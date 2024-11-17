@@ -1,284 +1,48 @@
+<h1 id="data-driven-compression-of-multi-channel-images">Data-Driven Compression of Multi-Channel Images</h1>
+<p>The primary objective of the project is to systematically assess the efficacy and performance of some of these methods which enable building of low-order representations of image data. For a detailed project report, please refer to the <a href="https://github.com/kirtan2605/KTH-SM2001-Data-Driven-Methods-in-Engineering/blob/master/Project/Kirtan%20Patel%20SM2001%20Project%20Report.pdf">Complete Project Report</a></p>
+<h2 id="image-dataset">Image Dataset</h2>
+<p>The dataset under assessment for performance evaluation is a multi-channel (color) image.</p>
+<p align="center">
+  <img src="https://github.com/kirtan2605/KTH-SM2001-Data-Driven-Methods-in-Engineering/blob/master/readme_images/KTH_photo.jpg" style="width:500px; height:auto; float:left;">
+  <div style="clear:both; margin-bottom:200px;"></div>
+</p>
 
-<!DOCTYPE html>
-<html lang="en">
+<p>The dataset has been reduced in size for performance evaluation using neural networks for a smaller training time with the limited computaitonal resources.</p>
+<p align="center">
+  <img src="https://github.com/kirtan2605/KTH-SM2001-Data-Driven-Methods-in-Engineering/blob/master/readme_images/NN/KTH_photo%20reduced%205.jpg" style="width:500px; height:auto; float:left;">
+  <div style="clear:both; margin-bottom:200px;"></div>
+</p>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" type="image/png" href="./images/engineering-portfolio-favicon.png" />
+<h2 id="singular-vector-decomposition">Singular Vector Decomposition</h2>
+<p>Low-order representations of the image data can be obtained by storing data upto different value of rank r (All the three channels have the same value of r) after the singular vector decomposition of the data matrix (which is an image in this case). For a more accurate reconstruction with lower storage, different value of r can be set for each of the three channels based on the amount of cumulative energy that is captured.</p>
+<p align="center">
+  <img src="https://github.com/kirtan2605/KTH-SM2001-Data-Driven-Methods-in-Engineering/blob/master/readme_images/SVD/Compressed_Image_r001.png" style="width: 30%; height: 175px; margin-right: 20px;">
+  <img src="https://github.com/kirtan2605/KTH-SM2001-Data-Driven-Methods-in-Engineering/blob/master/readme_images/SVD/Compressed_Image_r010.png" style="width: 30%; height: 175px; margin-right: 20px;">
+  <img src="https://github.com/kirtan2605/KTH-SM2001-Data-Driven-Methods-in-Engineering/blob/master/readme_images/SVD/Compressed_Image_r025.png" style="width: 30%; height: 175px; margin-right: 20px;">
+</p>
 
-  <!-- Put your site title here -->
-  <title>
-    Kirtan Premprakash Patel | Engineering Portfolio | Data-Driven Image Compression
-  </title>
 
-  <meta name="description" content="Add small description of yourslef.">
-  <!-- Add some coding keywords below, Ex: (React, CSS etc) -->
-  <meta name="keywords" content="Put your name, skills and some coding keywords" />
-  <link rel="stylesheet" href="index.css" />
-</head>
+<h2 id="discrete-fourier-transform">Discrete Fourier Transform</h2>
+<p>This transformation shifts an image from its spatial domain into the frequency domain, allowing for the segregation of high-frequency and low-frequency coefficients. Low-order representations of the image data can be obtained by storing data upto different value of frequencies on the bases of the magnitude of their fourier coefficients. It also permits the attenuation or modification of specific frequencies, resulting in an image with reduced data but retaining a satisfactory level of quality. </p>
+<p align="center">
+  <img src="https://github.com/kirtan2605/KTH-SM2001-Data-Driven-Methods-in-Engineering/blob/master/readme_images/DFT/Storage_0.1.png" style="width: 30%; height: 175px; margin-right: 20px;">
+  <img src="https://github.com/kirtan2605/KTH-SM2001-Data-Driven-Methods-in-Engineering/blob/master/readme_images/DFT/Storage_0.21.png" style="width: 30%; height: 175px; margin-right: 20px;">
+  <img src="https://github.com/kirtan2605/KTH-SM2001-Data-Driven-Methods-in-Engineering/blob/master/readme_images/DFT/Storage_0.51.png" style="width: 30%; height: 175px; margin-right: 20px;">
+</p>
 
-<body>
+<h2 id="convolutional-neural-network-based-autoencoder">Convolutional Neural Network based AutoEncoder</h2>
+<p>Neural networks’ ability to learn nonlinear relationships makes autoencoders a powerful extension of PCA. Convolutional Neural Networks (CNN) based autoencoders extend the basic autoencoder architecture by incorporating convolutional layers. This enables them to capture spatial hierarchies and features within the image data, which improves image compression and reconstruction.  In the context of image data, this latent space captures the most salient features of the input.</p>
+<p align="center">
+  <img src="https://github.com/kirtan2605/KTH-SM2001-Data-Driven-Methods-in-Engineering/blob/master/readme_images/NN/CNNAE/ReconImage_d005.png" style="width: 30%; height: 200px; margin-right: 20px;">
+  <img src="https://github.com/kirtan2605/KTH-SM2001-Data-Driven-Methods-in-Engineering/blob/master/readme_images/NN/CNNAE/ReconImage_d025.png" style="width: 30%; height: 200px; margin-right: 20px;">
+  <img src="https://github.com/kirtan2605/KTH-SM2001-Data-Driven-Methods-in-Engineering/blob/master/readme_images/NN/CNNAE/ReconImage_d100.png" style="width: 30%; height: 200px; margin-right: 20px;">
+</p>
 
-  <!-- ***** Header ***** -->
 
-  <header class="header" role="banner" id="top">
-    <div class="row">
-      <nav class="nav" role="navigation">
-        <ul class="nav__items">
-          <li class="nav__item"><a href="#work" class="nav__link">Projects</a></li>
-          <!-- <li class="nav__item"><a href="#clients" class="nav__link">Clients</a></li> -->
-          <li class="nav__item">
-            <a href="#about" class="nav__link">About</a>
-          </li>
-          <!--
-          <li class="nav__item">
-            <a href="#contact" class="nav__link">Contact</a>
-          </li> -->
-        </ul>
-      </nav>
-    </div>
-    <div class="header__text-box row">
-      <div class="header__text">
-        <h1 class="heading-primary">
-          <!-- Replace the following name with your name -->
-          <span>Data-Driven Image Compression</span>
-        </h1>
-        <!-- Put a small paragraph about yourself -->
-        <p>A Space Engineer from Ahmedabad, India</p>
-        <!-- <a href="#contact" class="btn btn--pink">Get in touch</a> -->
-      </div>
-    </div>
-  </header>
-
-  <main role="main">
-
-    <!-- ***** Work ***** -->
-
-    <section class="work" id="work">
-      <div class="row">
-        <h2>Project Work</h2>
-        <div class="work__boxes">
-
-          <!-- Each div with the work__box class is a project. -->
-
-          <!--
-          <div class="work__box">
-            <div class="work__text">
-              <h3>Portfolio Template</h3>
-              <p>
-                A free Open Source Portfolio for anyone to use for free.
-              </p>
-              <ul class="work__list">
-                <li>HTML</li>
-                <li>SCSS</li>
-                <li>JavaScript</li>
-                <li>Parcel</li>
-              </ul>
-
-              <div class="work__links">
-                <a href="https://nisar.surge.sh" target="_blank" class="link__text">
-                  Visit Site <span>&rarr;</span>
-                </a>
-                <a href="https://github.com/nisarhassan12/portfolio" title="View Source Code" target="_blank">
-                  <img src="./images/github.svg" class="work__code" alt="GitHub">
-                </a>
-              </div>
-            </div>
-            <div class="work__image-box">
-              <img src="./images/project-1.png" class="work__image" alt="Project 1" />
-            </div>
-          </div>
-
-          -->
-
-          <div class="work__box">
-            <div class="work__text">
-              <h3>Data-Driven Compression of Multi-Channel Images</h3>
-              <p>
-                The primary objective of the project is to systematically assess the efficacy and performance of some 
-                of these methods which enable building of low-order representations of image data.
-              </p>
-              <ul class="work__list">
-                <li>React</li>
-                <li>Next.js</li>
-                <li>Node</li>
-                <li>MongoDB</li>
-              </ul>
-
-              <div class="work__links">
-                <a href="#" class="link__text">
-                  Visit Site <span>&rarr;</span>
-                </a>
-                <a href="https://github.com/kirtan2605/KTH-SM2001-Data-Driven-Methods-in-Engineering/tree/master">
-                  <img src="./images/github.svg" class="work__code" title="View Source Code" alt="GitHub">
-                </a>
-              </div>
-            </div>
-            <div class="work__image-box">
-              <img src="./images/EngineeringPortfolio_DDM.png" class="work__image" alt="Project 1" />
-            </div>
-          </div>
-
-          <div class="work__box">
-            <div class="work__text">
-              <h3>Notificator</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod,
-                eius.
-              </p>
-              <ul class="work__list">
-                <li>React</li>
-                <li>Next.js</li>
-                <li>Node</li>
-                <li>MongoDB</li>
-              </ul>
-
-              <div class="work__links">
-                <a href="#" class="link__text">
-                  Visit Site <span>&rarr;</span>
-                </a>
-                <a href="#">
-                  <img src="./images/github.svg" class="work__code" title="View Source Code" alt="GitHub">
-                </a>
-              </div>
-            </div>
-            <div class="work__image-box">
-              <img src="./images/project-3.png" class="work__image" alt="Project 3" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ***** Clients ***** -->
-
-    <!-- ***
-    <section class="client" id="clients">
-      <div class="row">
-        <h2>Clients</h2>
-        <div class="client__logos">
-          <!~~ Add logos of the clients or companies you'have worked with.~~->
-          <img src="./images/ronjones.png" class="client__logo" alt="Company 2" />
-          <img src="./images/goldengrid.png" class="client__logo" alt="Company 3" />
-          <img src="./images/bullseye.png" class="client__logo" alt="Company 1" />
-          <img src="./images/mighty-furnitures.png" class="client__logo" alt="Company 1" />
-          <img src="./images/fastlane.png" class="client__logo" alt="Company 3" />
-          <img src="./images/chippy.png" class="client__logo" alt="Company 1" />
-        </div>
-      </div>
-    </section>
-
-    -->
-
-    <!-- ***** About ***** -->
-
-    <section class="about" id="about">
-      <div class="row">
-        <h2>About Me</h2>
-        <div class="about__content">
-          <div class="about__text">
-            <!-- Replace the below paragraph with info about yourself -->
-            <p>
-              I am a space engineering student with a strong proficiency in developing, optimizing, and integrating 
-              complex systems for efficient spacecraft operation. I hold a bachelor's degree in Aerospace Engineering 
-              from the Indian Institute of Technology Madras and am currently pursuing my master's at KTH Royal 
-              Institute of Technology in Stockholm, Sweden.
-              </p>
-            
-            </p>
-              Outside of academics, I am an avid runner with a 10km personal best of 55:17, an enthusiastic Formula 1 
-              fan who follows the sport closely and supports Red Bull Racing, and a passionate supporter of Real Madrid CF.
-            </p>
-
-            <!-- Provide a link to your resume -->
-            <!-- <a href="#" class="btn">My Resume</a> -->
-          </div>
-
-          <div class="about__photo-container">
-            <!-- Add a nice photo of yourself -->
-            <img 
-                class="about__photo" 
-                src="./images/kirtan-premprakash-patel.jpeg" 
-                alt="Photo of Kirtan Premprakash Patel" 
-                style="width: 500px; height: auto;" 
-          />
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- ***** Contact ***** -->
-  <!--
-  <section class="contact" id="contact">
-    <div class="row">
-      <h2>Get in Touch</h2>
-      <div class="contact__info">
-        <p>
-          Are you looking for a fast-performing and user-friendly website to
-          represent your product or business? or looking for any kind of
-          consultation? or want to ask questions? or have some advice for me
-          or just want to say "Hi 👋" in any case feel free to Let me know. I
-          will do my best to respond back. 😊 The quickest way to reach out to
-          me is via an email.
-        </p>
-        <!~~ Replace the email with yours ~~>
-        <a href="mailto:kirtan.2791@gmail.com" class="btn">kirtan.2791@gmail.com</a>
-      </div>
-    </div>
-  </section>
-  -->
-
-  <!-- ***** Footer ***** -->
-
-  <footer role="contentinfo" class="footer">
-    <div class="row">
-      <!-- Update the links to point to your accounts -->
-      <ul class="footer__social-links">
-        <!--
-        <li class="footer__social-link-item">
-          <a href="https://twitter.com/nisarhassan12/" title="Link to Twitter Profile">
-            <img src="./images/twitter.svg" class="footer__social-image" alt="Twitter">
-          </a>
-        </li>
-        -->
-        <li class="footer__social-link-item">
-          <a href="https://github.com/kirtan2605/" title="Link to Github Profile">
-            <img src="./images/github.svg" class="footer__social-image" alt="Github">
-          </a>
-        </li>
-        <!--
-        <li class="footer__social-link-item">
-          <a href="https://codepen.io/nisar_hassan" title="Link to Codepen Profile">
-            <img src="./images/codepen.svg" class="footer__social-image" alt="Codepen">
-          </a>
-        </li>
-        -->
-        <li class="footer__social-link-item">
-          <a href=https://www.linkedin.com/in/kirtan-patel-2605/">
-            <img src="./images/linkedin.svg" title="Link to Linkedin Profile" class="footer__social-image" alt="Linkedin">
-          </a>
-        </li>
-      </ul>
-
-      <!-- If you give me some credit by keeping the below paragraph, will be huge for me 😊 Thanks. -->
-      <p>
-        &copy; 2020 - Template designed & developed by <a href="https://nisar.dev" class="link">Nisar</a>.
-      </p>
-      <div class="footer__github-buttons">
-        <iframe
-          src="https://ghbtns.com/github-btn.html?user=nisarhassan12&repo=portfolio-template&type=watch&count=true"
-          frameborder="0" scrolling="0" width="170" height="20" title="Watch Portfolio Template on GitHub">
-        </iframe>
-      </div>
-    </div>
-  </footer>
-
-  <a href="#top" class="back-to-top" title="Back to Top">
-    <img src="./images/arrow-up.svg" alt="Back to Top" class="back-to-top__image"/>
-  </a>
-  <script src="./index.js"></script>
-</body>
-
-</html>
+<h2 id="convolutional-neural-network-based-heirarchical-autoencoder">Convolutional Neural Network based Heirarchical AutoEncoder</h2>
+<p>Convolutional Neural Network (CNN)-based Hierarchical Autoencoders (HAE) represent a powerful neural network architecture designed for hierarchical feature learning, particularly well-suited for tasks involving complex spatial data, such as image analysis, computer vision, and deep learning applications. Hierarchical autoencoders extend the principles of traditional autoencoders to enable the extraction of increasingly abstract and informative features through multiple layers of stacked autoencoders. Furthermore, the CNN-HAE architecture can order the AE modes following their contributions to the reconstructed field while achieving efficient order reduction.</p>
+<p align="center">
+  <img src="https://github.com/kirtan2605/KTH-SM2001-Data-Driven-Methods-in-Engineering/blob/master/readme_images/NN/CNNHAE/ReconImage_d3n01.png" style="width: 30%; height: 200px; margin-right: 20px;">
+  <img src="https://github.com/kirtan2605/KTH-SM2001-Data-Driven-Methods-in-Engineering/blob/master/readme_images/NN/CNNHAE/ReconImage_d3n05.png" style="width: 30%; height: 200px; margin-right: 20px;">
+  <img src="https://github.com/kirtan2605/KTH-SM2001-Data-Driven-Methods-in-Engineering/blob/master/readme_images/NN/CNNHAE/ReconImage_d3n10.png" style="width: 30%; height: 200px; margin-right: 20px;">
+</p>
