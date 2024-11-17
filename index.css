@@ -555,12 +555,11 @@ body:not(.user-is-tabbing) a:focus {
 @media(min-width: 901px) {
     .about__text {
         flex: 1; /* Make the text section take the remaining space */
-        padding-right: 20px; /* Optional: space between text and image */
+        padding-right: 10px; /* Optional: space between text and image */
     }
     
     .about__photo-container {
         flex-shrink: 0; /* Prevent the image from shrinking */
-        width: 400px; /* Set fixed width for the image */
         margin: 0 var(--gutter-huge) 0 0; /* Space between image and text */
     }
 }
