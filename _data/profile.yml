@@ -34,6 +34,12 @@ portrait_url: /assets/images/photos/KirtanPatel.jpg
 #portrait_caption: >-
 #  Photo by Manja Vitolic on Unsplash (this caption is optional, comment it out to disable).
 
+experience:
+ - name: Dutch Institute for Fundamental Energy Research
+   logo: /assets/images/badges/DIFFER_Logo.png
+   position: Researcher
+   date: Feb. 2025 - Present
+
 education:
 - name: KTH Royal Institute of Technology
   logo: /assets/images/badges/KTH_Logo.png
@@ -44,12 +50,6 @@ education:
   logo: /assets/images/badges/IIT_Madras_Logo.png
   position: B.Tech Aerospace Engineering
   date: Jul. 2019 - May. 2023
-
-experience:
- - name: Dutch Institute for Fundamental Energy Research
-   logo: /assets/images/badges/DIFFER_Logo.png
-   position: Researcher
-   date: Feb. 2025 - Present
 
 awards:
 - name: Award Name 2
