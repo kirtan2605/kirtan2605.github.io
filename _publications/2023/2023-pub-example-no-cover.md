@@ -1,13 +1,13 @@
 ---
-title:          "Publication without cover image"
+title:          "Characterizing and Modeling Time Series Data"
 date:           2023-01-1 00:01:00 +0800
 selected:       false
 
 abstract: >-
-  When the cover image is not provided, it will generate a random colorful bubble images as the cover image using the <code>bubble_visual_hash.js</code> script.
+  This project focuses on characterizing and modeling time series data using ARMA models in R. It involves forecasting future values while evaluating model performance through ACF/PACF plots and residual analysis to ensure prediction accuracy and reliability.
 cover:          /assets/images/covers/cover3.jpg
 
 links:
-  Code: https://github.com/luost26/bubble-visual-hash
-  Demo: https://luost26.github.io/bubble-visual-hash
+  Code: https://github.com/kirtan2605/UTwente-191571090-Time_Series_Analysis/tree/master
+  Project Report : https://github.com/kirtan2605/UTwente-191571090-Time_Series_Analysis/blob/d92e59caa91ed58a0d0c7604f42c121f6b7d1c80/TSA_Assignment_s2935848.pdf
 ---
