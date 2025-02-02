@@ -23,12 +23,12 @@ short_bio_text_justify: false
 short_bio: >-
   <p>
     An aerospace engineer and physics enthusiast with a passion for developing, optimising, and integrating complex systems. 
+    My experiences in space engineering focus on plasma dynamics, space weather effects on spacecraft systems, and the 
+    development of GNC and RF technologies. 
   </p>
   <p>
-    My interests in space engineering focus on plasma dynamics, space weather effects on spacecraft systems, and the 
-    development of GNC and RF technologies. Beyond space applications, I am fascinated by electromagnetism, microwave 
-    photonics, and plasmonics, exploring their applications in high-frequency communications, quantum computing, and 
-    next-generation sensing technologies.  
+    Beyond space applications, my interest extends to electromagnetism, microwave photonics, and plasmonics, 
+    exploring their applications in high-frequency communications, quantum computing, and next-generation sensing technologies.  
   </p>
 
 portrait_url: /assets/images/photos/KirtanPatel.jpg
