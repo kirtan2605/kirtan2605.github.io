@@ -37,12 +37,13 @@ portrait_url: /assets/images/photos/KirtanPatel.jpg
 education:
 - name: KTH Royal Institute of Technology
   logo: /assets/images/badges/KTH_Logo.png
-  position: >- 
-    M.Sc Aerospace Engineering
+  position: Master of Science
+  dept : Aerospace Engineering, Dept. of Engineering Sciences
   date: Aug. 2023 - present
 - name: Indian Institute of Technology, Madras
   logo: /assets/images/badges/IIT_Madras_Logo.png
-  position: B.Tech Aerospace Engineering (Honors)
+  position: Bachelors of Technology
+  dept : Dept. of Aerospace Engineering
   date: Jul. 2019 - May. 2023
 
 experience:
