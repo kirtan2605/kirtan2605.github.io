@@ -1,14 +1,14 @@
-primary_name: "Your Name"
+primary_name: "Kirtan Premprakash Patel"
 secondary_name: ""
-navbar_name: "Your Name"
+navbar_name: "Kirtan"
 
 positions:
 - logo: /assets/images/badges/MIT_Social_circle.png  # Logo is optional
-  name: Position 1 with logo
-- name: Position 2 without logo
+  name: Dutch Institute for Fundamental Energy Research
+#- name: Position 2 without logo
 
 
-email: "your@email.com"
+email: "kirtan.2791@gmail.com"
 # cv_link: link-to-your-cv-file
 gscholar: xFmQpf4AAAAJ  # This is an example, replace it with your own Google Scholar ID
 github: your_github_id
