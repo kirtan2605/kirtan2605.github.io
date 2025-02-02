@@ -3,8 +3,8 @@ secondary_name: ""
 navbar_name: "Kirtan"
 
 positions:
-- logo: /assets/images/badges/DIFFER-logo-transparent.png  # Logo is optional
-  name: Dutch Institute for Fundamental Energy Research
+- logo: /assets/images/badges/DIFFER_Logo.png  # Logo is optional
+  name: Dutch Institute for Fundamental Energy Research (DIFFER)
 #- name: Position 2 without logo
 
 
@@ -30,21 +30,20 @@ short_bio: >-
     as well as being common in domestic longhair and domestic shorthair cats.
   </p>
 
-portrait_url: /assets/images/photos/portrait.jpg
-portrait_caption: >-
-  Photo by Manja Vitolic on Unsplash (this caption is optional, comment it out to disable).
+portrait_url: /assets/images/photos/KirtanPatel.jpg
+#portrait_caption: >-
+#  Photo by Manja Vitolic on Unsplash (this caption is optional, comment it out to disable).
 
 education:
-- name: Massachusetts Institute of Technology
-  logo: /assets/images/badges/MIT_Social_circle.png
+- name: KTH Royal Institute of Technology
+  logo: /assets/images/badges/KTH_Logo.png
   position: >- 
-    Department of Electrical Engineering and Computer Science <br/>
-    Ph.D. Student
-  date: Sep. 2024 - present
-- name: Peking University
+    M.Sc Aerospace Engineering
+  date: Aug. 2023 - present
+- name: Indian Institute of Technology, Madras
   logo: /assets/images/badges/PKU_red.png
-  position: B.S. in Computer Science
-  date: Sep. 2019 - Jul. 2021
+  position: B.Tech Aerospace Engineering
+  date: Jul. 2019 - May. 2023
 
 # experience:
 # - name: Peking University
