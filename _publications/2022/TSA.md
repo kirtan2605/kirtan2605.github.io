@@ -1,6 +1,6 @@
 ---
 title:          "Characterizing and Modeling Time Series Data"
-date:           2023-01-1 00:01:00 +0800
+date:           2022-01-1 00:01:00 +0800
 selected:       false
 
 abstract: >-
