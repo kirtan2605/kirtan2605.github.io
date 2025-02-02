@@ -41,15 +41,15 @@ education:
     M.Sc Aerospace Engineering
   date: Aug. 2023 - present
 - name: Indian Institute of Technology, Madras
-  logo: /assets/images/badges/PKU_red.png
+  logo: /assets/images/badges/IIT_Madras_Logo.png
   position: B.Tech Aerospace Engineering
   date: Jul. 2019 - May. 2023
 
-# experience:
-# - name: Peking University
-#   logo: /assets/images/badges/PKU_red.png
-#   position: Research Intern
-#   date: Sep. 2019 - Jul. 2021
+ experience:
+ - name: Dutch Institute for Fundamental Energy Research
+   logo: /assets/images/badges/DIFFER_Logo.png
+   position: Researcher
+   date: Feb. 2025 - Present
 
 awards:
 - name: Award Name 2
