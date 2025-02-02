@@ -10,7 +10,7 @@ selected:       false
 
 abstract: >-
   Investigation of radiation-induced Single Event Upsets (SEUs) in MATS satellite CCD imagery through anomaly detection and correlation with SPENVIS particle flux models, enabling better understanding of space radiation effects on imaging sensors.
-cover:          /assets/images/covers/cover3.jpg
+cover:          /assets/images/covers/ground-track.png
 links:
   Code: https://github.com/kirtan2605/KTH-EF2260-Space-Environment-and-Spacecraft-Engineering
 # Unsplash: https://unsplash.com/photos/sliced-in-half-pineapple--_PLJZmHZzk
