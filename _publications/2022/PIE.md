@@ -1,5 +1,5 @@
 ---
-title:          "Sandbox Simulation of the Online Game - The Evolution of Trust"
+title:          "Sandbox Simulation of an online game named The Evolution of Trust"
 date:           2022-05-05 00:01:00 +0800
 selected:       false
 
