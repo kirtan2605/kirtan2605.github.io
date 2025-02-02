@@ -10,7 +10,7 @@ selected:       false
 
 abstract: >-
   Evaluation of pass durations, solar angle variations, eclipse events, and geomagnetic storm effects for the MATS satellite using TLE propagation.
-cover:          assets/images/covers/SPOT_cover-photo.png
+cover:          assets/images/covers/MATS-Orbit_cover-photo.png
 # links:
 #  Code: https://github.com/kirtan2605/KTH-EF2260-Space-Environment-and-Spacecraft-Engineering
 # Unsplash: https://unsplash.com/photos/sliced-in-half-pineapple--_PLJZmHZzk
