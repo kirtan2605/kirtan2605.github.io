@@ -34,12 +34,6 @@ portrait_url: /assets/images/photos/KirtanPatel.jpg
 #portrait_caption: >-
 #  Photo by Manja Vitolic on Unsplash (this caption is optional, comment it out to disable).
 
-experience:
- - name: Dutch Institute for Fundamental Energy Research
-   logo: /assets/images/badges/DIFFER_Logo.png
-   position: Researcher
-   date: Feb. 2025 - Present
-
 education:
 - name: KTH Royal Institute of Technology
   logo: /assets/images/badges/KTH_Logo.png
@@ -51,10 +45,16 @@ education:
   position: B.Tech Aerospace Engineering
   date: Jul. 2019 - May. 2023
 
+experience:
+ - name: Dutch Institute for Fundamental Energy Research
+   logo: /assets/images/badges/DIFFER_Logo.png
+   position: Researcher
+   date: Feb. 2025 - Present
+
 awards:
-- name: Award Name 2
+- name: KTH One-Year Scholarship
   date: 2024
-- name: Award Name 1 
-  date: 2021
-- name: A quick brown fox jumps over the lazy dog and runs away award
-  date: 2021
+- name: Honors 
+  date: 2023
+- name: All Rounder of the Year 
+  date: 2018
