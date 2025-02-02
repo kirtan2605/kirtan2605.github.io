@@ -1,5 +1,5 @@
 ---
-title:          "Orbital Analysis for MATS Satellite"
+title:          "Orbital Analysis of MATS Satellite"
 date:           2024-05-12 00:01:00 +0800
 selected:       false
 # pub:            "International Conference on Machine Learning (ICML)"
