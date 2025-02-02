@@ -42,7 +42,7 @@ education:
   date: Aug. 2023 - present
 - name: Indian Institute of Technology, Madras
   logo: /assets/images/badges/IIT_Madras_Logo.png
-  position: B.Tech Aerospace Engineering
+  position: B.Tech Aerospace Engineering (Honors)
   date: Jul. 2019 - May. 2023
 
 experience:
@@ -54,7 +54,5 @@ experience:
 awards:
 - name: KTH One-Year Scholarship
   date: 2024
-- name: Honors 
-  date: 2023
-- name: All Rounder of the Year 
-  date: 2018
+- name: Karl Engvers Foundation Travel Scholarship
+  date: 2024
