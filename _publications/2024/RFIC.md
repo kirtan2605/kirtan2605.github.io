@@ -11,7 +11,7 @@ selected:       false
 abstract: >-
     Optimized BJT Low Noise Amplifier design achieving significant gain and noise figure improvements at 5 GHz. 
     Performance evaluation includes input/output matching and overall efficiency at specified frequency.  
-cover:          assets/images/covers/MATS-Orbit_cover-photo.png
+cover:          assets/images/covers/RFIC_cover-photo.png
 # links:
 #  Code: https://github.com/kirtan2605/KTH-EF2260-Space-Environment-and-Spacecraft-Engineering
 # Unsplash: https://unsplash.com/photos/sliced-in-half-pineapple--_PLJZmHZzk
