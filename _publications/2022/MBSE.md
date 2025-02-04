@@ -9,8 +9,7 @@ selected:       false
 # pub_date:       "2024"
 
 abstract: >-
-    Led the systems engineering efforts to optimize production operations, including stakeholder analysis and development of key performance metrics. 
-    Applied MBSE tools to create logical system architecture, enhancing subsystem integration and reducing lifecycle costs.  
+    Systems Architecture design to optimize production operations, including stakeholder analysis and development of key performance metrics. MBSE implementation to create logical system architecture, enhancing subsystem integration and reducing lifecycle costs.  
 cover:          assets/images/covers/MBSE_cover-photo.png
 # links:
 #  Code: https://github.com/kirtan2605/KTH-EF2260-Space-Environment-and-Spacecraft-Engineering
