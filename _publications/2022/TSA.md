@@ -9,5 +9,5 @@ cover:          assets/images/covers/TSA_cover-photo.png
 
 links:
   Code: https://github.com/kirtan2605/UTwente-191571090-Time_Series_Analysis/tree/master
-  Project Report : https://github.com/kirtan2605/UTwente-191571090-Time_Series_Analysis/blob/d92e59caa91ed58a0d0c7604f42c121f6b7d1c80/TSA_Assignment_s2935848.pdf
+  Project Report : https://github.com/kirtan2605/UTwente-191571090-Time_Series_Analysis/raw/d92e59caa91ed58a0d0c7604f42c121f6b7d1c80/TSA_Assignment_s2935848.pdf
 ---
