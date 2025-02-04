@@ -9,5 +9,5 @@ abstract: >-
 cover:          assets/images/covers/QPSK_cover-photo.png
 links:
   Code: https://github.com/kirtan2605/KTH-EQ2310-Digital_Communications/tree/master/src
-  Project Report : https://github.com/kirtan2605/KTH-EQ2310-Digital_Communications/blob/master/EQ2310_Project_Report.pdf
+  Project Report : https://github.com/kirtan2605/KTH-EQ2310-Digital_Communications/raw/master/EQ2310_Project_Report.pdf
 ---
