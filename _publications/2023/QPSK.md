@@ -8,6 +8,6 @@ abstract: >-
   in time-varying channels.  
 cover:          assets/images/covers/QPSK_cover-photo.png
 links:
-  Code: https://github.com/kirtan2605/KTH-EQ2310-Digital_Communications/tree/master/src
-  Project Report : https://github.com/kirtan2605/KTH-EQ2310-Digital_Communications/raw/master/EQ2310_Project_Report.pdf
+  Code: https://github.com/kirtan2605/Analysis-of-QPSK-Modulation-and-Synchronization/tree/master/src
+  Project Report : https://github.com/kirtan2605/Analysis-of-QPSK-Modulation-and-Synchronization/raw/master/project-report.pdf
 ---
