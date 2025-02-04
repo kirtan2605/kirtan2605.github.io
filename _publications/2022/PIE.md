@@ -10,5 +10,5 @@ cover:          assets/images/covers/PIE_cover-photo.png
 
 links:
   Code: https://github.com/kirtan2605/UTwente-191158510-Programming_in_Engineering/tree/master/Python%20Project/Code
-  Project Report: https://github.com/kirtan2605/UTwente-191158510-Programming_in_Engineering/blob/1b1529d2cca4b58b44e3e2d61866dabb7411ab69/Python%20Project/PiE_Python_Project_Report%20-%20s2935848.pdf
+  Project Report: https://github.com/kirtan2605/UTwente-191158510-Programming_in_Engineering/raw/1b1529d2cca4b58b44e3e2d61866dabb7411ab69/Python%20Project/PiE_Python_Project_Report%20-%20s2935848.pdf
 ---
