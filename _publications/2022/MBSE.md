@@ -11,7 +11,7 @@ selected:       false
 abstract: >-
     Led the systems engineering efforts to optimize production operations, including stakeholder analysis and development of key performance metrics. 
     Applied MBSE tools to create logical system architecture, enhancing subsystem integration and reducing lifecycle costs.  
-cover:          assets/images/covers/RFIC_cover-photo.png
+cover:          assets/images/covers/MBSE_cover-photo.png
 # links:
 #  Code: https://github.com/kirtan2605/KTH-EF2260-Space-Environment-and-Spacecraft-Engineering
 # Unsplash: https://unsplash.com/photos/sliced-in-half-pineapple--_PLJZmHZzk
