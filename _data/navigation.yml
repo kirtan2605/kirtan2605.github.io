@@ -4,6 +4,6 @@ pages:
 - name: Home
   url: /
 - name: Projects
-  url: /publications
+  url: /projects
 #- name: Showcase
 #  url: /showcase
