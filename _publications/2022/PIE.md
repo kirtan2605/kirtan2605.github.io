@@ -10,5 +10,5 @@ cover:          assets/images/covers/PIE_cover-photo.png
 
 links:
   Code: https://github.com/kirtan2605/The-Evolution-of-Trust-Sandbox-Simulation/tree/master/src
-  Project Report: https://github.com/kirtan2605/The-Evolution-of-Trust-Sandbox-Simulation/raw/master/project-report.pdf
+  Project Report: https://docs.google.com/viewer?url=https://kirtan2605.github.io/assets/reports/PIE_project-report.pdf
 ---
