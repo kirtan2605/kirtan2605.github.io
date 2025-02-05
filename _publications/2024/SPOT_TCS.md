@@ -12,7 +12,7 @@ abstract: >-
   Devsign of thermal control system for the SPOT satellite, optimizing radiator sizing for thermal rejection and heater power for 60-70% duty cycles. 
   The system ensures equipment temperatures remain between -10°C and 25°C under extreme space conditions, based on satellite life and orbit analysis.
 cover:          assets/images/covers/SPOT_cover-photo.png
-# links:
+links:
 #  Code: https://github.com/kirtan2605/KTH-EF2260-Space-Environment-and-Spacecraft-Engineering
-# Unsplash: https://unsplash.com/photos/sliced-in-half-pineapple--_PLJZmHZzk
+   Project Report: https://docs.google.com/viewer?url=https://kirtan2605.github.io/assets/reports/TCS-SPOT_project-report.pdf
 ---
