@@ -12,6 +12,6 @@ abstract: >-
   Evaluation of pass durations, solar angle variations, eclipse events, and geomagnetic storm effects for the MATS satellite using TLE propagation. Simulation to estimate the number of Starlink satellites in line-of-sight visibility.
 cover:          assets/images/covers/MATS-Orbit_cover-photo.png
 # links:
-#  Code: https://github.com/kirtan2605/KTH-EF2260-Space-Environment-and-Spacecraft-Engineering
+#  Code: https://github.com/kirtan2605/TLE-Propogation-LOS-Visbility-Analysis
 # Unsplash: https://unsplash.com/photos/sliced-in-half-pineapple--_PLJZmHZzk
 ---
