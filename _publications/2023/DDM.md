@@ -7,5 +7,5 @@ abstract: >-
 cover:          assets/images/covers/DDM_cover-photo.png 
 links:
   Code: https://github.com/kirtan2605/Data-Driven-Image-Compression
-  Project Report : <embed src="https://kirtan22605.github.io/assets/reports/DDM_project-report.pdf" type="application/pdf" />
+  Project Report : <a href="kirtan22605.github.io/assets/reports/DDM_project-report.pdf" target="_blank">PDF.</a>
 ---
