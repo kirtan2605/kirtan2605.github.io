@@ -13,5 +13,5 @@ abstract: >-
 cover:          /assets/images/covers/ground-track.png
 links:
   Code: https://github.com/kirtan2605/Space-Radiation-Effects
-# Unsplash: https://unsplash.com/photos/sliced-in-half-pineapple--_PLJZmHZzk
+  Project Report: https://docs.google.com/viewer?url=https://kirtan2605.github.io/assets/reports/MATS-SEU_project-report.pdf
 ---
