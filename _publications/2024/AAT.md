@@ -12,7 +12,7 @@ abstract: >-
     Design and validation of a half-width microstrip leaky-wave antenna at 5 GHz, assessing radiation performance and 
     impedance matching. Measurement and analysis of directivity, beamwidth, and bandwidth characteristics.  
 cover:          assets/images/covers/AAT_cover-photo.png
-# links:
-#  Code: https://github.com/kirtan2605/KTH-EF2260-Space-Environment-and-Spacecraft-Engineering
+links:
+  Presentation: https://docs.google.com/viewer?url=https://kirtan2605.github.io/assets/reports/AAT_presentation.pdf
 # Unsplash: https://unsplash.com/photos/sliced-in-half-pineapple--_PLJZmHZzk
 ---
