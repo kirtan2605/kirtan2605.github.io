@@ -9,5 +9,5 @@ abstract: >-
 cover:          assets/images/covers/QPSK_cover-photo.png
 links:
   Code: https://github.com/kirtan2605/Analysis-of-QPSK-Modulation-and-Synchronization/tree/master/src
-  Project Report : https://github.com/kirtan2605/Analysis-of-QPSK-Modulation-and-Synchronization/raw/master/project-report.pdf
+  Project Report : https://docs.google.com/viewer?url=https://kirtan2605.github.io/assets/reports/QPSK_project-report.pdf
 ---
