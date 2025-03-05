@@ -13,6 +13,6 @@ abstract: >-
     impedance matching. Measurement and analysis of directivity, beamwidth, and bandwidth characteristics.  
 cover:          assets/images/covers/AAT_cover-photo.png
 links:
-  Presentation: https://docs.google.com/viewer?url=https://kirtan2605.github.io/assets/reports/AAT_presentation.pdf
+  Presentation: https://drive.google.com/file/d/1iQR_rwb23S-BPnQDOUft5C7fSpXMR1eS/view?usp=drive_link
 # Unsplash: https://unsplash.com/photos/sliced-in-half-pineapple--_PLJZmHZzk
 ---
