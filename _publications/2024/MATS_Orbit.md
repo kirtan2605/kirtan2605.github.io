@@ -13,5 +13,5 @@ abstract: >-
 cover:          assets/images/covers/MATS-Orbit_cover-photo.png
 links:
   Code: https://github.com/kirtan2605/TLE-Propogation-LOS-Visbility-Analysis
-  Presentation: https://docs.google.com/viewer?url=https://kirtan2605.github.io/assets/reports/MATS-Orbit_presentation.pdf
+  Presentation: https://drive.google.com/file/d/1A81m3NYYmaff0Pd5JLQp0MbTxl5CbyNK/view?usp=drive_link
 ---
