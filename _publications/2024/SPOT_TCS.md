@@ -14,5 +14,5 @@ abstract: >-
 cover:          assets/images/covers/SPOT-TCS_cover-photo.png
 links:
 #  Code: https://github.com/kirtan2605/KTH-EF2260-Space-Environment-and-Spacecraft-Engineering
-   Project Report: https://docs.google.com/viewer?url=https://kirtan2605.github.io/assets/reports/TCS-SPOT_project-report.pdf
+   Project Report: https://drive.google.com/file/d/1ZZgNOLEI_amL_CfxUi1S5IL67uXJfLl3/view?usp=drive_link
 ---
