@@ -7,5 +7,5 @@ abstract: >-
 cover:          assets/images/covers/AIITRA_cover-photo.png 
 links:
   Code: https://github.com/kirtan2605/TKA-AIITRA_Robotics_Challenge-2021
-  Project Report : https://docs.google.com/viewer?url=https://kirtan2605.github.io/assets/reports/AIITRA_project-report.pdf
+  Project Report : https://drive.google.com/file/d/1sFJGt9pkFtqrBaSeIjpRsHhWhKoMBhBH/view?usp=drive_link
 ---
