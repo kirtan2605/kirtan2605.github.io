@@ -13,5 +13,5 @@ abstract: >-
 cover:          /assets/images/covers/ground-track.png
 links:
   Code: https://github.com/kirtan2605/Space-Radiation-Effects
-  Project Report: https://docs.google.com/viewer?url=https://kirtan2605.github.io/assets/reports/MATS-SEU_project-report.pdf
+  Project Report: https://drive.google.com/file/d/1xRhiKEcGRLWlinnUZcQth3CVu3PiZgHS/view?usp=drive_link
 ---
