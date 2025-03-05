@@ -6,5 +6,6 @@ abstract: >-
   Study of bias-momentum geosynchronous spacecraft control for precise attitude control for ground station pointing under orbital deviations. Simulation of SSP perturbations, derivation of guidance commands, and roll-actuated control with pulse-width pulse-frequency modulated thruster activation.
 
 cover:          assets/images/covers/AOCS_cover-photo-new.png
-
+links :
+  Project Report : https://drive.google.com/file/d/1uJTDLstDyQXI5IiQJsLiEERWK0GQHWOA/view?usp=drive_link
 ---
