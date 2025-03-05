@@ -14,5 +14,5 @@ abstract: >-
 cover:          assets/images/covers/RFIC_cover-photo.png
 links:
 #  Code: https://github.com/kirtan2605/KTH-EF2260-Space-Environment-and-Spacecraft-Engineering
-   Presentation: https://docs.google.com/viewer?url=https://kirtan2605.github.io/assets/reports/RFIC_presentation.pdf
+   Presentation: https://drive.google.com/file/d/1lJ96tOoeBmJmisW2Ifojx8hQMpJM0Rlp/view?usp=drive_link
 ---
