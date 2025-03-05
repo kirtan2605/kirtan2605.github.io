@@ -11,7 +11,9 @@ selected:       false
 abstract: >-
     Systems Architecture design to optimize production operations, including stakeholder analysis and development of key performance metrics. MBSE implementation to create logical system architecture, enhancing subsystem integration and reducing lifecycle costs.  
 cover:          assets/images/covers/MBSE_cover-photo.png
-# links:
+links:
+    Poster : https://drive.google.com/file/d/1oESzTM5obM4d-2ht_4phFa-xq-bDQxkQ/view?usp=drive_link
+    Handout : https://drive.google.com/file/d/1V3M8nebFzk1fS_u6TuO4g_TPGXlDeoJK/view?usp=drive_link
 #  Code: https://github.com/kirtan2605/KTH-EF2260-Space-Environment-and-Spacecraft-Engineering
 # Unsplash: https://unsplash.com/photos/sliced-in-half-pineapple--_PLJZmHZzk
 ---
