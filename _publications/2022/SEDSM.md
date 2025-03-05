@@ -6,7 +6,7 @@ selected:       false
 abstract: >-
   Use of semi-empirical models for predicting dynamic stall, focusing on the ONERA and Snel Models to address limitations in current computational methods. Evaluation of model strengths and weaknesses, with comparison to experimental data obtained via openFOAM, and identification of areas for further research.
   
-  cover:          assets/images/covers/TSA_cover-photo.png
+  cover:          assets/images/covers/SEDSM_cover-photo.png
 
 links:
   Project Report : https://drive.google.com/file/d/12h__u5Ny5jtWhjko5imlUwuzu67Abcjl/view?usp=drive_link
