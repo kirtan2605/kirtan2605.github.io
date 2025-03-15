@@ -22,10 +22,14 @@ orcid: 0000-0003-1228-9924
 short_bio_text_justify: false
 short_bio: >-
   <p>
-    An aerospace engineer and physics enthusiast with a passion for developing, optimizing, and integrating complex systems. I specialize in space engineering, focusing on plasma dynamics, space weather impacts on spacecraft systems, and the development of GNC and RF/Microwave technologies.
+    An aerospace engineer and physics enthusiast with a passion for developing, optimizing, and integrating complex systems. 
+    I specialize in space engineering, focusing on plasma dynamics, space weather impacts on spacecraft systems, and the 
+    development of GNC and RF/Microwave technologies.
   </p>
   <p>
-Beyond space applications, my interest extends to electromagnetic phenomena across multiple domains—exploring their potential in developing waveguides for high-frequency communications, metamaterial-based sensors, and plasma diagnostics. I am also intrigued by spin systems, particularly their applications in energy-efficient computing and next-generation wireless networks.
+    Beyond space applications, my interest extends to electromagnetic phenomena across multiple domains—exploring their potential 
+    in developing waveguides for high-frequency communications, metamaterial-based sensors, and plasma diagnostics. I am also intrigued by spin systems, 
+    particularly their applications in energy-efficient computing and next-generation wireless networks.
   </p>
 # multiple scales ....
 #  - from microwave photonics to plasmonics - 
