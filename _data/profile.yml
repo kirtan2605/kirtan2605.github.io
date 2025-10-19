@@ -3,8 +3,8 @@ secondary_name: ""
 navbar_name: "Kirtan"
 
 positions:
-- logo: /assets/images/badges/AID-GmbH_Logo.jpg  # Logo is optional
-  name: AID Innovation
+- logo: /assets/images/badges/logomark square cropped.png  # Logo is optional
+  name: Aerospace Systems Engineer | Building Advanced Technologies that are Engineered to Outperform
 #- name: Position 2 without logo
 
 
