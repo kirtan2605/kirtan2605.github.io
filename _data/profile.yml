@@ -3,7 +3,7 @@ secondary_name: ""
 navbar_name: "Kirtan"
 
 positions:
-- logo: /assets/images/badges/AID-GmbH_Logo.png  # Logo is optional
+- logo: /assets/images/badges/AID-GmbH_Logo.jpg  # Logo is optional
   name: AID Innovation
 #- name: Position 2 without logo
 
@@ -56,7 +56,7 @@ experience:
    position: Researcher
    date: Feb. 2025 - Jul. 2025
  - name: AID Innovation
-   logo: /assets/images/badges/AID-GmbH_Logo.png
+   logo: /assets/images/badges/AID-GmbH_Logo.jpg
    position: Systems Engineer
    date: Sep. 2025 - Present
 
