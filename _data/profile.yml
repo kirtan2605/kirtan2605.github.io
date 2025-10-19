@@ -3,8 +3,8 @@ secondary_name: ""
 navbar_name: "Kirtan"
 
 positions:
-- logo: /assets/images/badges/DIFFER_Logo.png  # Logo is optional
-  name: Dutch Institute for Fundamental Energy Research (DIFFER)
+- logo: /assets/images/badges/AID-GmbH_Logo.png  # Logo is optional
+  name: AID Innovation
 #- name: Position 2 without logo
 
 
@@ -54,6 +54,10 @@ experience:
  - name: Dutch Institute for Fundamental Energy Research (DIFFER)
    logo: /assets/images/badges/DIFFER_Logo.png
    position: Researcher
+   date: Feb. 2025 - Present
+ - name: AID Innovation
+   logo: /assets/images/badges/AID-GmbH_Logo.png
+   position: Systems Engineer
    date: Feb. 2025 - Present
 
 awards:
