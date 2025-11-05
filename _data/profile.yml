@@ -2,8 +2,8 @@ primary_name: "Kirtan Premprakash Patel"
 secondary_name: ""
 navbar_name: "Kirtan"
 
-positions:
-- name: Aerospace Systems Engineer | Building Systems that are Engineered to Outperform
+#positions:
+#- name: Aerospace Systems Engineer | Building Systems that are Engineered to Outperform
 #- name: Position 2 without logo
 
 
@@ -21,17 +21,15 @@ orcid: 0000-0003-1228-9924
 short_bio_text_justify: false
 short_bio: >-
   <p>
-    An aerospace engineer and physics enthusiast with a passion for developing, optimising, and integrating complex 
+    An aerospace systems engineer and physics enthusiast with a passion for developing, optimising, and integrating complex 
     systems. My experiences in space engineering focus on plasma dynamics, space weather effects on spacecraft systems, 
-    and the development of Guidance-Navigation-and-Control and RF/Microwave technologies.
+    and the development of GNC and RF/Microwave technologies.
   </p>
   <p>
     Beyond space applications, my interest extends to electromagnetic phenomena across multiple domains — exploring 
-    their potential in high-frequency communications and metamaterial-based sensors.
-  </p>
-  <p>
-    I pursue the development of advanced systems through the integration of multiphysics frameworks, computational 
-    intelligence, and performance-driven design for aerospace, defence and nuclear technology.
+    their potential in high-frequency communications and metamaterial-based sensors. I pursue the development of advanced 
+    systems through the integration of multiphysics frameworks, computational intelligence, and performance-driven design 
+    for aerospace, defence and nuclear technology.
   </p>
 portrait_url: /assets/images/photos/KirtanPatel-cropped.jpg
 #portrait_caption: >-
