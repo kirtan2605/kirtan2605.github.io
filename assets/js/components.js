@@ -124,15 +124,6 @@ export function renderExperience() {
         </section>`;
 }
 
-export function renderSideQuestsTeaser() {
-    return `
-        <section class="row mt-3" aria-label="Beyond work">
-            <div class="col-12">
-                <p class="home-side-quests">Beyond work: ${profile.personal.games.map((game) => game.name).join(", ")}. <a href="side-quests.html">Side-Quests <i class="fas fa-arrow-right" aria-hidden="true"></i></a></p>
-            </div>
-        </section>`;
-}
-
 function renderProjectDetails(project) {
     return `
         <div class="project-details project-details--linked">

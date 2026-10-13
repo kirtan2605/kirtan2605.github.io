@@ -254,20 +254,6 @@ div.lazy {
     margin: 0.15rem 0 0;
 }
 
-.home-side-quests {
-    color: #6c757d;
-    font-size: 0.875rem;
-    margin: 0;
-}
-
-.home-side-quests a {
-    margin-left: 0.25rem;
-}
-
-.home-side-quests i {
-    font-size: 0.75rem;
-}
-
 .project-cover {
     aspect-ratio: 3 / 2;
     object-fit: cover;
