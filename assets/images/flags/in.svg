@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 10" role="img" aria-label="India">
+  <path fill="#ff9933" d="M0 0h15v3.333H0z"/>
+  <path fill="#fff" d="M0 3.333h15v3.334H0z"/>
+  <path fill="#138808" d="M0 6.667h15V10H0z"/>
+  <circle cx="7.5" cy="5" r="1.4" fill="none" stroke="#000080" stroke-width=".18"/>
+  <circle cx="7.5" cy="5" r=".18" fill="#000080"/>
+  <path d="M7.5 3.6v2.8M6.1 5h2.8M6.51 4.01l1.98 1.98m0-1.98-1.98 1.98M6.79 3.79l1.42 2.42m-.5-2.42-1.42 2.42" stroke="#000080" stroke-width=".11"/>
+</svg>

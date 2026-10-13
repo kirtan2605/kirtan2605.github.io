@@ -67,3 +67,272 @@ div.lazy {
     font-family: Courier, monospace;
 }
 
+.navbar-toggler {
+    font-size: 1em;
+    padding: 0.5em;
+}
+
+.profile-portrait {
+    height: 265px;
+}
+
+.profile-avatar {
+    height: 48px;
+}
+
+.career-card {
+    height: 100%;
+}
+
+.career-title {
+    border-bottom: 1px solid #e6e9ec;
+    padding-bottom: 0.75rem;
+    margin-bottom: 0;
+}
+
+.career-entry {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+    margin-top: 1rem;
+}
+
+.career-entry + .career-entry {
+    border-top: 1px solid #eef0f2;
+    padding-top: 1rem;
+}
+
+.career-logo-slot {
+    width: 58px;
+    flex: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 0.15rem;
+}
+
+.career-logo {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.career-logo-wide {
+    width: 58px;
+    height: 29px;
+}
+
+.career-entry-body {
+    min-width: 0;
+    flex: 1;
+}
+
+.career-heading {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) max-content;
+    align-items: start;
+    gap: 0.5rem;
+}
+
+.career-date,
+.career-award-heading time {
+    font-style: italic;
+    white-space: nowrap;
+}
+
+.career-date,
+.career-location,
+.career-department,
+.career-position {
+    font-size: 0.875rem;
+}
+
+.career-date,
+.career-location {
+    color: #6c757d;
+}
+
+.career-location {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin: 0.15rem 0 0.35rem;
+}
+
+.career-flag {
+    width: 17px;
+    height: 12px;
+    flex: none;
+    object-fit: cover;
+    border: 1px solid #dce1e5;
+    border-radius: 2px;
+}
+
+.career-award-heading {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.75rem;
+}
+
+.career-awards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+    list-style: none;
+    margin: 0;
+    padding: 1rem 0 0;
+}
+
+.career-awards li {
+    min-width: 0;
+    padding: 0.875rem 1rem;
+    border-left: 3px solid #d4dee8;
+    background: #f8f9fa;
+}
+
+.career-awards p {
+    font-size: 0.875rem;
+    color: #6c757d;
+    margin: 0.35rem 0 0;
+}
+
+.project-cover {
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+}
+
+.project-mobile {
+    background-position: center;
+    background-size: cover;
+}
+
+.project-mobile-overlay {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.year-navigation {
+    top: 80px;
+}
+
+.showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-auto-flow: dense;
+    grid-auto-rows: 8px;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.showcase-item {
+    grid-column: span var(--span);
+    grid-row-end: span var(--rows, 1);
+    min-width: 0;
+}
+
+.showcase-item > .card {
+    overflow: hidden;
+}
+
+.image-overlay-scroll {
+    overflow: auto;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.formula {
+    font-family: Georgia, serif;
+    font-size: 1.35rem;
+}
+
+.showcase-carousel {
+    height: var(--carousel-height);
+    position: relative;
+    overflow: hidden;
+}
+
+.showcase-slide {
+    display: none;
+    height: 100%;
+    position: relative;
+}
+
+.showcase-slide.is-active {
+    display: block;
+}
+
+.showcase-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.showcase-caption {
+    position: absolute;
+    right: 15%;
+    bottom: 20px;
+    left: 15%;
+    z-index: 2;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.75);
+}
+
+.carousel-button {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 3;
+    width: 15%;
+    border: 0;
+    color: #fff;
+    background: transparent;
+    font-size: 2rem;
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+.carousel-button:hover,
+.carousel-button:focus {
+    opacity: 1;
+}
+
+.carousel-button.previous {
+    left: 0;
+}
+
+.carousel-button.next {
+    right: 0;
+}
+
+@media (max-width: 767.98px) {
+    .career-awards {
+        grid-template-columns: 1fr;
+    }
+
+    .career-award-heading {
+        flex-wrap: wrap;
+    }
+
+    .showcase-item {
+        grid-column: span 12;
+    }
+
+    .card-body.p-5 {
+        padding: 2rem !important;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .career-logo-slot {
+        width: 48px;
+    }
+
+    .career-logo-wide {
+        width: 48px;
+        height: 24px;
+    }
+
+    .career-heading {
+        grid-template-columns: 1fr;
+        gap: 0.1rem;
+    }
+}
+
