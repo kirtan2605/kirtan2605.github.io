@@ -89,7 +89,10 @@ function renderTimeline(items) {
             <span class="career-logo-slot"><img src="${item.logo}" alt="" class="career-logo${item.name === "University of Twente" ? " career-logo-wide" : ""}"></span>
             <div class="career-entry-body">
                 <div class="career-heading">
-                    <div class="career-organization">${item.name}</div>
+                    <div>
+                        <div class="career-organization">${item.name}</div>
+                        ${item.fullName ? `<div class="career-full-name">${item.fullName}</div>` : ""}
+                    </div>
                     <time class="career-date">${item.date}</time>
                 </div>
                 <div class="career-location"><img src="assets/images/flags/${item.flag}.svg" alt="" class="career-flag">${item.location}</div>

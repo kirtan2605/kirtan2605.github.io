@@ -64,7 +64,8 @@ export const profile = {
             date: "Sep. 2025 – Present",
         },
         {
-            name: "Dutch Institute for Fundamental Energy Research (DIFFER)",
+            name: "DIFFER",
+            fullName: "Dutch Institute for Fundamental Energy Research",
             logo: "assets/images/badges/DIFFER_Logo.png",
             location: "Eindhoven, Netherlands",
             flag: "nl",

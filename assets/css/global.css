@@ -148,10 +148,9 @@ div.lazy {
     gap: 0.5rem;
 }
 
-@media (min-width: 768px) {
-    .career-organization {
-        white-space: nowrap;
-    }
+.career-full-name {
+    color: #6c757d;
+    font-size: 0.8rem;
 }
 
 .career-date,
@@ -165,6 +164,31 @@ div.lazy {
 .career-department,
 .career-position {
     font-size: 0.875rem;
+}
+
+@media (min-width: 992px) {
+    .career-columns {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.5rem;
+    }
+
+    .career-column + .career-column {
+        border-top: 0;
+        border-left: 1px solid #e6e9ec;
+        padding: 0 0 0 1.5rem;
+    }
+
+    .career-organization,
+    .career-full-name {
+        white-space: nowrap;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .career-heading {
+        grid-template-columns: 1fr;
+        gap: 0.1rem;
+    }
 }
 
 .career-date,
