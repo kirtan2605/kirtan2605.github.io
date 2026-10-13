@@ -3,7 +3,7 @@ export const site = {
     navigation: [
         { label: "Home", href: "index.html", page: "home" },
         { label: "Projects", href: "projects.html", page: "projects" },
-        { label: "Showcase", href: "showcase.html", page: "showcase" },
+        // { label: "Showcase", href: "showcase.html", page: "showcase" },
     ],
     footer: {
         templateName: "academic-homepage",
