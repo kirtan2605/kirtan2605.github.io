@@ -53,20 +53,6 @@ export const showcaseGroups = [
                     </div>`,
             },
             {
-                id: "github-history",
-                width: 4,
-                className: "card border-0 shadow-sm bg-white",
-                html: `
-                    <div>
-                        <img src="https://api.star-history.com/svg?repos=luost26/academic-homepage&type=Date" loading="lazy" class="w-100 rounded-top" alt="Academic Homepage GitHub star history">
-                        <div class="card-body">
-                            <h5 class="card-title">GitHub Star History</h5>
-                            <p class="card-text">This image shows the star history of the original website template.</p>
-                            <p class="card-text"><small><a href="https://github.com/luost26/academic-homepage" target="_blank" rel="noopener">View the template</a></small></p>
-                        </div>
-                    </div>`,
-            },
-            {
                 id: "formula",
                 width: 4,
                 className: "card border-0 shadow-sm bg-white",

@@ -3,12 +3,9 @@ export const site = {
     navigation: [
         { label: "Home", href: "index.html", page: "home" },
         { label: "Projects", href: "projects.html", page: "projects" },
+        { label: "Side-Quests", href: "side-quests.html", page: "side-quests" },
         // { label: "Showcase", href: "showcase.html", page: "showcase" },
     ],
-    footer: {
-        templateName: "academic-homepage",
-        templateUrl: "https://github.com/luost26/academic-homepage",
-    },
 };
 
 export const profile = {
@@ -17,13 +14,39 @@ export const profile = {
     positions: [],
     bio: [
         "An aerospace systems engineer and physics enthusiast with a passion for developing, optimising, and integrating complex systems. My experiences in space engineering focus on plasma dynamics, space weather effects on spacecraft systems, and the development of GNC and RF/Microwave technologies.",
-        "Beyond space applications, my interest extends to electromagnetic phenomena across multiple domains — exploring their potential in high-frequency communications and metamaterial-based sensors. I pursue the development of advanced systems through the integration of multiphysics frameworks, computational intelligence, and performance-driven design for aerospace, defence and nuclear technology.",
+        "Beyond space applications, my interest extends to electromagnetic phenomena across multiple domains, exploring their potential in high-frequency communications and metamaterial-based sensors. I pursue the development of advanced systems through the integration of multiphysics frameworks, computational intelligence, and performance-driven design for aerospace, defence and nuclear technology.",
     ],
     contact: {
         email: "kirtan.2791@gmail.com",
         github: "https://github.com/kirtan2605",
         linkedin: "https://www.linkedin.com/in/kirtan-patel-2605",
         orcid: "https://orcid.org/0000-0003-1228-9924",
+    },
+    personal: {
+        games: [
+            {
+                name: "Rocket League",
+                wallpaper: "assets/images/gaming/rocket-league-inspired.png",
+                wallpaperAlt: "Original illustration of a rocket-powered car leaping toward a ball in a stadium",
+            },
+            {
+                name: "Brawlhalla",
+                wallpaper: "assets/images/gaming/brawlhalla-inspired.png",
+                wallpaperAlt: "Original illustration of fighters above a floating arena in the clouds",
+            },
+            {
+                name: "PUBG Mobile",
+                wallpaper: "assets/images/gaming/pubg-mobile-inspired.png",
+                wallpaperAlt: "Original illustration of a player overlooking an island battleground at sunset",
+            },
+            {
+                name: "Crash of Cars",
+                wallpaper: "assets/images/gaming/crash-of-cars-inspired.png",
+                wallpaperAlt: "Original illustration of colorful cars competing for a crown in an urban arena",
+            },
+        ],
+        discord: "ambush2605",
+        highlights: [],
     },
     education: [
         {
@@ -69,7 +92,8 @@ export const profile = {
             logo: "assets/images/badges/DIFFER_Logo.png",
             location: "Eindhoven, Netherlands",
             flag: "nl",
-            position: "Research Assistant, Plasma Edge Diagnostics",
+            position: "Research Assistant",
+            focus: "Plasma Edge Diagnostics",
             date: "Feb. 2025 – Jul. 2025",
         },
         {
@@ -77,7 +101,8 @@ export const profile = {
             logo: "assets/images/badges/IIT_Madras_Logo.png",
             location: "Chennai, India",
             flag: "in",
-            position: "Undergraduate Researcher, Spacecraft Dynamics & Control",
+            position: "Undergraduate Researcher",
+            focus: "Spacecraft Dynamics & Control",
             date: "Aug. 2022 – May 2023",
         },
         {
@@ -85,7 +110,8 @@ export const profile = {
             logo: "assets/images/badges/UTwente_Logo.png",
             location: "Enschede, Netherlands",
             flag: "nl",
-            position: "Research Assistant, Model-Based Systems Engineering",
+            position: "Research Assistant",
+            focus: "Model-Based Systems Engineering",
             date: "Apr. 2022 – Dec. 2022",
         },
     ],

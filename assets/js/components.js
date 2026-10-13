@@ -4,7 +4,6 @@ const externalLinkAttributes = `target="_blank" rel="noopener noreferrer"`;
 
 export function renderShell(activePage) {
     const header = document.querySelector("[data-site-header]");
-    const footer = document.querySelector("[data-site-footer]");
 
     if (header) {
         header.innerHTML = `
@@ -24,19 +23,6 @@ export function renderShell(activePage) {
                     </div>
                 </div>
             </nav>`;
-    }
-
-    if (footer) {
-        const updated = new Intl.DateTimeFormat("en", { month: "short", year: "numeric" }).format(new Date());
-        footer.innerHTML = `
-            <div class="container">
-                <div class="row my-3">
-                    <div class="col-6 text-muted"><i>Last updated: ${updated}</i></div>
-                    <div class="col-6 text-right text-muted">
-                        <a href="${site.footer.templateUrl}" ${externalLinkAttributes}><i class="fas fa-pencil-ruler" aria-hidden="true"></i> ${site.footer.templateName}</a>
-                    </div>
-                </div>
-            </div>`;
     }
 
     const toggle = document.querySelector("[data-nav-toggle]");
@@ -88,16 +74,17 @@ function renderTimeline(items) {
         <li class="career-entry">
             <span class="career-logo-slot"><img src="${item.logo}" alt="" class="career-logo${item.name === "University of Twente" ? " career-logo-wide" : ""}"></span>
             <div class="career-entry-body">
-                <div class="career-heading">
-                    <div>
+                <div class="career-details">
+                    <div class="career-institution">
                         <div class="career-organization">${item.name}</div>
-                        ${item.fullName ? `<div class="career-full-name">${item.fullName}</div>` : ""}
                     </div>
+                    <div class="career-location"><img src="assets/images/flags/${item.flag}.svg" alt="" class="career-flag">${item.location}</div>
+                    ${item.fullName ? `<div class="career-full-name">${item.fullName}</div>` : ""}
+                    <div class="career-position">${item.position}</div>
                     <time class="career-date">${item.date}</time>
                 </div>
-                <div class="career-location"><img src="assets/images/flags/${item.flag}.svg" alt="" class="career-flag">${item.location}</div>
+                ${item.focus ? `<div class="career-focus">Focus: ${item.focus}</div>` : ""}
                 ${item.department ? `<div class="career-department">${item.department}</div>` : ""}
-                <div class="career-position">${item.position}</div>
             </div>
         </li>`).join("");
 }
@@ -121,7 +108,7 @@ export function renderExperience() {
                     </div>
                 </div>
             </div>
-            <div class="col-12 mb-3">
+            <div class="col-12">
                 <div class="card border-0 shadow-sm bg-white">
                     <div class="card-body p-4">
                         <h2 class="h5 career-title">Honours &amp; Awards</h2>
@@ -137,6 +124,15 @@ export function renderExperience() {
         </section>`;
 }
 
+export function renderSideQuestsTeaser() {
+    return `
+        <section class="row mt-3" aria-label="Beyond work">
+            <div class="col-12">
+                <p class="home-side-quests">Beyond work: ${profile.personal.games.map((game) => game.name).join(", ")}. <a href="side-quests.html">Side-Quests <i class="fas fa-arrow-right" aria-hidden="true"></i></a></p>
+            </div>
+        </section>`;
+}
+
 function renderProjectDetails(project) {
     return `
         <div class="project-details project-details--linked">
@@ -145,21 +141,20 @@ function renderProjectDetails(project) {
         </div>`;
 }
 
-export function renderProject(project, options = {}) {
-    const borderClass = options.last ? "" : " border-bottom border-gray";
-    const projectUrl = project.caseStudyUrl || `project.html?id=${encodeURIComponent(project.id)}`;
+export function renderProject(project) {
+    const projectUrl = project.caseStudyUrl || `projects/overview/?id=${encodeURIComponent(project.id)}`;
     return `
-        <article class="project-item">
+        <article class="project-item bg-white shadow-sm rounded-sm">
             <a class="project-card-link" href="${projectUrl}" aria-label="View project: ${project.title}">
             <div class="d-none d-md-block">
-                <div class="row no-gutters${borderClass}">
+                <div class="row no-gutters">
                     <div class="col-md-3 col-xl-2 mb-md-0 p-md-3">
                         <img src="${project.cover}" loading="lazy" alt="Cover for ${project.title}" class="w-100 rounded-sm project-cover">
                     </div>
                     <div class="col-md-9 col-xl-10 p-3 pl-md-0">${renderProjectDetails(project)}</div>
                 </div>
             </div>
-            <div class="row no-gutters d-md-none${borderClass} project-mobile" style="background-image: url('${project.cover}')">
+            <div class="row no-gutters d-md-none project-mobile" style="background-image: url('${project.cover}')">
                 <div class="w-100 project-mobile-overlay"><div class="d-flex align-items-start flex-column py-3 px-4"><div class="w-100">${renderProjectDetails(project)}</div></div></div>
             </div>
             <span class="project-case-study-arrow" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" focusable="false"><path d="M3.5 10h12m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
@@ -172,12 +167,12 @@ export function renderProjectCollection(projects, { selected = false } = {}) {
         return `
             <section class="my-3 p-0 bg-white shadow-sm rounded-sm" aria-labelledby="selected-projects-title">
                 <h2 id="selected-projects-title" class="h6 border-bottom border-gray p-3 mb-0"><i class="fas fa-star" aria-hidden="true"></i> Selected Projects</h2>
-                ${projects.map((project, index) => renderProject(project, { last: index === projects.length - 1 })).join("")}
+                ${projects.map((project) => renderProject(project)).join("")}
                 <div class="h6 d-block p-3 mt-0 mb-0 text-right"><a href="projects.html">All projects <i class="fas fa-angle-double-right" aria-hidden="true"></i></a></div>
             </section>`;
     }
 
-    return projects.map((project, index) => renderProject(project, { last: index === projects.length - 1 })).join("");
+    return projects.map((project) => renderProject(project)).join("");
 }
 
 export function renderCarousel(id, carousel) {

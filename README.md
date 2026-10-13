@@ -8,11 +8,13 @@ A static personal website with no build step and no package dependencies. Open t
 .
 |-- index.html                    # Homepage shell
 |-- projects.html                 # Projects page shell
-|-- project.html                  # Report-led case studies selected by ?id=
-|-- thermal-control.html          # SPOT thermal-control case study
-|-- mats-seu.html                 # MATS radiation case study
-|-- mats-orbit.html               # MATS orbital analysis case study
-|-- leaky-wave-antenna.html       # Antenna case study
+|-- side-quests.html              # Side-Quests page with Discord and optional highlights
+|-- projects/
+|   |-- thermal-control/index.html    # SPOT thermal-control case study
+|   |-- mats-seu/index.html           # MATS radiation case study
+|   |-- mats-orbit/index.html         # MATS orbital analysis case study
+|   |-- leaky-wave-antenna/index.html # Antenna case study
+|   `-- overview/index.html           # Shared template selected by ?id=
 |-- showcase.html                 # Showcase page shell
 |-- 404.html                      # Not-found page
 |-- content/
@@ -45,9 +47,11 @@ A static personal website with no build step and no package dependencies. Open t
 
 ## Editing content
 
-- Update personal details in `content/profile.js`.
+- Update bio, contact links, education, experience, and personal details in `content/profile.js`.
+- Add screenshots or clips to `profile.personal.highlights` in `content/profile.js`. Each item needs `type` (`image` or `video`) and `src`; add `alt` for images, and optionally `caption`, `poster`, or `captions` for video.
 - Add each project under `content/projects/<year>/` using the filename format `YYYY-MM-DD-project-name.js`, then register it in `content/projects/index.js`.
-- Add a sourced case-study record under `content/project-case-studies*.js` for any new project linked to `project.html?id=<id>`.
+- Add a sourced case-study record under `content/project-case-studies*.js` for any new project linked to `projects/overview/?id=<id>`.
+- Dedicated project pages live in `projects/<slug>/index.html`. Keep their `<base href="../../">` so shared assets and navigation resolve from the site root.
 - Add or edit showcase cards in `content/showcase.js`.
 - Change shared presentation in `assets/css/global.css` and `assets/js/components.js`.
 
@@ -57,4 +61,4 @@ In VS Code, open `index.html` and choose **Open with Live Server**. No Ruby, Jek
 
 ## Deployment
 
-GitHub Pages can serve the repository directly from the branch root. Because every page is already static, no Jekyll build is needed.
+GitHub Pages can serve the repository directly from the branch root. The `.nojekyll` file disables Jekyll processing. The old root-level project URLs remain as redirects for existing links.

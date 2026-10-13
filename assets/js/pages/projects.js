@@ -18,7 +18,7 @@ const yearNavigation = document.querySelector("[data-year-navigation]");
 content.innerHTML = years.map((year) => `
     <section aria-labelledby="year-${year}">
         <h2 class="pt-4" id="year-${year}">${year}</h2>
-        <div class="my-0 p-0 bg-white shadow-sm rounded-sm">
+        <div class="project-list-group">
             ${renderProjectCollection(projectsByYear[year])}
         </div>
     </section>`).join("");
