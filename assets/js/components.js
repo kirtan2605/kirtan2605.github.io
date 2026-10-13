@@ -102,19 +102,19 @@ function renderTimeline(items) {
 export function renderExperience() {
     return `
         <section class="row mt-3 career-overview" aria-label="Education, experience, and honours">
-            <div class="col-12 col-lg-6 mb-3">
+            <div class="col-12 mb-3">
                 <div class="card border-0 shadow-sm bg-white">
                     <div class="card-body p-4">
-                        <h2 class="h5 career-title">Education</h2>
-                        <ul class="list-unstyled mb-0">${renderTimeline(profile.education)}</ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-lg-6 mb-3">
-                <div class="card border-0 shadow-sm bg-white">
-                    <div class="card-body p-4">
-                        <h2 class="h5 career-title">Experience</h2>
-                        <ul class="list-unstyled mb-0">${renderTimeline(profile.experience)}</ul>
+                        <div class="career-columns">
+                            <div class="career-column">
+                                <h2 class="h5 career-title">Education</h2>
+                                <ul class="list-unstyled mb-0">${renderTimeline(profile.education)}</ul>
+                            </div>
+                            <div class="career-column">
+                                <h2 class="h5 career-title">Experience</h2>
+                                <ul class="list-unstyled mb-0">${renderTimeline(profile.experience)}</ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

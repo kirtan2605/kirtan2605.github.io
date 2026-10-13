@@ -88,6 +88,17 @@ div.lazy {
     height: 48px;
 }
 
+.career-columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+.career-column + .career-column {
+    border-left: 1px solid #e6e9ec;
+    padding-left: 1.5rem;
+}
+
 .career-title {
     border-bottom: 1px solid #e6e9ec;
     padding-bottom: 0.75rem;
@@ -307,6 +318,17 @@ div.lazy {
 }
 
 @media (max-width: 767.98px) {
+    .career-columns {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .career-column + .career-column {
+        border-left: 0;
+        border-top: 1px solid #e6e9ec;
+        padding: 1rem 0 0;
+    }
+
     .career-awards {
         grid-template-columns: 1fr;
     }
