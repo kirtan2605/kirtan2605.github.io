@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <base href="../../">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A MATS satellite mission-analysis case study: propagating orbital elements to study illumination, eclipses, Esrange contact windows, and geometric visibility of Starlink satellites.">
+    <title>MATS orbital mission analysis - Kirtan</title>
+    <link rel="icon" href="assets/images/photos/KirtanPatel-cropped.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/thermal-control.css">
+    <link rel="stylesheet" href="assets/css/presentation-case-study.css">
+    <script type="module" src="assets/js/pages/mats-orbit.js"></script>
+</head>
+<body class="bg-light thermal-page presentation-page">
+    <header data-site-header></header>
+
+    <main>
+        <section class="thermal-hero" aria-labelledby="project-title">
+            <div class="container thermal-hero-grid">
+                <div class="thermal-hero-copy">
+                    <p class="thermal-eyebrow">Space systems · Mission analysis</p>
+                    <h1 id="project-title">Understanding the MATS orbit, contacts, and lines of sight</h1>
+                    <p class="thermal-hero-lead">A satellite's orbit sets when it sees sunlight, when a ground station can talk to it, and which other spacecraft are geometrically visible. This team project propagated MATS orbital data and turned those positions into eclipse, Esrange contact, and Starlink line-of-sight analyses.</p>
+                    <div class="thermal-tags" aria-label="Project methods and tools">
+                        <span>TLE propagation</span>
+                        <span>Eclipse analysis</span>
+                        <span>Ground-station passes</span>
+                        <span>Line-of-sight geometry</span>
+                    </div>
+                </div>
+                <figure class="thermal-hero-visual">
+                    <div class="thermal-hero-image-wrap">
+                        <img src="assets/images/covers/MATS-Orbit_cover-photo.png" alt="World map with successive MATS ground tracks crossing the Esrange ground station latitude">
+                        <span class="thermal-image-label">MATS ground track</span>
+                    </div>
+                    <figcaption>One day of propagated ground tracks, with the KIR-1 antenna at Esrange marked in northern Sweden.</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <nav class="thermal-jumpbar" aria-label="Case study sections">
+            <div class="container">
+                <a href="projects/mats-orbit/#brief">The question</a>
+                <a href="projects/mats-orbit/#method">Method</a>
+                <a href="projects/mats-orbit/#orbit">Orbit &amp; sunlight</a>
+                <a href="projects/mats-orbit/#contact">Eclipses &amp; contact</a>
+                <a href="projects/mats-orbit/#starlink">Starlink visibility</a>
+                <a href="projects/mats-orbit/#limits">Interpretation</a>
+            </div>
+        </nav>
+
+        <article class="container thermal-article">
+            <section class="thermal-section thermal-intro" id="brief" aria-labelledby="brief-title">
+                <div>
+                    <p class="thermal-section-kicker">The question</p>
+                    <h2 id="brief-title">What does MATS's changing position make possible?</h2>
+                    <p class="thermal-section-lead">MATS flies in an approximately 585 km, near-circular sun-synchronous orbit. Its position relative to the Sun, Earth, Esrange ground station, and other satellites changes every minute. A mission planner needs more than a single orbit drawing: they need time histories of lighting, eclipse, communication access, and potential lines of sight.</p>
+                    <p>The study asked four practical questions: <strong>How does the orbit evolve?</strong> <strong>When is MATS eclipsed?</strong> <strong>How often can Esrange see it?</strong> And, in a separate geometric experiment, <strong>how many Starlink satellites lie above Earth's limb from MATS?</strong></p>
+                </div>
+                <aside class="thermal-outcome-panel" aria-label="Project at a glance">
+                    <p class="thermal-panel-label">At a glance</p>
+                    <dl>
+                        <div><dt>≈96</dt><dd>minutes per orbit</dd></div>
+                        <div><dt>5,196</dt><dd>modeled Esrange contact windows</dd></div>
+                        <div><dt>439</dt><dd>Starlink satellites in the January sample</dd></div>
+                    </dl>
+                    <p class="thermal-panel-note">These figures describe the studied data windows and model assumptions, not a permanent mission forecast.</p>
+                </aside>
+
+                <figure class="thermal-system-diagram">
+                    <div class="thermal-system-flow" aria-label="Orbital elements are propagated to satellite positions, then tested against sunlight, the ground station, and other satellite positions">
+                        <div class="thermal-system-node"><i class="fas fa-list-ol" aria-hidden="true"></i><strong>Historical TLEs</strong><span>Position and orbit information at known epochs</span></div>
+                        <span class="thermal-flow-arrow" aria-hidden="true">→</span>
+                        <div class="thermal-system-node"><i class="fas fa-satellite" aria-hidden="true"></i><strong>Propagate positions</strong><span>Track MATS and comparison satellites over time</span></div>
+                        <span class="thermal-flow-arrow" aria-hidden="true">→</span>
+                        <div class="thermal-system-node"><i class="fas fa-compass" aria-hidden="true"></i><strong>Apply geometry</strong><span>Sunlight, Earth shadow, station elevation, and line of sight</span></div>
+                    </div>
+                    <figcaption><strong>One common foundation, several questions:</strong> the same propagated state can be compared with a Sun direction, a fixed ground antenna, or another satellite. Each comparison has a different visibility criterion.</figcaption>
+                </figure>
+            </section>
+
+            <section class="thermal-section" id="method" aria-labelledby="method-title">
+                <div class="thermal-heading-row">
+                    <div><p class="thermal-section-kicker">01 · Build the time history</p><h2 id="method-title">Propagate near each TLE's epoch, then ask geometric questions</h2></div>
+                    <p>A two-line element set (TLE) describes an orbit at a particular epoch. The project gathered successive TLEs rather than treating one set as accurate indefinitely, then calculated positions and derived quantities across the analysis period.</p>
+                </div>
+                <ol class="thermal-process">
+                    <li><span>01</span><div><h3>Retrieve orbital elements</h3><p>Collect time-stamped MATS TLEs and, for the constellation study, Starlink TLEs covering the sample period.</p></div></li>
+                    <li><span>02</span><div><h3>Propagate positions</h3><p>Compute satellite states at regular times, staying mindful that TLE accuracy degrades as propagation moves away from its epoch.</p></div></li>
+                    <li><span>03</span><div><h3>Test mission geometry</h3><p>Use Sun direction and Earth's shadow for illumination; use Esrange coordinates and a 10° elevation mask for ground-station access.</p></div></li>
+                    <li><span>04</span><div><h3>Compare other spacecraft</h3><p>For a January 2023 sample, test whether Earth blocks the line between MATS and each of 439 Starlink spacecraft at 60-second steps.</p></div></li>
+                </ol>
+                <p class="thermal-data-note">The Starlink sample size and 60-second resolution come from the project's code repository. “Geometrically visible” means the straight line is not blocked by the assumed Earth boundary; it does not imply that a satellite appears in MATS's camera field of view.</p>
+            </section>
+
+            <section class="thermal-section" id="orbit" aria-labelledby="orbit-title">
+                <div class="thermal-heading-row">
+                    <div><p class="thermal-section-kicker">02 · Read the orbit</p><h2 id="orbit-title">The Sun angle and orbital elements change over time</h2></div>
+                    <p>The analysis followed the angle between the Sun direction and the orbit's angular-momentum vector, alongside changes in semi-major axis and eccentricity. These trends set the context for seasonal lighting and eclipse behavior.</p>
+                </div>
+                <div class="thermal-chart-grid">
+                    <figure class="thermal-chart-card presentation-slide-card">
+                        <div class="thermal-chart-heading"><strong>Sun–orbit angle</strong></div>
+                        <img src="assets/images/projects/mats-orbit/slide-06.png" loading="lazy" alt="Time series of the angle between Sun direction and MATS orbit angular momentum from late 2022 to spring 2024">
+                        <figcaption>The plotted angle changes substantially across the analyzed months; the presentation reports a minimum near 3° and maximum near 32°.</figcaption>
+                    </figure>
+                    <figure class="thermal-chart-card presentation-slide-card">
+                        <div class="thermal-chart-heading"><strong>Orbit evolution</strong></div>
+                        <img src="assets/images/projects/mats-orbit/slide-07.png" loading="lazy" alt="Plots of decreasing MATS semi-major axis and oscillating eccentricity over time">
+                        <figcaption>The semi-major axis trends downward, while eccentricity varies on shorter and longer cycles. The orbital period is about 96 minutes.</figcaption>
+                    </figure>
+                </div>
+                <div class="thermal-insight"><span aria-hidden="true"><i class="fas fa-sun"></i></span><p><strong>Why it matters:</strong> the orbital plane's orientation to the Sun determines whether the spacecraft enters Earth's shadow and how its lighting geometry evolves. The model turns a moving orbit into dates and durations a mission team can plan around.</p></div>
+            </section>
+
+            <section class="thermal-section" id="contact" aria-labelledby="contact-title">
+                <div class="thermal-heading-row">
+                    <div><p class="thermal-section-kicker">03 · Plan light and contact</p><h2 id="contact-title">Eclipses and Esrange passes are brief, countable windows</h2></div>
+                    <p>The eclipse calculation used a simplified spherical-Earth shadow model. Esrange visibility was a separate test: MATS had to rise at least 10° above the local horizon for the KIR-1 antenna.</p>
+                </div>
+                <div class="thermal-results-grid">
+                    <article><span class="thermal-result-index">01</span><h3>Eclipses</h3><strong>1,633</strong><p>Counted in the presentation's analyzed interval; the mean modeled duration was 15.5 minutes.</p></article>
+                    <article><span class="thermal-result-index">02</span><h3>Longest eclipse</h3><strong>21 min</strong><p>The longest duration shown in the study occurred on 12 June 2023.</p></article>
+                    <article><span class="thermal-result-index">03</span><h3>Esrange contact</h3><strong>4.99 min</strong><p>Average duration across 5,196 modeled visibility windows, or about 9.4 passes per day.</p></article>
+                </div>
+                <div class="thermal-chart-grid">
+                    <figure class="thermal-chart-card presentation-slide-card">
+                        <div class="thermal-chart-heading"><strong>Modeled eclipse durations</strong></div>
+                        <img src="assets/images/projects/mats-orbit/slide-12.png" loading="lazy" alt="MATS eclipse duration and eclipse-occurrence plots, with summary values of 1,633 eclipses and 15.50-minute average">
+                        <figcaption>The model finds longer eclipses in part of the studied period and long intervals without them. The counts depend on the date range and simplified shadow geometry.</figcaption>
+                    </figure>
+                    <figure class="thermal-chart-card presentation-slide-card">
+                        <div class="thermal-chart-heading"><strong>Esrange visibility windows</strong></div>
+                        <img src="assets/images/projects/mats-orbit/slide-27.png" loading="lazy" alt="Timeline of MATS visibility-window durations from Esrange, with 5,196 windows and a 4.99-minute mean">
+                    </figure>
+                </div>
+                <p class="thermal-data-note">The Esrange window totals are model outputs for the analyzed interval, not guaranteed link availability after weather, scheduling, or radio constraints.</p>
+            </section>
+
+            <section class="thermal-section" id="starlink" aria-labelledby="starlink-title">
+                <div class="thermal-heading-row">
+                    <div><p class="thermal-section-kicker">04 · Extend the geometry</p><h2 id="starlink-title">Which Starlink satellites are above Earth's limb?</h2></div>
+                    <p>The second analysis propagated MATS and a sampled Starlink population together. At each time step, it asked whether the line between two spacecraft cleared an assumed Earth boundary, then counted the geometrically visible satellites.</p>
+                </div>
+                <div class="thermal-chart-grid">
+                    <figure class="thermal-chart-card presentation-slide-card">
+                        <div class="thermal-chart-heading"><strong>Line-of-sight test</strong></div>
+                        <img src="assets/images/projects/mats-orbit/slide-38.png" loading="lazy" alt="Geometry of two spacecraft positions and their connecting line above Earth for a line-of-sight visibility test">
+                        <figcaption>The shortest distance from Earth’s center to the inter-satellite line is compared with a spherical Earth boundary; a more conservative adjusted radius is also considered.</figcaption>
+                    </figure>
+                    <figure class="thermal-chart-card presentation-slide-card">
+                        <div class="thermal-chart-heading"><strong>Visible count through January 2023</strong></div>
+                        <img src="assets/images/projects/mats-orbit/slide-42.png" loading="lazy" alt="January 2023 time series showing the number of sampled Starlink satellites with geometric line of sight from MATS">
+                        <figcaption>For the sampled constellation, the modeled number above Earth's limb changes continuously—typically tens of spacecraft at a time in this plot.</figcaption>
+                    </figure>
+                </div>
+                <div class="thermal-insight"><span aria-hidden="true"><i class="fas fa-eye-slash"></i></span><p><strong>Visibility is not interference.</strong> The line-of-sight result does not show whether a Starlink satellite crossed the MATS instrument field of view, was illuminated, or affected any measurement. Those are separate tests left for future work.</p></div>
+            </section>
+
+            <section class="thermal-section thermal-reflection" id="limits" aria-labelledby="limits-title">
+                <div>
+                    <p class="thermal-section-kicker">05 · Interpretation and limits</p>
+                    <h2 id="limits-title">Useful mission estimates, bounded by the model</h2>
+                    <p>Across the study, TLE propagation turned historical orbital elements into interpretable timelines: lighting and eclipse behavior, short Esrange contact windows, and a broad inter-satellite visibility survey. The analysis also explored whether orbital decay aligned with sunspot activity, but the presentation notes that moving-average slopes were noisy; that comparison is exploratory rather than proof of a causal relationship.</p>
+                    <p>The outputs depend on TLE age, the chosen time step, a spherical-Earth approximation, and visibility cutoffs. A follow-up would use higher-fidelity geometry and explicitly test the MATS field of view before drawing conclusions about imaging interference.</p>
+                </div>
+            </section>
+
+            <section class="thermal-next-step" aria-label="Project resources">
+                <div><p>Explore the complete analysis</p><h2>Plots, assumptions, and the full line-of-sight study.</h2></div>
+                <div class="thermal-next-actions presentation-next-actions">
+                    <a class="thermal-report-button" href="assets/reports/MATS-Orbit_presentation.pdf" target="_blank" rel="noopener noreferrer">Open project presentation <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                    <a href="https://github.com/kirtan2605/TLE-Propogation-LOS-Visbility-Analysis" target="_blank" rel="noopener noreferrer">View analysis code <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                </div>
+            </section>
+        </article>
+    </main>
+</body>
+</html>

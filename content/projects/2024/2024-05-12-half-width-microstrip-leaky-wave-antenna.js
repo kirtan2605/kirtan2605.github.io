@@ -5,6 +5,6 @@ export default {
     selected: true,
     abstract: "Designed, fabricated, and measured a 5 GHz half-width microstrip leaky-wave antenna, comparing bandwidth and beam behavior with simulation and design targets.",
     cover: "assets/images/covers/AAT_cover-photo.png",
-    caseStudyUrl: "leaky-wave-antenna.html",
+    caseStudyUrl: "projects/leaky-wave-antenna/",
     links: [],
 };

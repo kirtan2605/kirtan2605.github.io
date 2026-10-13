@@ -41,9 +41,7 @@ function makeFigure(figure) {
     fullSize.setAttribute("aria-label", "Open figure full size: " + figure.alt);
     fullSize.append(image);
     item.append(fullSize);
-    const caption = el("figcaption");
-    caption.append(el("strong", null, figure.label), document.createTextNode(" — " + figure.caption));
-    item.append(caption);
+    if (figure.caption) item.append(el("figcaption", null, figure.caption));
     return item;
 }
 
@@ -73,7 +71,7 @@ function renderCaseStudy() {
     const navInner = el("div", "container");
     study.sections.forEach((section) => {
         const link = el("a", null, section.navLabel || section.kicker);
-        link.href = "#" + section.id;
+        link.href = window.location.pathname + window.location.search + "#" + section.id;
         navInner.append(link);
     });
     nav.append(navInner);

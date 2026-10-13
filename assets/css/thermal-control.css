@@ -718,6 +718,10 @@
     text-align: right;
 }
 
+.thermal-chart-heading strong:only-child {
+    text-align: left;
+}
+
 .thermal-table-card {
     overflow: hidden;
     border: 1px solid var(--thermal-border);
