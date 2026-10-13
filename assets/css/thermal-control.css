@@ -1,0 +1,964 @@
+:root {
+    --thermal-primary: #007bff;
+    --thermal-ink: #212529;
+    --thermal-muted: #6c757d;
+    --thermal-border: #e6e9ec;
+    --thermal-soft: #f8f9fa;
+}
+
+.thermal-page {
+    color: var(--thermal-ink);
+}
+
+.thermal-page a {
+    color: var(--thermal-primary);
+}
+
+.thermal-page a:hover {
+    color: #0056b3;
+}
+
+.thermal-hero {
+    padding: 0 0 1rem;
+}
+
+.thermal-hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+    align-items: center;
+    gap: 2.5rem;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    border-radius: 0.25rem;
+    background: #fff;
+    box-shadow: 0 0.125rem 0.45rem rgba(0, 0, 0, 0.075);
+}
+
+.thermal-eyebrow,
+.thermal-section-kicker {
+    margin: 0 0 0.6rem;
+    color: var(--thermal-primary);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.thermal-hero h1 {
+    max-width: 720px;
+    margin: 0 0 1rem;
+    font-size: clamp(2rem, 3.4vw, 2.8rem);
+    line-height: 1.18;
+}
+
+.thermal-hero-lead {
+    max-width: 680px;
+    margin-bottom: 1.5rem;
+    color: #495057;
+    font-size: 1.05rem;
+    line-height: 1.65;
+}
+
+.thermal-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1.4rem;
+}
+
+.thermal-tags span {
+    padding: 0.3rem 0.65rem;
+    border: 1px solid #d9e0e6;
+    border-radius: 0.25rem;
+    color: #5c6874;
+    background: var(--thermal-soft);
+    font-size: 0.75rem;
+}
+
+.thermal-report-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 0.9rem;
+    border: 1px solid var(--thermal-primary);
+    border-radius: 0.25rem;
+    color: #fff !important;
+    background: var(--thermal-primary);
+    font-size: 0.875rem;
+    font-weight: 700;
+}
+
+.thermal-report-button:hover,
+.thermal-report-button:focus {
+    border-color: #0069d9;
+    color: #fff !important;
+    background: #0069d9;
+    text-decoration: none;
+}
+
+.thermal-hero-visual,
+.thermal-wide-figure,
+.thermal-chart-card {
+    margin: 0;
+}
+
+.thermal-hero-image-wrap {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--thermal-border);
+    border-radius: 0.25rem;
+    background: var(--thermal-soft);
+}
+
+.thermal-hero-image-wrap img {
+    display: block;
+    width: 100%;
+}
+
+.thermal-image-label {
+    position: absolute;
+    right: 0.75rem;
+    bottom: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.2rem;
+    color: #fff;
+    background: rgba(33, 37, 41, 0.85);
+    font-size: 0.72rem;
+}
+
+.thermal-hero-visual figcaption {
+    margin-top: 0.6rem;
+    color: var(--thermal-muted);
+    font-size: 0.78rem;
+    line-height: 1.45;
+}
+
+.thermal-jumpbar {
+    position: sticky;
+    top: 60px;
+    z-index: 10;
+    border-bottom: 1px solid var(--thermal-border);
+    background: rgba(248, 249, 250, 0.97);
+}
+
+.thermal-jumpbar .container {
+    display: flex;
+    gap: 1.4rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.thermal-jumpbar a {
+    flex: none;
+    padding: 0.75rem 0;
+    color: #586674;
+    font-size: 0.8rem;
+}
+
+.thermal-jumpbar a:hover,
+.thermal-jumpbar a:focus {
+    color: var(--thermal-primary);
+    text-decoration: none;
+}
+
+.thermal-article {
+    max-width: 1140px;
+}
+
+.thermal-section {
+    margin: 1rem 0;
+    padding: 2.25rem;
+    border-radius: 0.25rem;
+    background: #fff;
+    box-shadow: 0 0.125rem 0.45rem rgba(0, 0, 0, 0.075);
+    scroll-margin-top: 120px;
+}
+
+.thermal-section h2 {
+    margin: 0;
+    font-size: clamp(1.55rem, 2.3vw, 2rem);
+    line-height: 1.25;
+}
+
+.thermal-section h3 {
+    font-size: 1.1rem;
+}
+
+.thermal-intro,
+.thermal-heading-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(250px, 0.6fr);
+    gap: 2.5rem;
+    align-items: start;
+}
+
+.thermal-section-lead {
+    margin: 1.5rem 0 1rem;
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.thermal-intro > div > p:last-child,
+.thermal-heading-row > p,
+.thermal-reflection > div > p:not(.thermal-section-kicker) {
+    color: #56616c;
+    line-height: 1.7;
+}
+
+.thermal-outcome-panel {
+    padding: 1.35rem;
+    border: 1px solid var(--thermal-border);
+    border-left: 3px solid var(--thermal-primary);
+    border-radius: 0.25rem;
+    background: var(--thermal-soft);
+}
+
+.thermal-panel-label {
+    margin: 0 0 0.8rem;
+    color: #495057;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.thermal-outcome-panel dl {
+    margin: 0;
+}
+
+.thermal-outcome-panel dl div {
+    display: grid;
+    grid-template-columns: 3.5rem 1fr;
+    align-items: baseline;
+    padding: 0.55rem 0;
+    border-bottom: 1px solid var(--thermal-border);
+}
+
+.thermal-outcome-panel dt {
+    color: var(--thermal-primary);
+    font-size: 1.5rem;
+}
+
+.thermal-outcome-panel dd {
+    margin: 0;
+    color: #56616c;
+    font-size: 0.82rem;
+}
+
+.thermal-panel-note {
+    margin: 0.9rem 0 0;
+    color: var(--thermal-muted);
+    font-size: 0.78rem;
+}
+
+.thermal-heading-row {
+    margin-bottom: 1.75rem;
+}
+
+.thermal-heading-row > p {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.thermal-explainer {
+    max-width: 900px;
+    margin: 0 0 1.5rem;
+    color: #56616c;
+    line-height: 1.7;
+}
+
+.thermal-system-diagram {
+    grid-column: 1 / -1;
+    margin: 0;
+    padding: 1.25rem;
+    border: 1px solid var(--thermal-border);
+    border-radius: 0.25rem;
+    background: var(--thermal-soft);
+}
+
+.thermal-system-flow {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
+    gap: 0.75rem;
+    align-items: center;
+}
+
+.thermal-system-node {
+    display: flex;
+    min-height: 115px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem;
+    border: 1px solid #d9e0e6;
+    border-radius: 0.25rem;
+    background: #fff;
+    text-align: center;
+}
+
+.thermal-system-node i {
+    margin-bottom: 0.35rem;
+    color: var(--thermal-primary);
+    font-size: 1.2rem;
+}
+
+.thermal-system-node strong {
+    font-size: 0.9rem;
+}
+
+.thermal-system-node span {
+    color: var(--thermal-muted);
+    font-size: 0.76rem;
+}
+
+.thermal-system-controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.55rem;
+    margin-top: 0.85rem;
+}
+
+.thermal-system-controls span {
+    padding: 0.35rem 0.6rem;
+    border: 1px solid #d9e0e6;
+    border-radius: 0.25rem;
+    color: #56616c;
+    background: #fff;
+    font-size: 0.76rem;
+}
+
+.thermal-system-controls i {
+    margin-right: 0.25rem;
+    color: var(--thermal-primary);
+}
+
+.thermal-flow-arrow {
+    color: var(--thermal-primary);
+    font-size: 1.3rem;
+}
+
+.thermal-system-diagram figcaption {
+    margin-top: 1rem;
+    color: #56616c;
+    font-size: 0.83rem;
+    line-height: 1.6;
+}
+
+.thermal-spec-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    border: 1px solid var(--thermal-border);
+    border-radius: 0.25rem;
+    background: var(--thermal-border);
+}
+
+.thermal-spec {
+    display: flex;
+    min-height: 112px;
+    flex-direction: column;
+    padding: 1rem;
+    background: var(--thermal-soft);
+}
+
+.thermal-spec span,
+.thermal-spec small {
+    color: var(--thermal-muted);
+    font-size: 0.76rem;
+}
+
+.thermal-spec strong {
+    margin-top: 0.65rem;
+    font-size: 1.35rem;
+}
+
+.thermal-case-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.75rem;
+}
+
+.thermal-case {
+    display: flex;
+    min-height: 118px;
+    flex-direction: column;
+    padding: 1rem;
+    border: 1px solid var(--thermal-border);
+    border-radius: 0.25rem;
+    background: var(--thermal-soft);
+}
+
+.thermal-case-cold {
+    border-top: 3px solid var(--thermal-primary);
+}
+
+.thermal-case-hot {
+    border-top: 3px solid #cb6b31;
+}
+
+.thermal-case small,
+.thermal-case span {
+    color: var(--thermal-muted);
+    font-size: 0.76rem;
+}
+
+.thermal-case strong {
+    margin: 0.3rem 0;
+    font-size: 1.35rem;
+}
+
+.thermal-data-note,
+.thermal-plot-intro {
+    margin: 0.85rem 0 1.5rem;
+    color: #56616c;
+    font-size: 0.84rem;
+    line-height: 1.65;
+}
+
+.thermal-attitudes {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 1.25rem;
+}
+
+.thermal-attitudes > div {
+    display: flex;
+    gap: 0.85rem;
+    padding: 1rem;
+    border: 1px solid var(--thermal-border);
+    border-radius: 0.25rem;
+}
+
+.thermal-attitude-icon {
+    display: grid;
+    width: 2rem;
+    height: 2rem;
+    flex: none;
+    place-items: center;
+    border-radius: 50%;
+    color: var(--thermal-primary);
+    background: #e6f2ff;
+}
+
+.thermal-attitudes h3 {
+    margin: 0 0 0.4rem;
+}
+
+.thermal-attitudes p {
+    margin: 0;
+    color: #56616c;
+    font-size: 0.84rem;
+    line-height: 1.6;
+}
+
+.thermal-equations,
+.thermal-chart-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.thermal-process {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.thermal-process li {
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+    gap: 0.8rem;
+    padding: 1.1rem;
+    border: 1px solid var(--thermal-border);
+    border-radius: 0.25rem;
+    background: var(--thermal-soft);
+}
+
+.thermal-process li > span {
+    color: var(--thermal-primary);
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.thermal-process h3 {
+    margin-bottom: 0.5rem;
+}
+
+.thermal-process p {
+    margin: 0;
+    color: #56616c;
+    font-size: 0.86rem;
+    line-height: 1.6;
+}
+
+.thermal-layout-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(250px, 0.9fr);
+    gap: 1.25rem;
+    align-items: center;
+    margin: 1.25rem 0;
+}
+
+.thermal-face-map {
+    margin: 0;
+    padding: 1rem;
+    border: 1px solid var(--thermal-border);
+    border-radius: 0.25rem;
+    background: var(--thermal-soft);
+}
+
+.thermal-face-map-title {
+    margin-bottom: 0.85rem;
+    color: #56616c;
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.thermal-face-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.6rem;
+}
+
+.thermal-face-list > div {
+    display: flex;
+    min-height: 90px;
+    flex-direction: column;
+    padding: 0.75rem;
+    border: 1px solid #d9e0e6;
+    border-radius: 0.25rem;
+    background: #fff;
+}
+
+.thermal-face-list span {
+    color: var(--thermal-primary);
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.thermal-face-list strong {
+    margin: 0.25rem 0;
+    font-size: 0.86rem;
+}
+
+.thermal-face-list small {
+    color: var(--thermal-muted);
+}
+
+.thermal-face-map figcaption {
+    margin-top: 0.75rem;
+    color: var(--thermal-muted);
+    font-size: 0.74rem;
+    line-height: 1.55;
+}
+
+.thermal-layout-explainer h3 {
+    margin-bottom: 0.75rem;
+}
+
+.thermal-layout-explainer p {
+    margin-bottom: 0.75rem;
+    color: #56616c;
+    font-size: 0.88rem;
+    line-height: 1.65;
+}
+
+.thermal-equations {
+    margin: 1rem 0;
+}
+
+.thermal-equations div {
+    padding: 1rem;
+    border-left: 3px solid #a4c5e8;
+    background: var(--thermal-soft);
+}
+
+.thermal-equations small {
+    color: var(--thermal-muted);
+    font-weight: 700;
+}
+
+.thermal-equations p {
+    margin: 0.4rem 0 0;
+    overflow-wrap: anywhere;
+    font-family: Georgia, serif;
+    font-size: 1.05rem;
+}
+
+.thermal-wide-figure,
+.thermal-chart-card {
+    overflow: hidden;
+    border: 1px solid var(--thermal-border);
+    border-radius: 0.25rem;
+    background: #fff;
+}
+
+.thermal-wide-figure img,
+.thermal-chart-card img {
+    display: block;
+    width: 100%;
+}
+
+.thermal-wide-figure figcaption,
+.thermal-chart-card figcaption {
+    padding: 0.8rem 1rem;
+    border-top: 1px solid var(--thermal-border);
+    color: var(--thermal-muted);
+    font-size: 0.78rem;
+    line-height: 1.5;
+}
+
+.thermal-insight {
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+    gap: 0.7rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-left: 3px solid var(--thermal-primary);
+    background: #edf5fd;
+}
+
+.thermal-insight span {
+    color: var(--thermal-primary);
+    font-size: 1.35rem;
+    line-height: 1;
+}
+
+.thermal-insight p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+.thermal-iteration-steps {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin: 0 0 1rem;
+}
+
+.thermal-iteration-steps > div {
+    padding: 1.1rem;
+    border: 1px solid var(--thermal-border);
+    border-radius: 0.25rem;
+    background: var(--thermal-soft);
+}
+
+.thermal-iteration-steps span {
+    color: var(--thermal-primary);
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.thermal-iteration-steps h3 {
+    margin: 0.3rem 0 0.5rem;
+}
+
+.thermal-iteration-steps p {
+    margin: 0;
+    color: #56616c;
+    font-size: 0.84rem;
+    line-height: 1.6;
+}
+
+.thermal-chart-card-warning {
+    margin-bottom: 1rem;
+}
+
+.thermal-plot-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.1rem;
+    margin: 0 0 0.8rem;
+    color: #56616c;
+    font-size: 0.78rem;
+}
+
+.thermal-plot-legend span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.thermal-plot-legend i {
+    display: inline-block;
+    width: 0.8rem;
+    height: 0.2rem;
+    flex: none;
+    border-radius: 999px;
+}
+
+.thermal-line-blue { background: #2d7bd8; }
+.thermal-line-red { background: #b62622; }
+.thermal-line-green { background: #7bab20; }
+.thermal-line-orange { background: #f07d36; }
+
+.thermal-chart-heading {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid var(--thermal-border);
+    background: var(--thermal-soft);
+}
+
+.thermal-chart-heading span {
+    color: var(--thermal-muted);
+    font-size: 0.74rem;
+}
+
+.thermal-chart-heading strong {
+    font-size: 0.86rem;
+    text-align: right;
+}
+
+.thermal-table-card {
+    overflow: hidden;
+    border: 1px solid var(--thermal-border);
+    border-radius: 0.25rem;
+}
+
+.thermal-table-intro {
+    padding: 1.25rem;
+    border-bottom: 1px solid var(--thermal-border);
+    background: var(--thermal-soft);
+}
+
+.thermal-table-intro h3 {
+    margin: 0 0 0.4rem;
+}
+
+.thermal-table-intro > p:last-child {
+    max-width: 720px;
+    margin: 0;
+    color: #56616c;
+    font-size: 0.84rem;
+    line-height: 1.55;
+}
+
+.thermal-table {
+    margin: 0;
+    font-size: 0.82rem;
+}
+
+.thermal-table th,
+.thermal-table td {
+    padding: 0.8rem;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.thermal-table thead th {
+    border-top: 0;
+    color: #56616c;
+    background: #fff;
+    font-size: 0.76rem;
+}
+
+.thermal-table th small,
+.thermal-table thead small {
+    color: var(--thermal-muted);
+    font-weight: 400;
+}
+
+.thermal-table-note {
+    margin: 0;
+    padding: 0.8rem 1.25rem;
+    border-top: 1px solid var(--thermal-border);
+    color: var(--thermal-muted);
+    font-size: 0.75rem;
+    line-height: 1.5;
+}
+
+.thermal-results-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.thermal-results-grid article {
+    position: relative;
+    padding: 1.25rem;
+    border: 1px solid var(--thermal-border);
+    border-top: 3px solid var(--thermal-primary);
+    border-radius: 0.25rem;
+    background: var(--thermal-soft);
+}
+
+.thermal-result-index {
+    float: right;
+    color: #abb5be;
+    font-size: 0.75rem;
+}
+
+.thermal-results-grid h3 {
+    margin-bottom: 1rem;
+}
+
+.thermal-results-grid strong {
+    display: block;
+    margin-bottom: 0.7rem;
+    color: var(--thermal-primary);
+    font-size: 1.75rem;
+}
+
+.thermal-results-grid p {
+    margin: 0;
+    color: #56616c;
+    font-size: 0.84rem;
+    line-height: 1.55;
+}
+
+.thermal-chart-card-wide {
+    grid-column: 1 / -1;
+}
+
+.thermal-chart-card-final img {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.thermal-reflection h2 {
+    margin-bottom: 1.3rem;
+}
+
+.thermal-reflection > div {
+    max-width: 900px;
+}
+
+.thermal-next-step {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    margin: 1rem 0 2rem;
+    padding: 1.75rem 2.25rem;
+    border-radius: 0.25rem;
+    background: #fff;
+    box-shadow: 0 0.125rem 0.45rem rgba(0, 0, 0, 0.075);
+}
+
+.thermal-next-step p {
+    margin: 0 0 0.4rem;
+    color: var(--thermal-muted);
+    font-size: 0.8rem;
+}
+
+.thermal-next-step h2 {
+    max-width: 580px;
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+.thermal-next-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.75rem;
+    flex: none;
+}
+
+@media (max-width: 991.98px) {
+    .thermal-hero-grid,
+    .thermal-intro,
+    .thermal-heading-row,
+    .thermal-layout-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .thermal-spec-grid,
+    .thermal-case-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 767.98px) {
+    .thermal-hero-grid {
+        padding-top: 1.75rem;
+        padding-bottom: 1.75rem;
+    }
+
+    .thermal-jumpbar {
+        top: 57px;
+    }
+
+    .thermal-section {
+        padding: 1.5rem;
+    }
+
+    .thermal-process,
+    .thermal-equations,
+    .thermal-attitudes,
+    .thermal-iteration-steps,
+    .thermal-results-grid,
+    .thermal-chart-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .thermal-system-flow {
+        grid-template-columns: 1fr;
+    }
+
+    .thermal-system-node {
+        min-height: 75px;
+    }
+
+    .thermal-flow-arrow {
+        line-height: 1;
+        text-align: center;
+        transform: rotate(90deg);
+    }
+
+    .thermal-chart-card-wide {
+        grid-column: auto;
+    }
+
+    .thermal-next-step {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .thermal-next-actions {
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .thermal-hero h1 {
+        font-size: 1.9rem;
+    }
+
+    .thermal-hero-lead {
+        font-size: 0.95rem;
+    }
+
+    .thermal-spec-grid,
+    .thermal-case-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .thermal-spec {
+        min-height: 90px;
+    }
+
+    .thermal-chart-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .thermal-chart-heading strong {
+        text-align: left;
+    }
+
+    .thermal-next-step {
+        padding: 1.5rem;
+    }
+}
