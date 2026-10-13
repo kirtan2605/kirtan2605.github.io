@@ -52,10 +52,10 @@ export function renderProfile() {
         <section class="row" aria-labelledby="profile-name">
             <div class="col">
                 <div class="card border-0 shadow-sm bg-white">
-                    <div class="card-body p-5">
+                    <div class="card-body p-4">
                         <div class="row">
                             <div class="col">
-                                <figure class="float-right ml-4 mb-4 d-none d-md-block">
+                                <figure class="float-right ml-4 mb-0 d-none d-md-block">
                                     <img src="${profile.portrait}" class="figure-img img-fluid img-thumbnail profile-portrait" alt="Portrait of ${profile.name}">
                                 </figure>
                                 <div class="d-flex">
@@ -70,7 +70,7 @@ export function renderProfile() {
                                 <div class="text-profile-bio mt-3">${profile.bio.map((paragraph) => `<p>${paragraph}</p>`).join("")}</div>
                             </div>
                         </div>
-                        <hr>
+                        <hr class="profile-divider">
                         <div class="row"><div class="col profile-links">
                             <a class="pr-3 no-break" href="mailto:${profile.contact.email}"><i class="fas fa-at" aria-hidden="true"></i> <span class="email-text">${profile.contact.email.replace("@", "(at)")}</span></a>
                             <a class="pr-3 no-break" href="${profile.contact.github}" ${externalLinkAttributes}><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
@@ -103,7 +103,7 @@ export function renderExperience() {
     return `
         <section class="row mt-3 career-overview" aria-label="Education, experience, and honours">
             <div class="col-12 col-lg-6 mb-3">
-                <div class="card border-0 shadow-sm bg-white career-card">
+                <div class="card border-0 shadow-sm bg-white">
                     <div class="card-body p-4">
                         <h2 class="h5 career-title">Education</h2>
                         <ul class="list-unstyled mb-0">${renderTimeline(profile.education)}</ul>
@@ -111,7 +111,7 @@ export function renderExperience() {
                 </div>
             </div>
             <div class="col-12 col-lg-6 mb-3">
-                <div class="card border-0 shadow-sm bg-white career-card">
+                <div class="card border-0 shadow-sm bg-white">
                     <div class="card-body p-4">
                         <h2 class="h5 career-title">Experience</h2>
                         <ul class="list-unstyled mb-0">${renderTimeline(profile.experience)}</ul>

@@ -19,6 +19,14 @@ h1, h2, h3, h4, h5, h6,
     font-weight: 400;
 }
 
+.text-profile-bio p:last-child {
+    margin-bottom: 0;
+}
+
+.profile-divider {
+    margin: 1.25rem 0 0.75rem;
+}
+
 .navbar {
     opacity: 0.95;
 }
@@ -80,10 +88,6 @@ div.lazy {
     height: 48px;
 }
 
-.career-card {
-    height: 100%;
-}
-
 .career-title {
     border-bottom: 1px solid #e6e9ec;
     padding-bottom: 0.75rem;
@@ -94,12 +98,12 @@ div.lazy {
     display: flex;
     align-items: flex-start;
     gap: 0.65rem;
-    margin-top: 1rem;
+    margin-top: 0.75rem;
 }
 
 .career-entry + .career-entry {
     border-top: 1px solid #eef0f2;
-    padding-top: 1rem;
+    padding-top: 0.75rem;
 }
 
 .career-logo-slot {
@@ -313,10 +317,6 @@ div.lazy {
 
     .showcase-item {
         grid-column: span 12;
-    }
-
-    .card-body.p-5 {
-        padding: 2rem !important;
     }
 }
 
