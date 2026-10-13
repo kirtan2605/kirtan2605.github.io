@@ -138,17 +138,19 @@ export function renderExperience() {
 }
 
 function renderProjectDetails(project) {
-    const links = project.links.map((link) => `<a href="${link.url}" ${externalLinkAttributes}>[${link.label}]</a>`).join(" ");
     return `
-        <h3 class="h5 mt-0 mb-1 font-weight-normal">${project.title}</h3>
-        <p class="mt-0 mb-0 small text-muted">${project.abstract}</p>
-        ${links ? `<p class="small pb-0 mb-0 text-muted abstract-links">${links}</p>` : ""}`;
+        <div class="project-details project-details--linked">
+            <h3 class="h5 mt-0 mb-1 font-weight-normal">${project.title}</h3>
+            <p class="mt-0 mb-0 small text-muted">${project.abstract}</p>
+        </div>`;
 }
 
 export function renderProject(project, options = {}) {
     const borderClass = options.last ? "" : " border-bottom border-gray";
+    const projectUrl = project.caseStudyUrl || `project.html?id=${encodeURIComponent(project.id)}`;
     return `
         <article class="project-item">
+            <a class="project-card-link" href="${projectUrl}" aria-label="View project: ${project.title}">
             <div class="d-none d-md-block">
                 <div class="row no-gutters${borderClass}">
                     <div class="col-md-3 col-xl-2 mb-md-0 p-md-3">
@@ -158,8 +160,10 @@ export function renderProject(project, options = {}) {
                 </div>
             </div>
             <div class="row no-gutters d-md-none${borderClass} project-mobile" style="background-image: url('${project.cover}')">
-                <div class="w-100 project-mobile-overlay"><div class="d-flex align-items-start flex-column py-3 px-4"><div>${renderProjectDetails(project)}</div></div></div>
+                <div class="w-100 project-mobile-overlay"><div class="d-flex align-items-start flex-column py-3 px-4"><div class="w-100">${renderProjectDetails(project)}</div></div></div>
             </div>
+            <span class="project-case-study-arrow" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" focusable="false"><path d="M3.5 10h12m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </a>
         </article>`;
 }
 

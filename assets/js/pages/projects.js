@@ -24,3 +24,53 @@ content.innerHTML = years.map((year) => `
     </section>`).join("");
 
 yearNavigation.innerHTML = years.map((year) => `<a class="nav-link d-block" href="#year-${year}">${year}</a>`).join("");
+
+const yearHeadings = years.map((year) => document.getElementById(`year-${year}`));
+const yearLinks = Array.from(yearNavigation.querySelectorAll("a"));
+let activeYear = null;
+let scrollUpdateQueued = false;
+
+function setActiveYear(year) {
+    if (year === activeYear) return;
+    activeYear = year;
+
+    yearLinks.forEach((link) => {
+        const isActive = link.getAttribute("href") === `#year-${year}`;
+        link.classList.toggle("active", isActive);
+        if (isActive) {
+            link.setAttribute("aria-current", "location");
+        } else {
+            link.removeAttribute("aria-current");
+        }
+    });
+}
+
+function updateActiveYear() {
+    scrollUpdateQueued = false;
+    const scrollMarker = 110;
+    let currentYear = years[0];
+
+    yearHeadings.forEach((heading, index) => {
+        if (heading.getBoundingClientRect().top <= scrollMarker) {
+            currentYear = years[index];
+        }
+    });
+
+    setActiveYear(currentYear);
+}
+
+function queueActiveYearUpdate() {
+    if (scrollUpdateQueued) return;
+    scrollUpdateQueued = true;
+    requestAnimationFrame(updateActiveYear);
+}
+
+yearNavigation.addEventListener("click", (event) => {
+    const link = event.target.closest("a[href^='#year-']");
+    if (link) setActiveYear(link.hash.slice("#year-".length));
+});
+
+window.addEventListener("scroll", queueActiveYearUpdate, { passive: true });
+window.addEventListener("resize", queueActiveYearUpdate);
+window.addEventListener("load", queueActiveYearUpdate);
+queueActiveYearUpdate();
