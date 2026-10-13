@@ -90,13 +90,13 @@ div.lazy {
 
 .career-columns {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
 }
 
 .career-column + .career-column {
-    border-left: 1px solid #e6e9ec;
-    padding-left: 1.5rem;
+    border-top: 1px solid #e6e9ec;
+    padding-top: 1rem;
 }
 
 .career-title {
@@ -146,6 +146,12 @@ div.lazy {
     grid-template-columns: minmax(0, 1fr) max-content;
     align-items: start;
     gap: 0.5rem;
+}
+
+@media (min-width: 768px) {
+    .career-organization {
+        white-space: nowrap;
+    }
 }
 
 .career-date,
@@ -318,15 +324,9 @@ div.lazy {
 }
 
 @media (max-width: 767.98px) {
-    .career-columns {
+    .career-heading {
         grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-
-    .career-column + .career-column {
-        border-left: 0;
-        border-top: 1px solid #e6e9ec;
-        padding: 1rem 0 0;
+        gap: 0.1rem;
     }
 
     .career-awards {
@@ -350,11 +350,6 @@ div.lazy {
     .career-logo-wide {
         width: 48px;
         height: 24px;
-    }
-
-    .career-heading {
-        grid-template-columns: 1fr;
-        gap: 0.1rem;
     }
 }
 
