@@ -22,6 +22,57 @@ export const profile = {
         linkedin: "https://www.linkedin.com/in/kirtan-patel-2605",
         orcid: "https://orcid.org/0000-0003-1228-9924",
     },
+    skills: {
+        expertise: [
+            { name: "Model-Based Systems Engineering", icon: "fas fa-diagram-project" },
+            { name: "System Architecture Design", icon: "fas fa-sitemap" },
+            { name: "Plasma Physics", icon: "fas fa-atom" },
+            { name: "RF & Microwave Engineering", icon: "fas fa-satellite-dish" },
+            { name: "Spacecraft Dynamics", icon: "fas fa-satellite" },
+            { name: "Control Engineering", icon: "fas fa-sliders" },
+        ],
+        methods: [
+            { name: "Signal Synchronization", icon: "fas fa-wave-square" },
+            { name: "Time-Series Forecasting", icon: "fas fa-chart-line" },
+            { name: "Dimensional Reduction", icon: "fas fa-down-left-and-up-right-to-center" },
+            { name: "N² Interface Mapping", icon: "fas fa-table-cells" },
+            { name: "Numerical Methods", icon: "fas fa-calculator" },
+        ],
+        groups: [
+            {
+                name: "Engineering tools",
+                items: [
+                    { name: "ARCADIA-Capella", src: "https://raw.githubusercontent.com/kirtan2605/kirtan2605/master/images/tools/arcadia-capella.png" },
+                    { name: "ANSYS HFSS", src: "https://raw.githubusercontent.com/kirtan2605/kirtan2605/master/images/tools/ansys.png" },
+                    { name: "CST Microwave Studio", monogram: "CST" },
+                    { name: "AWR Microwave Office", src: "https://raw.githubusercontent.com/kirtan2605/kirtan2605/master/images/tools/awr.png" },
+                    { name: "AutoCAD", src: "https://raw.githubusercontent.com/kirtan2605/kirtan2605/master/images/tools/autocad.png" },
+                    { name: "Autodesk Fusion", src: "https://upload.wikimedia.org/wikipedia/commons/d/db/Fusion360_Logo.svg" },
+                    { name: "STM32Cube", src: "https://raw.githubusercontent.com/kirtan2605/kirtan2605/master/images/utility/stm32-cube.png" },
+                ],
+            },
+            {
+                name: "Programming languages & libraries",
+                items: [
+                    { name: "Python", src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" },
+                    { name: "MATLAB", src: "https://upload.wikimedia.org/wikipedia/commons/2/21/Matlab_Logo.png" },
+                    { name: "C", src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg" },
+                    { name: "C++", src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" },
+                    { name: "R", src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/r/r-original.svg" },
+                    { name: "Orekit", src: "https://raw.githubusercontent.com/kirtan2605/kirtan2605/master/images/tools/orekit.png" },
+                ],
+            },
+            {
+                name: "Workflow & platforms",
+                items: [
+                    { name: "Git", src: "https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" },
+                    { name: "LaTeX", src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/latex/latex-original.svg" },
+                    { name: "Zotero", src: "https://raw.githubusercontent.com/kirtan2605/kirtan2605/master/images/utility/zotero_logo.png" },
+                    { name: "Linux", src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" },
+                ],
+            },
+        ],
+    },
     personal: {
         games: [
             {

@@ -69,6 +69,62 @@ export function renderProfile() {
         </section>`;
 }
 
+function renderSkillItem(item) {
+    const icon = item.src
+        ? `<img src="${item.src}" alt="" loading="lazy" class="skill-logo">`
+        : `<span class="skill-monogram" aria-hidden="true">${item.monogram}</span>`;
+
+    return `
+        <li class="skill-item">
+            <span class="skill-icon-frame">${icon}</span>
+            <span class="skill-name">${item.name}</span>
+        </li>`;
+}
+
+export function renderSkills() {
+    return `
+        <section class="row mt-3" aria-labelledby="skills-title">
+            <div class="col">
+                <div class="card border-0 shadow-sm bg-white">
+                    <div class="card-body p-4">
+                        <div class="skill-heading">
+                            <div>
+                                <h2 id="skills-title" class="h5 career-title">Technical toolkit</h2>
+                            </div>
+                        </div>
+                        <div class="skill-layout">
+                            <section class="skill-focus" aria-labelledby="expertise-title">
+                                <div class="skill-focus-section">
+                                    <h3 id="expertise-title" class="skill-group-title">Core expertise</h3>
+                                    <ul class="skill-focus-list">
+                                        ${profile.skills.expertise.map((skill) => `
+                                            <li><i class="${skill.icon}" aria-hidden="true"></i><span>${skill.name}</span></li>`).join("")}
+                                    </ul>
+                                </div>
+                                <div class="skill-focus-section">
+                                    <h3 class="skill-group-title">Analytical methods</h3>
+                                    <ul class="skill-focus-list">
+                                        ${profile.skills.methods.map((skill) => `
+                                            <li><i class="${skill.icon}" aria-hidden="true"></i><span>${skill.name}</span></li>`).join("")}
+                                    </ul>
+                                </div>
+                            </section>
+                            <div class="skill-groups">
+                                ${profile.skills.groups.map((group) => `
+                                    <section class="skill-group" aria-label="${group.name}">
+                                        <h3 class="skill-group-title">${group.name}</h3>
+                                        <ul class="skill-icon-grid">
+                                            ${group.items.map((item) => renderSkillItem(item)).join("")}
+                                        </ul>
+                                    </section>`).join("")}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>`;
+}
+
 function renderTimeline(items) {
     return items.map((item) => `
         <li class="career-entry">
