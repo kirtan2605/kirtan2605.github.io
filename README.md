@@ -18,7 +18,7 @@ A static personal website with no build step and no package dependencies. Open t
 |-- showcase.html                 # Showcase page shell
 |-- 404.html                      # Not-found page
 |-- content/
-|   |-- profile.js                # Bio, links, education, and experience
+|   |-- profile.js                # Bio, links, skills, education, and experience
 |   |-- project-case-studies.js   # Report-led case-study copy
 |   |-- project-case-studies-extra.js
 |   |-- project-overviews.js      # Brief fallback when source material is unavailable
@@ -47,7 +47,7 @@ A static personal website with no build step and no package dependencies. Open t
 
 ## Editing content
 
-- Update bio, contact links, education, experience, and personal details in `content/profile.js`.
+- Update bio, contact links, technical skills, education, experience, and personal details in `content/profile.js`.
 - Add screenshots or clips to `profile.personal.highlights` in `content/profile.js`. Each item needs `type` (`image` or `video`) and `src`; add `alt` for images, and optionally `caption`, `poster`, or `captions` for video.
 - Add each project under `content/projects/<year>/` using the filename format `YYYY-MM-DD-project-name.js`, then register it in `content/projects/index.js`.
 - Add a sourced case-study record under `content/project-case-studies*.js` for any new project linked to `projects/overview/?id=<id>`.
