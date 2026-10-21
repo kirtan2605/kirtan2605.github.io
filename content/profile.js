@@ -97,7 +97,80 @@ export const profile = {
             },
         ],
         discord: "ambush2605",
-        highlights: [],
+        highlights: [
+            {
+                type: "image",
+                src: "assets/images/side-quests/window-seat-sunset.gif",
+                alt: "Looping view of a sunset beyond an airplane wing above a layer of clouds",
+                featured: true,
+            },
+            {
+                type: "image",
+                src: "assets/images/side-quests/blue-convertible.jpg",
+                alt: "Blue convertible parked beneath a leafy tree on a sunny street",
+                layout: "blue-convertible",
+            },
+            {
+                type: "image",
+                src: "assets/images/side-quests/colour-swatch-wall.jpg",
+                alt: "Rows of colourful fabric and material swatches",
+                layout: "colour-swatch",
+            },
+            {
+                type: "image",
+                src: "assets/images/side-quests/ground-crew.jpg",
+                alt: "Two dogs resting on grass in front of a vintage aircraft",
+                layout: "ground-crew",
+            },
+            {
+                type: "image",
+                src: "assets/images/side-quests/black-bike.jpg",
+                alt: "Black bicycle with white wheel rims against a concrete wall",
+                layout: "bike",
+            },
+            {
+                type: "image",
+                src: "assets/images/side-quests/autumn-lake.jpg",
+                alt: "Lake bordered by autumn trees beneath softly lit clouds",
+                layout: "landscape",
+            },
+            {
+                type: "image",
+                src: "assets/images/side-quests/ski-slope.jpg",
+                alt: "Snow-covered skis overlooking a mountain slope and snowy peaks",
+                layout: "ski",
+            },
+            {
+                type: "image",
+                src: "assets/images/side-quests/airplane-apron.jpg",
+                alt: "Passenger airplane parked on the apron beside ground crew and equipment",
+                layout: "airplane",
+            },
+            {
+                type: "image",
+                src: "assets/images/side-quests/lennon-wall-prague.jpg",
+                alt: "Colourful Lennon Wall mural covered with portraits, messages, and peace symbols in Prague",
+                layout: "lennon-wall",
+            },
+            {
+                type: "image",
+                src: "assets/images/side-quests/teddy-bears-on-bench.jpg",
+                alt: "Two large teddy bears sitting together on a street bench",
+                layout: "teddy-bears",
+            },
+            {
+                type: "image",
+                src: "assets/images/side-quests/hannes-alfven-plaque.jpg",
+                alt: "Bronze portrait plaque of physicist Hannes Alfvén above his Nobel diploma",
+                layout: "alfven-plaque",
+            },
+            {
+                type: "image",
+                src: "assets/images/side-quests/sticky-note-wall.jpg",
+                alt: "Colourful handwritten sticky notes covering the walls of a small room",
+                layout: "sticky-note",
+            },
+        ],
     },
     education: [
         {

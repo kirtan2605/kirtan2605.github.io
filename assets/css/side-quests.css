@@ -3,129 +3,374 @@
 }
 
 .side-quests-heading {
-    align-items: center;
-    display: flex;
-    gap: 1rem;
-    justify-content: space-between;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
-.side-quests-heading h1 {
-    font-size: 2rem;
+.side-quests-intro {
+    color: #56616c;
+    font-size: clamp(1.15rem, 2.5vw, 1.45rem);
+    line-height: 1.4;
     margin: 0;
-}
-
-.side-quests-discord {
-    align-items: center;
-    color: #495057;
-    display: flex;
-    gap: 0.5rem;
-    margin: 0;
-    white-space: nowrap;
-}
-
-.side-quests-discord i {
-    color: #007bff;
-    font-size: 1.25rem;
+    max-width: 38rem;
 }
 
 .side-quests-section {
-    margin-top: 1.5rem;
+    margin-top: 2.25rem;
 }
 
-.side-quests-section h2 {
-    font-size: 1.2rem;
-    margin: 0 0 0.85rem;
-}
-
-.side-quests-game-grid {
+.side-quests-collage {
+    align-items: start;
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 0.75rem;
-}
-
-.side-quests-gallery {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.side-quests-media {
+.side-quests-collage-stack {
+    align-content: start;
+    display: grid;
+    gap: 1rem;
+    min-width: 0;
+}
+
+.side-quests-collage-left {
+    grid-column: 1;
+}
+
+.side-quests-collage-main {
+    grid-column: 2 / 4;
+}
+
+.side-quests-collage-upper,
+.side-quests-collage-lower-pair {
+    align-items: start;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.side-quests-collage-lower {
+    align-items: start;
+    display: grid;
+    gap: 1rem;
+    grid-column: 1 / -1;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+}
+
+@media (min-width: 992px) {
+    .side-quests-collage-lower-pair .side-quests-media--alfven-plaque,
+    .side-quests-collage-lower-right {
+        transform: translateY(-5rem);
+    }
+}
+
+.side-quests-card {
     background: #fff;
     border-radius: 0.25rem;
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-}
-
-.side-quests-game {
-    aspect-ratio: 16 / 9;
-    background: #10223d;
-    border-radius: 0.25rem;
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    box-shadow: 0 0.35rem 1.25rem rgba(20, 34, 56, 0.09);
     overflow: hidden;
-    position: relative;
-}
-
-.side-quests-game img {
-    display: block;
-    height: 100%;
-    object-fit: cover;
-    width: 100%;
-}
-
-.side-quests-game::after {
-    background: linear-gradient(180deg, transparent 45%, rgba(0, 0, 0, 0.72));
-    content: "";
-    inset: 0;
-    position: absolute;
-}
-
-.side-quests-game h3 {
-    bottom: 0.75rem;
-    color: #fff;
-    font-size: 1.1rem;
-    left: 0.9rem;
-    margin: 0;
-    position: absolute;
-    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
-    z-index: 1;
 }
 
 .side-quests-media {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
     margin: 0;
-    overflow: hidden;
+    width: 100%;
 }
 
 .side-quests-media img,
 .side-quests-media video {
     display: block;
+    grid-column: 1;
+    grid-row: 1;
+    height: auto;
     width: 100%;
 }
 
-.side-quests-media figcaption {
-    color: #56616c;
-    font-size: 0.875rem;
-    padding: 0.75rem 1rem;
+.side-quests-media--teddy-bears img {
+    aspect-ratio: 1;
+    height: auto;
+    object-fit: cover;
+    object-position: center 53%;
 }
 
-@media (max-width: 767.98px) {
-    .side-quests-game-grid {
+.side-quests-media--bike img {
+    aspect-ratio: 5 / 4;
+    object-fit: cover;
+    object-position: right center;
+}
+
+.side-quests-media figcaption {
+    background: #fff;
+    color: #495057;
+    display: flex;
+    flex-direction: column;
+    font-size: 0.825rem;
+    gap: 0;
+    justify-content: center;
+    line-height: 1.15;
+    padding: 0.55rem 0.85rem;
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.side-quests-media figcaption strong {
+    color: #343a40;
+    font-size: 0.9rem;
+}
+
+.side-quests-strava {
+    align-self: end;
+    background: linear-gradient(180deg, transparent, rgba(10, 13, 16, 0.74));
+    color: #fff;
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: stretch;
+    padding: 3.5rem 1rem 0.8rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
+    z-index: 2;
+}
+
+.side-quests-strava-stats {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(3, max-content);
+    justify-content: space-between;
+}
+
+.side-quests-strava-stats > span {
+    display: flex;
+    flex-direction: column;
+}
+
+.side-quests-strava-stats small {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.75rem;
+    line-height: 1;
+}
+
+.side-quests-strava-stats b {
+    color: #fff;
+    font-size: 1.2rem;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+.side-quests-discord-card {
+    background:
+        radial-gradient(circle at 4% 10%, rgba(88, 101, 242, 0.45), transparent 28%),
+        linear-gradient(135deg, #1e1f22, #313338 62%, #3b3f75);
+    color: #f2f3f5;
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: minmax(220px, 0.8fr) minmax(0, 2fr);
+    min-height: 430px;
+    padding: 1.25rem;
+    position: relative;
+}
+
+.side-quests-games-panel {
+    margin-top: 0.25rem;
+}
+
+.side-quests-discord-profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 0;
+    padding: 0.25rem;
+}
+
+.side-quests-discord-identity {
+    align-items: center;
+    display: flex;
+    gap: 0.85rem;
+}
+
+.side-quests-discord-avatar {
+    align-items: center;
+    background: #5865f2;
+    border-radius: 50%;
+    box-shadow: 0 0 0 5px rgba(88, 101, 242, 0.18);
+    display: flex;
+    flex: 0 0 3.25rem;
+    font-size: 1.45rem;
+    height: 3.25rem;
+    justify-content: center;
+}
+
+.side-quests-discord-account {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.side-quests-discord-label {
+    color: #b5bac1;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.side-quests-discord-account strong {
+    font-size: 1.25rem;
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+}
+
+.side-quests-discord-status {
+    align-items: center;
+    color: #b5bac1;
+    display: flex;
+    font-size: 0.78rem;
+    gap: 0.35rem;
+    margin-top: 0.2rem;
+}
+
+.side-quests-discord-status > span {
+    background: #23a55a;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(35, 165, 90, 0.16);
+    height: 0.5rem;
+    width: 0.5rem;
+}
+
+.side-quests-discord-copy {
+    color: #dbdee1;
+    font-size: clamp(1.05rem, 2vw, 1.35rem);
+    font-weight: 650;
+    line-height: 1.35;
+    margin: 1.5rem 0 0;
+    max-width: 18rem;
+}
+
+.side-quests-discord-games {
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    min-height: 0;
+}
+
+.side-quests-discord-game {
+    border: 1px solid rgba(255, 255, 255, 0.11);
+    border-radius: 0.25rem;
+    min-height: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.side-quests-discord-game::after {
+    background: linear-gradient(180deg, transparent 38%, rgba(0, 0, 0, 0.82));
+    content: "";
+    inset: 0;
+    position: absolute;
+}
+
+.side-quests-discord-game img {
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 220ms ease;
+    width: 100%;
+}
+
+.side-quests-discord-game h3 {
+    bottom: 0.65rem;
+    color: #fff;
+    font-size: 0.95rem;
+    left: 0.75rem;
+    margin: 0;
+    position: absolute;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.65);
+    z-index: 1;
+}
+
+.side-quests-discord-game:hover img {
+    transform: scale(1.04);
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .side-quests-collage {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .side-quests-gallery {
+    .side-quests-collage-main {
+        grid-column: 2;
+    }
+
+    .side-quests-collage-upper {
         grid-template-columns: 1fr;
     }
+}
+
+@media (max-width: 767.98px) {
+    .side-quests-collage {
+        grid-template-columns: 1fr;
+    }
+
+    .side-quests-collage-left,
+    .side-quests-collage-main {
+        grid-column: 1;
+    }
+
+    .side-quests-collage-lower {
+        grid-template-columns: 1fr;
+    }
+
+    .side-quests-discord-card {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto minmax(0, 1fr);
+        min-height: 620px;
+    }
+
+    .side-quests-discord-profile {
+        align-items: flex-end;
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .side-quests-discord-copy {
+        font-size: 1rem;
+        margin: 0;
+        text-align: right;
+    }
+
 }
 
 @media (max-width: 480px) {
-    .side-quests-game-grid {
+    .side-quests-collage-upper,
+    .side-quests-collage-lower-pair {
         grid-template-columns: 1fr;
+    }
+
+    .side-quests-discord-card {
+        min-height: 600px;
+        padding: 1rem;
+    }
+
+    .side-quests-discord-profile {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .side-quests-discord-copy {
+        max-width: none;
+        text-align: left;
     }
 }
 
-@media (max-width: 380px) {
-    .side-quests-heading {
+@media (max-width: 575.98px) {
+    .side-quests-heading { margin-bottom: 1.25rem; }
+
+    .side-quests-discord-profile {
         align-items: flex-start;
         flex-direction: column;
+    }
+
+    .side-quests-discord-copy {
+        max-width: none;
+        text-align: left;
     }
 }

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Side-Quests - Kirtan Patel.">
+    <meta name="description" content="A collage of Kirtan Patel's games, travels, and off-the-clock moments.">
     <title>Side-Quests - Kirtan</title>
     <link rel="icon" href="assets/images/photos/KirtanPatel-cropped.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
@@ -18,17 +18,17 @@
 <body class="bg-light">
     <header data-site-header></header>
     <main class="container side-quests-page pb-5">
-        <section class="side-quests-section" aria-labelledby="gaming-title">
-            <div class="side-quests-heading">
-                <h1 id="gaming-title">Gaming</h1>
-                <p class="side-quests-discord"><i class="fab fa-discord" aria-hidden="true"></i><span class="sr-only">Discord username: </span><strong data-discord-username></strong></p>
-            </div>
-            <div class="side-quests-game-grid" data-games></div>
+        <h1 class="sr-only">Side Quests</h1>
+        <section class="side-quests-section side-quests-gaming-section" aria-label="Discord and games">
+            <div class="side-quests-games-panel" data-games></div>
         </section>
-
-        <section class="side-quests-section" aria-labelledby="highlights-title" data-highlights-section hidden>
-            <h2 id="highlights-title">Moments worth sharing</h2>
-            <div class="side-quests-gallery" data-highlights></div>
+        <section class="side-quests-section side-quests-scrapbook-section" aria-labelledby="scrapbook-title">
+            <div class="side-quests-heading">
+                <div class="side-quests-heading-copy">
+                    <h2 class="side-quests-intro" id="scrapbook-title">A scrapbook of things that caught my eye.</h2>
+                </div>
+            </div>
+            <div class="side-quests-collage" data-collage></div>
         </section>
     </main>
 </body>

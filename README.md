@@ -8,7 +8,7 @@ A static personal website with no build step and no package dependencies. Open t
 .
 |-- index.html                    # Homepage shell
 |-- projects.html                 # Projects page shell
-|-- side-quests.html              # Side-Quests page with Discord and optional highlights
+|-- side-quests.html              # Mixed-media Side-Quests collage
 |-- projects/
 |   |-- thermal-control/index.html    # SPOT thermal-control case study
 |   |-- mats-seu/index.html           # MATS radiation case study
