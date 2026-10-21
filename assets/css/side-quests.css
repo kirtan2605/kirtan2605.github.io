@@ -4,12 +4,10 @@
 
 .side-quests-heading {
     align-items: center;
-    border-bottom: 1px solid #dfe5ea;
     display: flex;
     gap: 1rem;
     justify-content: space-between;
     margin-bottom: 1rem;
-    padding: 0 0 1rem;
 }
 
 .side-quests-heading h1 {
@@ -40,7 +38,12 @@
     margin: 0 0 0.85rem;
 }
 
-.side-quests-game-grid,
+.side-quests-game-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.75rem;
+}
+
 .side-quests-gallery {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -77,10 +80,10 @@
 }
 
 .side-quests-game h3 {
-    bottom: 1rem;
+    bottom: 0.75rem;
     color: #fff;
-    font-size: 1.4rem;
-    left: 1.25rem;
+    font-size: 1.1rem;
+    left: 0.9rem;
     margin: 0;
     position: absolute;
     text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
@@ -105,8 +108,17 @@
 }
 
 @media (max-width: 767.98px) {
-    .side-quests-game-grid,
+    .side-quests-game-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     .side-quests-gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .side-quests-game-grid {
         grid-template-columns: 1fr;
     }
 }
