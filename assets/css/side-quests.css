@@ -281,6 +281,20 @@
     width: 1.55rem;
 }
 
+.side-quests-discord-platform i,
+.side-quests-discord-platform i::before {
+    align-items: center;
+    display: flex;
+    height: 1em;
+    justify-content: center;
+    line-height: 1;
+    width: 1em;
+}
+
+.side-quests-discord-platform i {
+    transform: translateY(-0.015rem);
+}
+
 .side-quests-discord-account {
     display: flex;
     flex-direction: column;
