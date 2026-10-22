@@ -269,24 +269,23 @@
 
 .side-quests-discord-platform {
     align-items: center;
-    background: #5865f2;
-    border: 3px solid #242631;
-    border-radius: 50%;
-    bottom: -0.2rem;
-    color: #fff;
+    background: transparent;
+    border: 0;
+    bottom: -0.05rem;
+    color: #5865f2;
     display: flex;
-    font-size: 0.72rem;
-    height: 1.55rem;
+    height: 1.35rem;
     justify-content: center;
     position: absolute;
-    right: -0.2rem;
-    width: 1.55rem;
+    right: -0.05rem;
+    width: 1.35rem;
 }
 
 .side-quests-discord-icon {
     display: block;
-    height: 0.9rem;
-    width: 0.9rem;
+    filter: drop-shadow(0 1px 1px rgba(17, 18, 20, 0.72));
+    height: 100%;
+    width: 100%;
 }
 
 .side-quests-discord-account {
