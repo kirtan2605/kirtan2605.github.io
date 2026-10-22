@@ -169,7 +169,7 @@ function renderGames(games, discord, container) {
     platform.setAttribute("aria-label", "Discord");
     const discordIcon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     discordIcon.classList.add("side-quests-discord-icon");
-    discordIcon.setAttribute("viewBox", "0 0 24 24");
+    discordIcon.setAttribute("viewBox", "0.5 -0.55 24 24");
     discordIcon.setAttribute("focusable", "false");
     discordIcon.setAttribute("aria-hidden", "true");
     const discordMark = document.createElementNS("http://www.w3.org/2000/svg", "path");
