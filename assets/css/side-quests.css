@@ -216,8 +216,9 @@
 
 .side-quests-discord-card {
     background:
-        radial-gradient(circle at 4% 10%, rgba(88, 101, 242, 0.45), transparent 28%),
-        linear-gradient(135deg, #1e1f22, #313338 62%, #3b3f75);
+        radial-gradient(circle at 4% 10%, rgba(88, 101, 242, 0.62), transparent 32%),
+        radial-gradient(circle at 100% 100%, rgba(129, 92, 246, 0.3), transparent 42%),
+        linear-gradient(135deg, #24243f, #323052 58%, #4a3f75);
     color: #f2f3f5;
     display: grid;
     gap: 1.25rem;
@@ -293,7 +294,7 @@
 }
 
 .side-quests-discord-platform i {
-    transform: translateY(0.065rem);
+    transform: translate(-0.04rem, 0.065rem);
 }
 
 .side-quests-discord-account {
