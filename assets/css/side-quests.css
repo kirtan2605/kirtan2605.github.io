@@ -248,29 +248,43 @@
     gap: 0.85rem;
 }
 
+.side-quests-discord-avatar-wrap {
+    flex: 0 0 4.25rem;
+    height: 4.25rem;
+    position: relative;
+    width: 4.25rem;
+}
+
 .side-quests-discord-avatar {
     background: #5865f2;
     border-radius: 50%;
     box-shadow: 0 0 0 5px rgba(88, 101, 242, 0.18);
     display: block;
-    flex: 0 0 3.25rem;
-    height: 3.25rem;
+    height: 100%;
     object-fit: cover;
-    width: 3.25rem;
+    width: 100%;
+}
+
+.side-quests-discord-platform {
+    align-items: center;
+    background: #5865f2;
+    border: 3px solid #242631;
+    border-radius: 50%;
+    bottom: -0.2rem;
+    color: #fff;
+    display: flex;
+    font-size: 0.72rem;
+    height: 1.55rem;
+    justify-content: center;
+    position: absolute;
+    right: -0.2rem;
+    width: 1.55rem;
 }
 
 .side-quests-discord-account {
     display: flex;
     flex-direction: column;
     min-width: 0;
-}
-
-.side-quests-discord-label {
-    color: #b5bac1;
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
 }
 
 .side-quests-discord-display-name {

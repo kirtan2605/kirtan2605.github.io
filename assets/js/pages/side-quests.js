@@ -1,5 +1,5 @@
-import { profile } from "../../../content/profile.js?v=20261022-15";
-import { renderShell } from "../components.js?v=20261022-15";
+import { profile } from "../../../content/profile.js?v=20261022-16";
+import { renderShell } from "../components.js?v=20261022-16";
 
 renderShell("side-quests");
 
@@ -155,16 +155,26 @@ function renderGames(games, discord, container) {
     const identity = document.createElement("div");
     identity.className = "side-quests-discord-identity";
 
+    const avatarWrap = document.createElement("span");
+    avatarWrap.className = "side-quests-discord-avatar-wrap";
+
     const avatar = document.createElement("img");
     avatar.className = "side-quests-discord-avatar";
     avatar.src = discord.avatar;
-    avatar.alt = "";
+    avatar.alt = `${discord.displayName} Discord avatar`;
+
+    const platform = document.createElement("span");
+    platform.className = "side-quests-discord-platform";
+    platform.title = "Discord";
+    platform.setAttribute("aria-label", "Discord");
+    const discordIcon = document.createElement("i");
+    discordIcon.className = "fab fa-discord";
+    discordIcon.setAttribute("aria-hidden", "true");
+    platform.append(discordIcon);
+    avatarWrap.append(avatar, platform);
 
     const account = document.createElement("div");
     account.className = "side-quests-discord-account";
-    const label = document.createElement("span");
-    label.className = "side-quests-discord-label";
-    label.textContent = "Discord";
     const displayName = document.createElement("strong");
     displayName.className = "side-quests-discord-display-name";
     displayName.textContent = discord.displayName;
@@ -197,8 +207,8 @@ function renderGames(games, discord, container) {
     const status = document.createElement("span");
     status.className = "side-quests-discord-status";
     status.innerHTML = '<span aria-hidden="true"></span> On a side-quest';
-    account.append(label, displayName, usernameRow, status);
-    identity.append(avatar, account);
+    account.append(displayName, usernameRow, status);
+    identity.append(avatarWrap, account);
 
     const copy = document.createElement("p");
     copy.className = "side-quests-discord-copy";
