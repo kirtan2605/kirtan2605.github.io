@@ -1,5 +1,5 @@
-import { profile } from "../../../content/profile.js?v=20261022-12";
-import { renderShell } from "../components.js?v=20261022-12";
+import { profile } from "../../../content/profile.js?v=20261022-13";
+import { renderShell } from "../components.js?v=20261022-13";
 
 renderShell("side-quests");
 
@@ -272,4 +272,4 @@ function renderSupport(teams, container) {
 
 renderHighlights(profile.personal.highlights || [], collage);
 renderGames(profile.personal.games, profile.personal.discord, gamesPanel);
-renderSupport(profile.personal.teams || [], supportPanel);
+if (supportPanel) renderSupport(profile.personal.teams || [], supportPanel);
