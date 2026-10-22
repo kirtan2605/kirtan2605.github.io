@@ -1,5 +1,5 @@
-import { profile } from "../../../content/profile.js?v=20261022-13";
-import { renderShell } from "../components.js?v=20261022-13";
+import { profile } from "../../../content/profile.js?v=20261022-14";
+import { renderShell } from "../components.js?v=20261022-14";
 
 renderShell("side-quests");
 
@@ -171,7 +171,7 @@ function renderGames(games, username, container) {
     handle.textContent = username;
     const status = document.createElement("span");
     status.className = "side-quests-discord-status";
-    status.innerHTML = '<span aria-hidden="true"></span> Off the clock, in the lobby';
+    status.innerHTML = '<span aria-hidden="true"></span> On a side-quest';
     account.append(label, handle, status);
     identity.append(avatar, account);
 

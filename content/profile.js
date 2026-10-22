@@ -3,7 +3,7 @@ export const site = {
     navigation: [
         { label: "Home", href: "index.html", page: "home" },
         { label: "Projects", href: "projects.html", page: "projects" },
-        { label: "Side-Quests", href: "side-quests.html", page: "side-quests" },
+        { label: "Showcase", href: "side-quests.html", page: "side-quests" },
         // { label: "Showcase", href: "showcase.html", page: "showcase" },
     ],
 };
