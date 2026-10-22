@@ -1,10 +1,11 @@
-import { profile } from "../../../content/profile.js";
-import { renderShell } from "../components.js";
+import { profile } from "../../../content/profile.js?v=20261022-12";
+import { renderShell } from "../components.js?v=20261022-12";
 
 renderShell("side-quests");
 
 const collage = document.querySelector("[data-collage]");
 const gamesPanel = document.querySelector("[data-games]");
+const supportPanel = document.querySelector("[data-support]");
 
 function createImage(item) {
     const image = document.createElement("img");
@@ -170,13 +171,13 @@ function renderGames(games, username, container) {
     handle.textContent = username;
     const status = document.createElement("span");
     status.className = "side-quests-discord-status";
-    status.innerHTML = '<span aria-hidden="true"></span> Side quest in progress';
+    status.innerHTML = '<span aria-hidden="true"></span> Off the clock, in the lobby';
     account.append(label, handle, status);
     identity.append(avatar, account);
 
     const copy = document.createElement("p");
     copy.className = "side-quests-discord-copy";
-    copy.textContent = "If Discord says I’m busy, one of these is probably why.";
+    copy.textContent = "Games that have claimed a statistically significant number of my hours.";
     profilePanel.append(identity, copy);
 
     const gameGrid = document.createElement("div");
@@ -201,5 +202,74 @@ function renderGames(games, username, container) {
     container.append(card);
 }
 
+function renderSupport(teams, container) {
+    const list = document.createElement("ul");
+    list.className = "side-quests-support-logos";
+    const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const videos = [];
+
+    const syncPlayback = (video, isVisible = video.dataset.visible === "true") => {
+        if (motionPreference.matches || document.hidden || !isVisible) {
+            video.pause();
+            return;
+        }
+
+        if (!video.src) video.src = video.dataset.src;
+        video.play().catch(() => {});
+    };
+
+    const observer = "IntersectionObserver" in window
+        ? new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                const video = entry.target;
+                video.dataset.visible = String(entry.isIntersecting);
+                syncPlayback(video, entry.isIntersecting);
+            });
+        }, { rootMargin: "120px 0px", threshold: 0.15 })
+        : null;
+
+    teams.forEach((team) => {
+        const item = document.createElement("li");
+        item.className = `side-quests-support-team side-quests-support-team--${team.style}`;
+        item.setAttribute("aria-label", team.name);
+
+        const logo = document.createElement("img");
+        logo.className = "side-quests-support-logo";
+        logo.src = team.logo;
+        logo.alt = "";
+
+        const media = document.createElement("div");
+        media.className = "side-quests-support-media";
+
+        const video = document.createElement("video");
+        video.className = "side-quests-support-video";
+        video.dataset.src = team.video;
+        video.poster = team.videoPoster;
+        video.muted = true;
+        video.loop = true;
+        video.playsInline = true;
+        video.preload = "none";
+        video.tabIndex = -1;
+        video.setAttribute("aria-hidden", "true");
+        videos.push(video);
+        if (observer) observer.observe(video);
+        else {
+            video.dataset.visible = "true";
+            syncPlayback(video, true);
+        }
+
+        media.append(video);
+        item.append(logo, media);
+        list.append(item);
+    });
+
+    container.append(list);
+
+    const syncAllVideos = () => videos.forEach((video) => syncPlayback(video));
+    motionPreference.addEventListener?.("change", syncAllVideos);
+    document.addEventListener("visibilitychange", syncAllVideos);
+}
+
 renderHighlights(profile.personal.highlights || [], collage);
 renderGames(profile.personal.games, profile.personal.discord, gamesPanel);
+renderSupport(profile.personal.teams || [], supportPanel);

@@ -364,6 +364,12 @@ div.lazy {
 
 .career-award-heading time {
     color: #6c757d;
+    flex: none;
+}
+
+.career-award-cohort {
+    color: #6c757d;
+    font-weight: 400;
 }
 
 .career-awards {

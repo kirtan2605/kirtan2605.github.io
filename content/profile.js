@@ -97,6 +97,22 @@ export const profile = {
             },
         ],
         discord: "ambush2605",
+        teams: [
+            {
+                name: "Real Madrid C.F.",
+                logo: "assets/images/support/real-madrid.svg",
+                video: "assets/images/support/ronaldo-landscape-smooth-v6.mp4",
+                videoPoster: "assets/images/support/ronaldo-landscape-smooth-v6.png",
+                style: "real-madrid",
+            },
+            {
+                name: "Red Bull Racing",
+                logo: "assets/images/support/red-bull-racing.svg",
+                video: "assets/images/support/verstappen-landscape-smooth-v4.mp4",
+                videoPoster: "assets/images/support/verstappen-landscape-smooth-v4.png",
+                style: "red-bull-racing",
+            },
+        ],
         highlights: [
             {
                 type: "image",
@@ -259,6 +275,24 @@ export const profile = {
             name: "Erasmus+ KA107 Scholarship",
             date: "2022",
             description: "European Commission mobility grant for the University of Twente exchange.",
+        },
+        {
+            name: "All India Rank 2,791",
+            cohort: "~161,000 candidates",
+            date: "2019",
+            description: "Joint Entrance Examination (JEE) Advanced.",
+        },
+        {
+            name: "All India Rank 149",
+            cohort: "~228,000 candidates",
+            date: "2019",
+            description: "Joint Entrance Examination (JEE) Main, Paper 2 (B.Arch./B.Planning).",
+        },
+        {
+            name: "All India Rank 11,538",
+            cohort: "~1.15 million candidates",
+            date: "2019",
+            description: "Joint Entrance Examination (JEE) Main, Paper 1 (B.E./B.Tech.).",
         },
     ],
 };

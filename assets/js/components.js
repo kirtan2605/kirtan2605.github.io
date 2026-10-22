@@ -1,4 +1,4 @@
-import { profile, site } from "../../content/profile.js";
+import { profile, site } from "../../content/profile.js?v=20261022-12";
 
 const externalLinkAttributes = `target="_blank" rel="noopener noreferrer"`;
 
@@ -167,10 +167,13 @@ export function renderExperience() {
             <div class="col-12">
                 <div class="card border-0 shadow-sm bg-white">
                     <div class="card-body p-4">
-                        <h2 class="h5 career-title">Honours &amp; Awards</h2>
+                        <h2 class="h5 career-title">Honours &amp; Achievements</h2>
                         <ul class="career-awards">${profile.awards.map((award) => `
                             <li>
-                                <div class="career-award-heading"><strong>${award.name}</strong><time>${award.date}</time></div>
+                                <div class="career-award-heading">
+                                    <span><strong>${award.name}</strong>${award.cohort ? `<span class="career-award-cohort"> (of ${award.cohort})</span>` : ""}</span>
+                                    <time>${award.date}</time>
+                                </div>
                                 <p>${award.description}</p>
                             </li>`).join("")}
                         </ul>

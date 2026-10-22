@@ -18,6 +18,64 @@
     margin-top: 2.25rem;
 }
 
+.side-quests-support-section {
+    margin-top: 1.5rem;
+}
+
+.side-quests-support-logos {
+    display: grid;
+    gap: clamp(1.5rem, 4vw, 3rem);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    list-style: none;
+    margin: 1.2rem 0 0;
+    padding: 0.25rem 0;
+}
+
+.side-quests-support-team {
+    align-items: center;
+    display: grid;
+    gap: clamp(1rem, 2vw, 1.5rem);
+    grid-template-columns: minmax(4.5rem, 0.72fr) minmax(0, 1.28fr);
+    min-width: 0;
+}
+
+.side-quests-support-logo {
+    display: block;
+    height: auto;
+    justify-self: center;
+    max-height: 6rem;
+    max-width: 100%;
+    object-fit: contain;
+    width: 100%;
+}
+
+.side-quests-support-team--real-madrid .side-quests-support-logo {
+    max-width: 5rem;
+}
+
+.side-quests-support-team--red-bull-racing .side-quests-support-logo {
+    max-width: 14rem;
+}
+
+.side-quests-support-media {
+    aspect-ratio: 16 / 9;
+    background: #e6e9ed;
+    border-radius: 0.25rem;
+    box-shadow: 0 0.35rem 1.25rem rgba(20, 34, 56, 0.09);
+    display: block;
+    min-width: 0;
+    overflow: hidden;
+    width: 100%;
+}
+
+.side-quests-support-video {
+    display: block;
+    height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    width: 100%;
+}
+
 .side-quests-collage {
     align-items: start;
     display: grid;
@@ -165,8 +223,11 @@
     gap: 1.25rem;
     grid-template-columns: minmax(220px, 0.8fr) minmax(0, 2fr);
     min-height: 430px;
+    min-width: 0;
+    overflow: hidden;
     padding: 1.25rem;
     position: relative;
+    width: 100%;
 }
 
 .side-quests-games-panel {
@@ -251,12 +312,16 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-template-rows: repeat(2, minmax(0, 1fr));
     min-height: 0;
+    min-width: 0;
+    overflow: hidden;
+    width: 100%;
 }
 
 .side-quests-discord-game {
     border: 1px solid rgba(255, 255, 255, 0.11);
     border-radius: 0.25rem;
     min-height: 0;
+    min-width: 0;
     overflow: hidden;
     position: relative;
 }
@@ -271,6 +336,8 @@
 .side-quests-discord-game img {
     display: block;
     height: 100%;
+    min-width: 0;
+    max-width: 100%;
     object-fit: cover;
     transition: transform 220ms ease;
     width: 100%;
@@ -306,6 +373,14 @@
 }
 
 @media (max-width: 767.98px) {
+    .side-quests-support-logos {
+        grid-template-columns: 1fr;
+    }
+
+    .side-quests-support-team {
+        grid-template-columns: minmax(4.5rem, 7rem) minmax(0, 1fr);
+    }
+
     .side-quests-collage {
         grid-template-columns: 1fr;
     }
@@ -363,6 +438,27 @@
 
 @media (max-width: 575.98px) {
     .side-quests-heading { margin-bottom: 1.25rem; }
+
+    .side-quests-support-logos {
+        gap: 1.25rem;
+    }
+
+    .side-quests-support-team {
+        grid-template-columns: minmax(3.75rem, 5rem) minmax(0, 1fr);
+    }
+
+    .side-quests-support-team--real-madrid .side-quests-support-logo {
+        max-width: 3.75rem;
+    }
+
+    .side-quests-discord-games {
+        grid-template-columns: 1fr;
+        grid-template-rows: none;
+    }
+
+    .side-quests-discord-game {
+        aspect-ratio: 16 / 9;
+    }
 
     .side-quests-discord-profile {
         align-items: flex-start;
