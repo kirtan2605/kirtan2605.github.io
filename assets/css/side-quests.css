@@ -221,7 +221,7 @@
     color: #f2f3f5;
     display: grid;
     gap: 1.25rem;
-    grid-template-columns: minmax(220px, 0.8fr) minmax(0, 2fr);
+    grid-template-rows: auto minmax(0, 1fr);
     min-height: 430px;
     min-width: 0;
     overflow: hidden;
@@ -235,9 +235,10 @@
 }
 
 .side-quests-discord-profile {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    align-items: center;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: minmax(0, 1fr) auto;
     min-width: 0;
     padding: 0.25rem;
 }
@@ -246,6 +247,7 @@
     align-items: center;
     display: flex;
     gap: 0.85rem;
+    justify-self: end;
 }
 
 .side-quests-discord-avatar-wrap {
@@ -292,7 +294,7 @@
 }
 
 .side-quests-discord-platform i {
-    transform: translateY(-0.015rem);
+    transform: translateY(0.065rem);
 }
 
 .side-quests-discord-account {
@@ -399,15 +401,15 @@
     font-size: clamp(1.05rem, 2vw, 1.35rem);
     font-weight: 650;
     line-height: 1.35;
-    margin: 1.5rem 0 0;
-    max-width: 18rem;
+    margin: 0;
+    max-width: 34rem;
 }
 
 .side-quests-discord-games {
     display: grid;
     gap: 0.75rem;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-rows: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows: minmax(0, 1fr);
     min-height: 0;
     min-width: 0;
     overflow: hidden;
@@ -492,21 +494,21 @@
     }
 
     .side-quests-discord-card {
-        grid-template-columns: 1fr;
         grid-template-rows: auto minmax(0, 1fr);
-        min-height: 620px;
+        min-height: 560px;
     }
 
     .side-quests-discord-profile {
-        align-items: flex-end;
-        flex-direction: row;
-        gap: 1rem;
+        align-items: center;
     }
 
     .side-quests-discord-copy {
         font-size: 1rem;
-        margin: 0;
-        text-align: right;
+    }
+
+    .side-quests-discord-games {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: repeat(2, minmax(0, 1fr));
     }
 
 }
@@ -524,7 +526,11 @@
 
     .side-quests-discord-profile {
         align-items: flex-start;
-        flex-direction: column;
+        grid-template-columns: 1fr;
+    }
+
+    .side-quests-discord-identity {
+        justify-self: start;
     }
 
     .side-quests-discord-copy {
@@ -559,7 +565,11 @@
 
     .side-quests-discord-profile {
         align-items: flex-start;
-        flex-direction: column;
+        grid-template-columns: 1fr;
+    }
+
+    .side-quests-discord-identity {
+        justify-self: start;
     }
 
     .side-quests-discord-copy {

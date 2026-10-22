@@ -213,7 +213,7 @@ function renderGames(games, discord, container) {
     const copy = document.createElement("p");
     copy.className = "side-quests-discord-copy";
     copy.textContent = "Games that have claimed a statistically significant number of my hours.";
-    profilePanel.append(identity, copy);
+    profilePanel.append(copy, identity);
 
     const gameGrid = document.createElement("div");
     gameGrid.className = "side-quests-discord-games";
