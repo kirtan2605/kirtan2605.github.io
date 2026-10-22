@@ -283,18 +283,10 @@
     width: 1.55rem;
 }
 
-.side-quests-discord-platform i,
-.side-quests-discord-platform i::before {
-    align-items: center;
-    display: flex;
-    height: 1em;
-    justify-content: center;
-    line-height: 1;
-    width: 1em;
-}
-
-.side-quests-discord-platform i {
-    transform: translate(-0.1rem, 0.065rem);
+.side-quests-discord-icon {
+    display: block;
+    height: 0.9rem;
+    width: 0.9rem;
 }
 
 .side-quests-discord-account {
