@@ -167,15 +167,11 @@ function renderGames(games, discord, container) {
     platform.className = "side-quests-discord-platform";
     platform.title = "Discord";
     platform.setAttribute("aria-label", "Discord");
-    const discordIcon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-    discordIcon.classList.add("side-quests-discord-icon");
-    discordIcon.setAttribute("viewBox", "0 0 24 24");
-    discordIcon.setAttribute("focusable", "false");
+    const discordIcon = document.createElement("img");
+    discordIcon.className = "side-quests-discord-icon";
+    discordIcon.src = "assets/images/gaming/discord-symbol.svg";
+    discordIcon.alt = "";
     discordIcon.setAttribute("aria-hidden", "true");
-    const discordMark = document.createElementNS("http://www.w3.org/2000/svg", "path");
-    discordMark.setAttribute("fill", "currentColor");
-    discordMark.setAttribute("d", "M20.317 4.37a19.8 19.8 0 0 0-4.885-1.515c-.074.09-.145.184-.211.282a18.27 18.27 0 0 0-5.486 0 6.03 6.03 0 0 0-.211-.282A19.74 19.74 0 0 0 4.64 4.37C1.55 8.98.713 13.477 1.13 17.91a19.9 19.9 0 0 0 5.994 3.03c.484-.66.914-1.354 1.28-2.07a12.9 12.9 0 0 1-2.018-.96c.17-.124.335-.253.494-.386 3.89 1.8 8.105 1.8 11.955 0 .16.133.325.262.494.386-.642.38-1.318.7-2.018.96.367.716.796 1.41 1.28 2.07a19.9 19.9 0 0 0 5.994-3.03c.49-5.14-.837-9.596-4.268-13.54ZM8.02 15.5c-1.17 0-2.14-1.07-2.14-2.394 0-1.324.948-2.395 2.14-2.395 1.202 0 2.16 1.083 2.14 2.395 0 1.324-.948 2.394-2.14 2.394Zm7.137 0c-1.17 0-2.14-1.07-2.14-2.394 0-1.324.948-2.395 2.14-2.395 1.202 0 2.16 1.083 2.14 2.395 0 1.324-.938 2.394-2.14 2.394Z");
-    discordIcon.append(discordMark);
     platform.append(discordIcon);
     avatarWrap.append(avatar, platform);
 
