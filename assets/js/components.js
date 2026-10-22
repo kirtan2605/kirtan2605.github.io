@@ -1,4 +1,4 @@
-import { profile, site } from "../../content/profile.js?v=20261022-14";
+import { profile, site } from "../../content/profile.js?v=20261022-15";
 
 const externalLinkAttributes = `target="_blank" rel="noopener noreferrer"`;
 

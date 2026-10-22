@@ -1,5 +1,5 @@
-import { profile } from "../../../content/profile.js?v=20261022-14";
-import { renderShell } from "../components.js?v=20261022-14";
+import { profile } from "../../../content/profile.js?v=20261022-15";
+import { renderShell } from "../components.js?v=20261022-15";
 
 renderShell("side-quests");
 
@@ -144,10 +144,10 @@ function renderHighlights(highlights, container) {
     container.append(leftTop, mainTop, lower);
 }
 
-function renderGames(games, username, container) {
+function renderGames(games, discord, container) {
     const card = document.createElement("article");
     card.className = "side-quests-card side-quests-discord-card";
-    card.setAttribute("aria-label", `Discord profile and favourite games for ${username}`);
+    card.setAttribute("aria-label", `Discord profile and favourite games for ${discord.displayName}`);
 
     const profilePanel = document.createElement("div");
     profilePanel.className = "side-quests-discord-profile";
@@ -155,24 +155,49 @@ function renderGames(games, username, container) {
     const identity = document.createElement("div");
     identity.className = "side-quests-discord-identity";
 
-    const avatar = document.createElement("span");
+    const avatar = document.createElement("img");
     avatar.className = "side-quests-discord-avatar";
-    avatar.setAttribute("aria-hidden", "true");
-    const discordIcon = document.createElement("i");
-    discordIcon.className = "fab fa-discord";
-    avatar.append(discordIcon);
+    avatar.src = discord.avatar;
+    avatar.alt = "";
 
     const account = document.createElement("div");
     account.className = "side-quests-discord-account";
     const label = document.createElement("span");
     label.className = "side-quests-discord-label";
     label.textContent = "Discord";
-    const handle = document.createElement("strong");
-    handle.textContent = username;
+    const displayName = document.createElement("strong");
+    displayName.className = "side-quests-discord-display-name";
+    displayName.textContent = discord.displayName;
+
+    const usernameRow = document.createElement("div");
+    usernameRow.className = "side-quests-discord-username-row";
+    const username = document.createElement("span");
+    username.className = "side-quests-discord-username";
+    username.textContent = discord.username;
+
+    const badges = document.createElement("span");
+    badges.className = "side-quests-discord-badges";
+    badges.setAttribute("aria-label", "Discord profile badges");
+    (discord.badges || []).forEach((badge) => {
+        const icon = document.createElement("span");
+        icon.className = "side-quests-discord-badge";
+        icon.dataset.tooltip = badge.label;
+        icon.setAttribute("aria-label", badge.label);
+        icon.tabIndex = 0;
+
+        const image = document.createElement("img");
+        image.src = badge.src;
+        image.alt = "";
+        image.setAttribute("aria-hidden", "true");
+        icon.append(image);
+        badges.append(icon);
+    });
+    usernameRow.append(username, badges);
+
     const status = document.createElement("span");
     status.className = "side-quests-discord-status";
     status.innerHTML = '<span aria-hidden="true"></span> On a side-quest';
-    account.append(label, handle, status);
+    account.append(label, displayName, usernameRow, status);
     identity.append(avatar, account);
 
     const copy = document.createElement("p");

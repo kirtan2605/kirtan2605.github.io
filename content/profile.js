@@ -96,7 +96,25 @@ export const profile = {
                 wallpaperAlt: "Original illustration of colorful cars competing for a crown in an urban arena",
             },
         ],
-        discord: "ambush2605",
+        discord: {
+            displayName: "CookieMonster",
+            username: "ambush2605",
+            avatar: "assets/images/gaming/discord-avatar-ambush2605.png",
+            badges: [
+                {
+                    src: "assets/images/gaming/discord-badge-game-time-casual.svg",
+                    label: "Game Time: Casual (5+ hours of detected gameplay)",
+                },
+                {
+                    src: "assets/images/gaming/discord-badge-game-variety-sampler.svg",
+                    label: "Game Variety: Sampler (2+ distinct games detected)",
+                },
+                {
+                    src: "assets/images/gaming/discord-badge-legacy-username.svg",
+                    label: "Legacy Username: migrated from Discord's username#discriminator system",
+                },
+            ],
+        },
         teams: [
             {
                 name: "Real Madrid C.F.",
