@@ -1,0 +1,178 @@
+:root {
+    color-scheme: light;
+    font-family: "Hanken Grotesk", system-ui, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #edf2f4;
+    color: #26313b;
+    margin: 0;
+    min-height: 100vh;
+}
+
+.aviation-note-shell {
+    align-items: center;
+    display: grid;
+    min-height: 100vh;
+    padding: 1.5rem;
+    place-items: center;
+}
+
+.aviation-note-card {
+    background: rgba(255, 255, 255, 0.94);
+    border: 1px solid rgba(62, 79, 91, 0.12);
+    border-radius: 0.75rem;
+    box-shadow: 0 1rem 3rem rgba(31, 48, 61, 0.1);
+    max-width: 24rem;
+    padding: clamp(1.5rem, 6vw, 2.25rem);
+    text-align: center;
+    width: 100%;
+}
+
+.aviation-note-mark {
+    align-items: center;
+    background: #f1f4f6;
+    border-radius: 50%;
+    display: inline-flex;
+    height: 2.75rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+    width: 2.75rem;
+}
+
+.aviation-note-mark svg {
+    fill: none;
+    height: 1.25rem;
+    stroke: #52626c;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.5;
+    width: 1.25rem;
+}
+
+.aviation-note-kicker {
+    color: #68757e;
+    font-size: 0.7rem;
+    font-weight: 650;
+    letter-spacing: 0.09em;
+    margin: 0 0 0.5rem;
+    text-transform: uppercase;
+}
+
+.aviation-note-card h1 {
+    font-size: clamp(1.65rem, 7vw, 2rem);
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+    margin: 0;
+}
+
+.aviation-note-status {
+    color: #68757e;
+    font-size: 0.94rem;
+    line-height: 1.5;
+    margin: 0.75rem auto 1.5rem;
+    max-width: 18rem;
+}
+
+.aviation-note-card.has-error .aviation-note-status {
+    color: #a14343;
+}
+
+.aviation-note-form {
+    text-align: left;
+}
+
+.aviation-note-form[hidden] {
+    display: none;
+}
+
+.aviation-note-form label {
+    color: #52626c;
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 650;
+    letter-spacing: 0.065em;
+    margin: 0 0 0.4rem;
+    text-transform: uppercase;
+}
+
+.aviation-note-controls {
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.aviation-note-controls input,
+.aviation-note-controls button {
+    border-radius: 0.4rem;
+    font: inherit;
+    min-height: 2.8rem;
+}
+
+.aviation-note-controls input {
+    background: #fff;
+    border: 1px solid #cad3d8;
+    color: #26313b;
+    min-width: 0;
+    padding: 0.65rem 0.75rem;
+}
+
+.aviation-note-controls input:focus {
+    border-color: #52626c;
+    box-shadow: 0 0 0 3px rgba(82, 98, 108, 0.12);
+    outline: none;
+}
+
+.aviation-note-controls input[aria-invalid="true"] {
+    border-color: #b85b5b;
+}
+
+.aviation-note-controls button {
+    background: #26313b;
+    border: 1px solid #26313b;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 650;
+    padding: 0.65rem 1rem;
+}
+
+.aviation-note-controls button:disabled {
+    cursor: wait;
+    opacity: 0.7;
+}
+
+.aviation-note-result {
+    color: #26313b;
+    font-size: clamp(1.55rem, 8vw, 2.2rem);
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    margin: 1.75rem 0;
+}
+
+.aviation-note-result[hidden] {
+    display: none;
+}
+
+.aviation-note-back {
+    color: #68757e;
+    display: inline-block;
+    font-size: 0.8rem;
+    margin-top: 1.5rem;
+    text-decoration: none;
+}
+
+.aviation-note-back:hover,
+.aviation-note-back:focus-visible {
+    color: #26313b;
+    text-decoration: underline;
+}
+
+@media (max-width: 28rem) {
+    .aviation-note-controls {
+        grid-template-columns: 1fr;
+    }
+}

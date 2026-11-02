@@ -346,15 +346,16 @@
     content: attr(data-tooltip);
     font-size: 0.72rem;
     font-weight: 500;
-    left: 50%;
+    left: auto;
     line-height: 1.3;
     max-width: 14rem;
     opacity: 0;
     padding: 0.42rem 0.55rem;
     pointer-events: none;
     position: absolute;
+    right: 0;
     top: calc(100% + 0.45rem);
-    transform: translate(-50%, -0.2rem);
+    transform: translate(0, -0.2rem);
     transition: opacity 120ms ease, transform 120ms ease;
     visibility: hidden;
     white-space: normal;
@@ -365,7 +366,7 @@
 .side-quests-discord-badge:hover::after,
 .side-quests-discord-badge:focus-visible::after {
     opacity: 1;
-    transform: translate(-50%, 0);
+    transform: translate(0, 0);
     visibility: visible;
 }
 
@@ -450,6 +451,870 @@
     transform: scale(1.04);
 }
 
+.side-quests-scrapbook-section,
+.aviation-logbook-section {
+    border-top: 1px solid #dfe4e8;
+    margin-top: clamp(2rem, 4vw, 3rem);
+    padding-top: clamp(1.25rem, 3vw, 2rem);
+}
+
+.aviation-logbook-heading {
+    align-items: center;
+    display: grid;
+    gap: 1rem 2.5rem;
+    grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.85fr);
+    margin-bottom: 1.5rem;
+}
+
+.aviation-logbook-heading h2 {
+    color: #26313b;
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 650;
+    letter-spacing: -0.025em;
+    line-height: 1.08;
+    margin: 0;
+}
+
+.aviation-logbook-heading > p {
+    color: #56616c;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.aviation-logbook-card {
+    background: #fff;
+    border-radius: 0.35rem;
+    box-shadow: 0 0.35rem 1.25rem rgba(20, 34, 56, 0.09);
+    overflow: hidden;
+}
+
+.aviation-map-panel {
+    background:
+        radial-gradient(circle at 50% 15%, rgba(255, 255, 255, 0.92), transparent 45%),
+        linear-gradient(145deg, #eef4f7, #e6edf1);
+    min-height: 26rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.aviation-map {
+    cursor: grab;
+    display: block;
+    height: auto;
+    min-height: 26rem;
+    touch-action: none;
+    user-select: none;
+    width: 100%;
+}
+
+.aviation-map.is-panning,
+.aviation-map.is-panning .aviation-route {
+    cursor: grabbing;
+}
+
+.aviation-map:focus-visible {
+    outline: 2px solid rgba(53, 75, 89, 0.55);
+    outline-offset: -3px;
+}
+
+.aviation-map-controls {
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid rgba(53, 75, 89, 0.16);
+    border-radius: 0.35rem;
+    box-shadow: 0 0.25rem 0.8rem rgba(31, 48, 61, 0.1);
+    display: grid;
+    overflow: hidden;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    z-index: 3;
+}
+
+.aviation-map-controls button {
+    align-items: center;
+    background: transparent;
+    border: 0;
+    color: #52626c;
+    cursor: pointer;
+    display: inline-flex;
+    font-size: 0.68rem;
+    height: 2rem;
+    justify-content: center;
+    padding: 0;
+    width: 2rem;
+}
+
+.aviation-map-controls button + button {
+    border-top: 1px solid rgba(53, 75, 89, 0.12);
+}
+
+.aviation-map-controls button:hover,
+.aviation-map-controls button:focus-visible {
+    background: rgba(79, 111, 143, 0.09);
+    color: #26313b;
+    outline: none;
+}
+
+.aviation-map-controls button:disabled {
+    color: #a8b0b5;
+    cursor: default;
+}
+
+.aviation-airport-route-switcher {
+    align-items: stretch;
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(53, 75, 89, 0.16);
+    border-radius: 0.35rem;
+    box-shadow: 0 0.25rem 0.8rem rgba(31, 48, 61, 0.1);
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    left: 1rem;
+    min-height: 2.7rem;
+    overflow: hidden;
+    position: absolute;
+    top: 1rem;
+    width: min(18.5rem, calc(100% - 5.25rem));
+    z-index: 3;
+}
+
+.aviation-airport-route-switcher[hidden] {
+    display: none;
+}
+
+.aviation-airport-route-code {
+    align-items: center;
+    border-right: 1px solid rgba(53, 75, 89, 0.12);
+    color: #26313b;
+    display: flex;
+    font-size: 0.78rem;
+    letter-spacing: 0.05em;
+    padding: 0 0.7rem;
+}
+
+.aviation-airport-route-copy {
+    align-self: center;
+    display: grid;
+    min-width: 0;
+    padding: 0.35rem 0.7rem;
+}
+
+.aviation-airport-route-summary {
+    color: #354b59;
+    font-size: 0.72rem;
+    font-weight: 650;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.aviation-airport-route-position {
+    color: #7b8790;
+    font-size: 0.57rem;
+    letter-spacing: 0.035em;
+    margin-top: 0.08rem;
+}
+
+.aviation-airport-route-navigation {
+    border-left: 1px solid rgba(53, 75, 89, 0.12);
+    display: grid;
+    grid-template-columns: repeat(2, 1.8rem);
+}
+
+.aviation-airport-route-navigation button {
+    background: transparent;
+    border: 0;
+    color: #52626c;
+    cursor: pointer;
+    font-size: 0.58rem;
+    padding: 0;
+}
+
+.aviation-airport-route-navigation button + button {
+    border-left: 1px solid rgba(53, 75, 89, 0.1);
+}
+
+.aviation-airport-route-navigation button:hover,
+.aviation-airport-route-navigation button:focus-visible {
+    background: rgba(79, 111, 143, 0.09);
+    color: #26313b;
+    outline: none;
+}
+
+.aviation-airport-route-navigation button:disabled {
+    color: #b0b7bc;
+    cursor: default;
+}
+
+.aviation-map-graticule line {
+    stroke: rgba(91, 112, 126, 0.08);
+    stroke-width: 1;
+    vector-effect: non-scaling-stroke;
+}
+
+.aviation-map-land {
+    opacity: 0.96;
+}
+
+.aviation-route {
+    --route-color: #5f6f78;
+    cursor: pointer;
+    outline: none;
+}
+
+.aviation-route-hit {
+    fill: none;
+    stroke: transparent;
+    stroke-linecap: round;
+    stroke-width: 7;
+    vector-effect: non-scaling-stroke;
+}
+
+.aviation-route-line {
+    fill: none;
+    opacity: 0.2;
+    stroke: #60727d;
+    stroke-linecap: round;
+    stroke-width: 0.9;
+    transition: filter 140ms ease, opacity 140ms ease, stroke 140ms ease, stroke-width 140ms ease;
+    vector-effect: non-scaling-stroke;
+}
+
+.aviation-route.is-active .aviation-route-line {
+    opacity: 0.055;
+}
+
+.aviation-route:hover .aviation-route-line,
+.aviation-route:focus-visible .aviation-route-line {
+    filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.95));
+    opacity: 0.92;
+    stroke: #26313b;
+    stroke-width: 1.8;
+}
+
+.aviation-map-routes:has(.aviation-route:hover) .aviation-route:not(:hover) .aviation-route-line,
+.aviation-map-routes:has(.aviation-route:focus-visible) .aviation-route:not(:focus-visible) .aviation-route-line {
+    filter: none;
+    opacity: 0.035;
+    stroke-width: 0.75;
+}
+
+.aviation-active-route {
+    pointer-events: none;
+}
+
+.aviation-active-route-line {
+    fill: none;
+    filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.95));
+    opacity: 0.96;
+    stroke: #26313b;
+    stroke-linecap: round;
+    stroke-width: 1.85;
+    vector-effect: non-scaling-stroke;
+}
+
+.aviation-map:has(.aviation-route:hover) .aviation-active-route-line,
+.aviation-map:has(.aviation-route:focus-visible) .aviation-active-route-line {
+    opacity: 0.12;
+}
+
+.aviation-airport {
+    cursor: pointer;
+    outline: none;
+}
+
+.aviation-airport-hit {
+    fill: transparent;
+    stroke: none;
+}
+
+.aviation-airport-dot {
+    fill: #fff;
+    stroke: #354b59;
+    stroke-width: 0.6;
+    transform-box: fill-box;
+    transform-origin: center;
+    transition: fill 140ms ease, stroke 140ms ease, transform 140ms ease;
+    vector-effect: non-scaling-stroke;
+}
+
+.aviation-airport:hover .aviation-airport-dot,
+.aviation-airport:focus-visible .aviation-airport-dot {
+    fill: #26313b;
+    stroke: #fff;
+    transform: scale(1.65);
+}
+
+.aviation-airport.is-active .aviation-airport-dot {
+    fill: #26313b;
+    stroke: #fff;
+    transform: scale(1.15);
+}
+
+.aviation-boarding-pass-stack {
+    bottom: 1.25rem;
+    left: 1.25rem;
+    max-width: min(23rem, calc(100% - 2.5rem));
+    position: absolute;
+    transition: padding-top 160ms ease;
+    width: 100%;
+    z-index: 4;
+}
+
+.aviation-boarding-pass-stack.has-pass-stack {
+    padding-top: var(--pass-stack-offset, 1.3rem);
+}
+
+.aviation-boarding-pass-stack.has-pass-stack::after {
+    --pass-notch-radius: 0.42rem;
+    --pass-notch-x: calc(100% - 4.75rem);
+    -webkit-mask-composite: source-in;
+    -webkit-mask-image:
+        radial-gradient(circle var(--pass-notch-radius) at var(--pass-notch-x) 0, transparent calc(100% - 1px), #000 100%),
+        radial-gradient(circle var(--pass-notch-radius) at var(--pass-notch-x) 100%, transparent calc(100% - 1px), #000 100%);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    aspect-ratio: 2.75 / 1;
+    background: #26313b;
+    border-radius: 0.4rem;
+    content: "";
+    filter: drop-shadow(0 -0.14rem 0.12rem rgba(31, 48, 61, 0.26));
+    left: 0;
+    mask-composite: intersect;
+    mask-image:
+        radial-gradient(circle var(--pass-notch-radius) at var(--pass-notch-x) 0, transparent calc(100% - 1px), #000 100%),
+        radial-gradient(circle var(--pass-notch-radius) at var(--pass-notch-x) 100%, transparent calc(100% - 1px), #000 100%);
+    mask-repeat: no-repeat;
+    mask-size: 100% 100%;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: var(--pass-stack-offset, 1.3rem);
+    z-index: 2;
+}
+
+.aviation-boarding-pass-peeks {
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+    z-index: 1;
+}
+
+.aviation-boarding-pass,
+.aviation-boarding-pass-peek {
+    --pass-notch-radius: 0.42rem;
+    --pass-notch-x: calc(100% - 4.75rem);
+    -webkit-mask-composite: source-in;
+    -webkit-mask-image:
+        radial-gradient(circle var(--pass-notch-radius) at var(--pass-notch-x) 0, transparent calc(100% - 1px), #000 100%),
+        radial-gradient(circle var(--pass-notch-radius) at var(--pass-notch-x) 100%, transparent calc(100% - 1px), #000 100%);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-composite: intersect;
+    mask-image:
+        radial-gradient(circle var(--pass-notch-radius) at var(--pass-notch-x) 0, transparent calc(100% - 1px), #000 100%),
+        radial-gradient(circle var(--pass-notch-radius) at var(--pass-notch-x) 100%, transparent calc(100% - 1px), #000 100%);
+    mask-repeat: no-repeat;
+    mask-size: 100% 100%;
+}
+
+.aviation-boarding-pass {
+    --pass-accent: #4f6f8f;
+    --pass-ink: #26313b;
+    --pass-muted: #68757e;
+    --pass-stub: #f4f7f8;
+    --pass-surface: #fff;
+    aspect-ratio: 2.75 / 1;
+    background: var(--pass-surface);
+    border: 1px solid rgba(62, 79, 91, 0.12);
+    border-radius: 0.4rem;
+    display: grid;
+    filter: drop-shadow(0 0.5rem 0.75rem rgba(31, 48, 61, 0.12));
+    grid-template-columns: minmax(0, 1fr) 4.75rem;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    z-index: 3;
+}
+
+.aviation-boarding-pass-peek {
+    --peek-accent: #4f6f8f;
+    --peek-ink: #26313b;
+    --peek-stub: #f4f7f8;
+    --peek-surface: #f7f9fa;
+    align-items: flex-start;
+    aspect-ratio: 2.75 / 1;
+    background: var(--peek-surface);
+    border: 1px solid color-mix(in srgb, var(--peek-ink) 16%, transparent);
+    border-radius: 0.4rem;
+    color: var(--peek-ink);
+    cursor: pointer;
+    display: grid;
+    filter: drop-shadow(0 0.35rem 0.45rem rgba(31, 48, 61, 0.1));
+    gap: 0.5rem;
+    grid-template-columns: minmax(0, auto) minmax(0, auto) 1fr;
+    left: 0;
+    overflow: hidden;
+    padding: 0.5rem 5.45rem 0.5rem 1rem;
+    pointer-events: auto;
+    position: absolute;
+    right: 0;
+    text-align: left;
+    transition: filter 140ms ease, transform 140ms ease;
+}
+
+.aviation-boarding-pass-peek::before {
+    background: var(--peek-accent);
+    content: "";
+    height: 0.18rem;
+    left: -1px;
+    pointer-events: none;
+    position: absolute;
+    right: -1px;
+    top: -1px;
+    z-index: 2;
+}
+
+.aviation-boarding-pass-peek[hidden] {
+    display: none;
+}
+
+.aviation-boarding-pass-peek:hover,
+.aviation-boarding-pass-peek:focus-visible {
+    filter: brightness(0.985) drop-shadow(0 0.35rem 0.45rem rgba(31, 48, 61, 0.1));
+    outline: 1px solid color-mix(in srgb, var(--peek-accent) 55%, transparent);
+    outline-offset: 2px;
+    transform: translateY(-0.12rem);
+}
+
+.aviation-boarding-pass-peek img {
+    display: block;
+    max-height: 0.65rem;
+    max-width: 5.5rem;
+    object-fit: contain;
+    object-position: left bottom;
+    position: relative;
+    z-index: 2;
+}
+
+.aviation-boarding-pass-peek-name,
+.aviation-boarding-pass-peek-route {
+    font-size: 0.5rem;
+    font-weight: 700;
+    letter-spacing: 0.055em;
+    line-height: 1;
+    position: relative;
+    text-transform: uppercase;
+    white-space: nowrap;
+    z-index: 2;
+}
+
+.aviation-boarding-pass-peek-name[hidden] {
+    display: none;
+}
+
+.aviation-boarding-pass-peek-route {
+    color: color-mix(in srgb, var(--peek-ink) 66%, transparent);
+    justify-self: end;
+}
+
+.aviation-boarding-pass-peek-stub {
+    background: var(--peek-stub);
+    border-left: 1px dashed color-mix(in srgb, var(--peek-ink) 55%, transparent);
+    bottom: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 4.75rem;
+    z-index: 1;
+}
+
+.aviation-boarding-pass::before {
+    background: var(--pass-rule-accent, var(--pass-accent));
+    content: "";
+    height: 0.24rem;
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 2;
+}
+
+.aviation-boarding-pass-main {
+    background: var(--pass-surface);
+    min-width: 0;
+    padding: 0.85rem 1rem 0.8rem;
+    position: relative;
+}
+
+.aviation-boarding-pass-header {
+    align-items: center;
+    color: var(--pass-muted);
+    display: flex;
+    font-size: 0.65rem;
+    font-weight: 750;
+    justify-content: space-between;
+    letter-spacing: 0.08em;
+    min-height: 1.6rem;
+    text-transform: uppercase;
+}
+
+.aviation-boarding-pass-brand {
+    align-items: center;
+    display: inline-flex;
+    gap: 0.4rem;
+    min-width: 0;
+}
+
+.aviation-boarding-pass-brand-direction {
+    color: var(--carrier-direction-color, var(--pass-muted));
+    font-size: 0.62rem;
+    font-weight: 750;
+    letter-spacing: 0.08em;
+    line-height: 1;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.aviation-boarding-pass-brand-direction[hidden] {
+    display: none;
+}
+
+.aviation-boarding-pass.has-multiple-airlines .aviation-boarding-pass-brand,
+.aviation-boarding-pass.has-multiple-airlines .aviation-boarding-pass-brand-extras {
+    gap: 0.28rem;
+}
+
+.aviation-boarding-pass-brand-extras {
+    align-items: center;
+    display: inline-flex;
+    gap: 0.4rem;
+    min-width: 0;
+}
+
+.aviation-boarding-pass-brand-divider {
+    background: color-mix(in srgb, var(--pass-muted) 52%, transparent);
+    display: block;
+    height: 1rem;
+    width: 1px;
+}
+
+.aviation-boarding-pass-logo {
+    display: block;
+    height: 1.75rem;
+    max-width: 9rem;
+    object-fit: contain;
+    object-position: left center;
+    width: auto;
+}
+
+.aviation-boarding-pass-logo.is-secondary {
+    height: 1rem;
+    max-width: 5.5rem;
+}
+
+.aviation-boarding-pass.has-multiple-airlines .aviation-boarding-pass-logo {
+    height: 1rem;
+    max-width: 5.5rem;
+}
+
+.aviation-boarding-pass-logo[hidden],
+.aviation-boarding-pass-brand-name[hidden] {
+    display: none;
+}
+
+.aviation-boarding-pass-brand-name {
+    color: var(--pass-ink);
+    font-size: 0.7rem;
+    letter-spacing: 0.025em;
+    text-transform: none;
+    white-space: nowrap;
+}
+
+.aviation-boarding-pass-secondary-name {
+    color: var(--pass-ink);
+    font-size: 0.58rem;
+    letter-spacing: 0.025em;
+    text-transform: none;
+    white-space: nowrap;
+}
+
+.aviation-boarding-pass-header i {
+    color: var(--pass-accent);
+    margin-right: 0.3rem;
+}
+
+.aviation-boarding-pass-type {
+    flex: 0 0 auto;
+    text-align: right;
+    white-space: nowrap;
+}
+
+.aviation-boarding-pass-type.has-flight-groups {
+    display: grid;
+    gap: 0.18rem;
+    letter-spacing: 0.045em;
+    line-height: 1;
+}
+
+.aviation-flight-number-row {
+    align-items: center;
+    display: grid;
+    gap: 0.28rem;
+    grid-template-columns: auto 1fr;
+}
+
+.aviation-flight-number-marker {
+    color: var(--flight-row-accent, var(--pass-accent));
+    font-size: 0.7rem;
+}
+
+.aviation-boarding-pass-route {
+    align-items: center;
+    display: grid;
+    gap: 0.65rem;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    margin-top: 0.65rem;
+}
+
+.aviation-boarding-pass-stop {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.aviation-boarding-pass-stop.is-destination {
+    align-items: flex-end;
+    text-align: right;
+}
+
+.aviation-boarding-pass-stop small {
+    color: var(--pass-muted);
+    font-size: 0.58rem;
+    font-weight: 750;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.aviation-boarding-pass-stop strong {
+    color: var(--pass-ink);
+    font-size: 1.5rem;
+    letter-spacing: 0.05em;
+    line-height: 1.05;
+    margin-top: 0.1rem;
+}
+
+.aviation-boarding-pass-stop span {
+    color: var(--pass-muted);
+    font-size: 0.7rem;
+    min-height: 1em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.aviation-boarding-pass-plane {
+    align-items: center;
+    color: var(--pass-accent);
+    display: flex;
+    font-size: 0.82rem;
+    gap: 0.25rem;
+    position: relative;
+}
+
+.aviation-boarding-pass-plane::before,
+.aviation-boarding-pass-plane::after {
+    border-top: 1px dashed var(--pass-muted);
+    content: "";
+    width: 1rem;
+}
+
+.aviation-boarding-pass-connection {
+    bottom: calc(50% + 0.3rem);
+    left: 50%;
+    line-height: 1;
+    pointer-events: none;
+    position: absolute;
+    transform: translateX(-50%);
+}
+
+.aviation-boarding-pass-connection small {
+    color: var(--pass-muted);
+    font-size: 0.42rem;
+    font-weight: 650;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.aviation-boarding-pass-date {
+    color: var(--pass-muted);
+    display: block;
+    font-size: 0.54rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    line-height: 1;
+    margin-top: 0.35rem;
+    opacity: 0.72;
+    text-transform: uppercase;
+}
+
+.aviation-boarding-pass-date:empty {
+    display: none;
+}
+
+.aviation-boarding-pass-navigation {
+    align-items: center;
+    color: var(--pass-muted);
+    display: inline-flex;
+    font-size: 0.46rem;
+    gap: 0.08rem;
+    bottom: 0.65rem;
+    left: 50%;
+    opacity: 0.72;
+    position: absolute;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+.aviation-boarding-pass-navigation[hidden] {
+    display: none;
+}
+
+.aviation-boarding-pass-navigation button {
+    align-items: center;
+    background: transparent;
+    border: 0;
+    border-radius: 50%;
+    color: inherit;
+    cursor: pointer;
+    display: inline-flex;
+    font-size: 0.42rem;
+    height: 0.8rem;
+    justify-content: center;
+    padding: 0;
+    width: 0.8rem;
+}
+
+.aviation-boarding-pass-navigation button:hover,
+.aviation-boarding-pass-navigation button:focus-visible {
+    background: color-mix(in srgb, var(--pass-accent) 10%, transparent);
+    color: var(--pass-accent);
+    outline: none;
+}
+
+.aviation-boarding-pass-navigation > span {
+    min-width: 1.7rem;
+    text-align: center;
+}
+
+.aviation-boarding-pass-note {
+    color: var(--pass-muted);
+    bottom: 0.72rem;
+    font-size: 0.5rem;
+    font-weight: 650;
+    letter-spacing: 0.035em;
+    line-height: 1;
+    margin: 0;
+    max-width: 56%;
+    overflow: hidden;
+    position: absolute;
+    right: 1rem;
+    text-align: right;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.aviation-boarding-pass-note:empty {
+    display: none;
+}
+
+.aviation-boarding-pass-stub {
+    align-items: center;
+    background: var(--pass-stub);
+    border-left: 1px dashed var(--pass-muted);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0;
+    padding: 0.8rem 0.65rem;
+    position: relative;
+}
+
+.aviation-boarding-pass-qr {
+    align-items: center;
+    display: flex;
+    height: 3.25rem;
+    justify-content: center;
+    width: 3.25rem;
+}
+
+.aviation-boarding-pass-qr.is-locked {
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+.aviation-boarding-pass-qr.is-locked:focus-visible {
+    outline: 2px solid color-mix(in srgb, var(--pass-accent) 65%, transparent);
+    outline-offset: 2px;
+}
+
+.aviation-boarding-pass-qr svg {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+.aviation-boarding-pass-qr svg rect {
+    fill: transparent;
+}
+
+.aviation-boarding-pass-qr svg path {
+    fill: var(--pass-ink);
+}
+
+.aviation-boarding-pass-qr.is-unavailable {
+    background:
+        linear-gradient(45deg, transparent 47%, var(--pass-muted) 48% 52%, transparent 53%),
+        linear-gradient(-45deg, transparent 47%, var(--pass-muted) 48% 52%, transparent 53%);
+    border: 1px solid color-mix(in srgb, var(--pass-muted) 45%, transparent);
+    opacity: 0.45;
+}
+
+.aviation-airline-previews {
+    align-items: center;
+    background: #fff;
+    border-top: 1px solid #edf0f2;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    padding: 0.8rem 1.25rem;
+}
+
+.aviation-airline-previews button {
+    background: transparent;
+    border: 1px solid #dfe4e8;
+    border-radius: 999px;
+    color: #5d6871;
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.74rem;
+    font-weight: 650;
+    padding: 0.35rem 0.7rem;
+    transition: background 120ms ease, border-color 120ms ease, color 120ms ease;
+}
+
+.aviation-airline-previews button:hover,
+.aviation-airline-previews button:focus-visible,
+.aviation-airline-previews button.is-active {
+    background: color-mix(in srgb, var(--airline-preview-color) 8%, #fff);
+    border-color: var(--airline-preview-color);
+    color: var(--airline-preview-color);
+    outline: none;
+}
+
 @media (min-width: 768px) and (max-width: 991.98px) {
     .side-quests-collage {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -499,6 +1364,11 @@
         grid-template-rows: repeat(2, auto);
     }
 
+    .aviation-logbook-heading {
+        align-items: start;
+        grid-template-columns: 1fr;
+    }
+
 }
 
 @media (max-width: 480px) {
@@ -524,6 +1394,53 @@
         max-width: none;
         text-align: left;
     }
+
+    .aviation-map-panel,
+    .aviation-map {
+        min-height: 22rem;
+    }
+
+    .aviation-map {
+        margin-left: -25%;
+        width: 150%;
+    }
+
+    .aviation-airport-route-switcher {
+        left: 0.75rem;
+        top: 0.75rem;
+        width: min(18.5rem, calc(100% - 4.5rem));
+    }
+
+    .aviation-boarding-pass-stack {
+        bottom: 0.75rem;
+        left: 0.75rem;
+        max-width: min(23rem, calc(100% - 1.5rem));
+    }
+
+    .aviation-boarding-pass {
+        grid-template-columns: minmax(0, 1fr) 4.75rem;
+    }
+
+    .aviation-boarding-pass-main {
+        padding: 0.7rem 0.75rem;
+    }
+
+    .aviation-boarding-pass-note {
+        bottom: 0.62rem;
+        right: 0.75rem;
+    }
+
+    .aviation-boarding-pass-header > span:first-child {
+        max-width: 9.5rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .aviation-boarding-pass-type:not(.has-flight-number) {
+        display: none;
+    }
+
 }
 
 @media (max-width: 575.98px) {

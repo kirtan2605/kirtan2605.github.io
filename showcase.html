@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="A visual showcase by Kirtan Patel.">
+    <meta name="description" content="A collage of Kirtan Patel's games, travels, and off-the-clock moments.">
     <title>Showcase - Kirtan</title>
     <link rel="icon" href="assets/images/photos/KirtanPatel-cropped.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
@@ -11,11 +11,41 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/global.css">
-    <script type="module" src="assets/js/pages/showcase.js"></script>
+    <link rel="stylesheet" href="assets/css/global.css?v=20261022-16">
+    <link rel="stylesheet" href="assets/css/side-quests.css?v=20261102-46">
+    <script src="assets/js/vendor/qrcode-generator.js?v=2.0.4"></script>
+    <script type="module" src="assets/js/pages/side-quests.js?v=20261102-60"></script>
 </head>
 <body class="bg-light">
     <header data-site-header></header>
-    <main class="container" data-showcase></main>
+    <main class="container side-quests-page pb-5">
+        <h1 class="sr-only">Showcase</h1>
+        <section class="side-quests-section side-quests-gaming-section" aria-label="Discord and games">
+            <div class="side-quests-games-panel" data-games></div>
+        </section>
+        <!-- Support videos are intentionally hidden pending a stronger production pass.
+        <section class="side-quests-section side-quests-support-section" aria-labelledby="support-title">
+            <h2 class="side-quests-intro" id="support-title">Allegiances, declared.</h2>
+            <div data-support></div>
+        </section>
+        -->
+        <section class="side-quests-section side-quests-scrapbook-section" aria-labelledby="scrapbook-title">
+            <div class="side-quests-heading">
+                <div class="side-quests-heading-copy">
+                    <h2 class="side-quests-intro" id="scrapbook-title">A gallery of things that caught my eye.</h2>
+                </div>
+            </div>
+            <div class="side-quests-collage" data-collage></div>
+        </section>
+        <section class="side-quests-section aviation-logbook-section" aria-labelledby="aviation-logbook-title">
+            <div class="aviation-logbook-heading">
+                <div>
+                    <h2 id="aviation-logbook-title">A passenger&rsquo;s aviation logbook</h2>
+                </div>
+                <p>A map of memories and the simple pleasure of being in the air.</p>
+            </div>
+            <div data-aviation-logbook></div>
+        </section>
+    </main>
 </body>
 </html>
