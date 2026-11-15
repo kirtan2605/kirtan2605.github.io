@@ -23,9 +23,9 @@ The April 2023 journey currently has a password-protected demonstration:
 - The QR links to `aviation-note.html#april-2023-demo`.
 - `assets/js/pages/aviation-note.js` stores only an AES-GCM ciphertext envelope.
 - `assets/js/aviation-note-crypto.js` performs PBKDF2 key derivation and AES-GCM decryption in the browser.
-- Password `2605` reveals the demonstration note `window seat`.
+- Password `KP2605` reveals the demonstration note `window seat`.
 
-This is a prototype only. A four-digit PIN can be brute-forced offline and must not be presented as meaningful privacy. The QR also points at the public site, so it will return a missing-page response until these files are deployed.
+This is a prototype only. The shared two-letter, four-digit demonstration password can be brute-forced offline and must not be presented as meaningful privacy. The QR also points at the public site, so it will return a missing-page response until these files are deployed.
 
 ## Deferred private-note architecture
 
@@ -37,7 +37,7 @@ The intended production architecture is documented in `docs/aviation-qr-private-
 4. Decrypt with a private offline PWA or native decoder using a non-exportable device key.
 5. Keep one protected recovery copy of the key outside the repository.
 
-Before production implementation, remove or replace the `2605` demonstration, choose the decoder format, define key backup and rotation, and test wrong-key, altered-payload, recovery, and device-migration scenarios.
+Before production implementation, remove or replace the `KP2605` demonstration, choose the decoder format, define key backup and rotation, and test wrong-key, altered-payload, recovery, and device-migration scenarios.
 
 ## Additional incomplete metadata
 

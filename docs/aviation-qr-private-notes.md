@@ -8,7 +8,7 @@ The aviation logbook should support one- or two-word private notes inside its bo
 
 Use a randomly generated 256-bit master key held only on authorised devices. Encrypt every note locally with AES-256-GCM before adding it to the website. The public QR contains a self-contained encrypted envelope, while decryption happens locally on the owner’s device.
 
-This is stronger than password protection. A short PIN such as `2605` can be brute-forced offline and is suitable only for a visual prototype.
+This is stronger than password protection. A short code such as the temporary `KP2605` demonstration password can be brute-forced offline and is suitable only for a visual prototype.
 
 ## Storage boundaries
 
@@ -79,7 +79,7 @@ Losing every copy of the key makes all notes permanently unrecoverable. Anyone w
 
 ## Implementation checklist
 
-1. Remove the `2605` password demonstration before production deployment.
+1. Remove or replace the `KP2605` password demonstration before production deployment.
 2. Define and document the binary payload format and Base64URL encoding.
 3. Build a local key-generation and recovery utility.
 4. Build the local note-encryption utility.

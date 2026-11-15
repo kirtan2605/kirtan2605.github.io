@@ -1,7 +1,7 @@
 import { decryptLockedNote } from "../aviation-note-crypto.js?v=20261102-1";
 
 const lockedNotes = Object.freeze({
-    "april-2023-demo": "v1.250000.f6997d10ed2818a3b57fcad484901a25.ac7eee77912c2487486f71f7.1b47b889c1470707783d43e2a8a9db3caa179d0e3f94ebb3865994",
+    "april-2023-demo": "v1.250000.83700ed65d8917a471b87c80c597d2b2.daac0d751fe50b3674297440.dbb7bcf9cc4691a5ec1faa0bb45edf5749db8eb803bc586d09cf97",
 });
 
 const card = document.querySelector("[data-note-card]");
