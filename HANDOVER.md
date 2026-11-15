@@ -15,17 +15,19 @@ Mumbai-related records already present are:
 
 Treat any additional Mumbai memories as new records unless the user explicitly identifies one as a correction to these entries.
 
+The user clarified that there is one AMD–BOM round trip in 2025 and one Mumbai journey in 2026. The 2026 journey is represented in May as another transport mode to Mumbai followed by the Akasa return `QP-6763`.
+
 ## QR note prototype
 
-The April 2023 journey currently has a password-protected demonstration:
+Multiple aviation journeys now carry password-protected memories:
 
-- `content/profile.js` assigns the note ID `april-2023-demo`.
-- The QR links to `aviation-note.html#april-2023-demo`.
-- `assets/js/pages/aviation-note.js` stores only an AES-GCM ciphertext envelope.
+- `content/profile.js` assigns each journey a unique `qrNoteId`.
+- Each QR links to `aviation-note.html#<note-id>`.
+- `assets/js/pages/aviation-note.js` stores only AES-GCM ciphertext envelopes, not the memory text or password.
 - `assets/js/aviation-note-crypto.js` performs PBKDF2 key derivation and AES-GCM decryption in the browser.
-- Password `KP2605` reveals the demonstration note `window seat`.
+- The temporary shared drafting password is `KP2605`.
 
-This is a prototype only. The shared two-letter, four-digit demonstration password can be brute-forced offline and must not be presented as meaningful privacy. The QR also points at the public site, so it will return a missing-page response until these files are deployed.
+This is still a prototype. The shared drafting password can be brute-forced offline and must not be presented as meaningful privacy. Before production, choose the final password and re-encrypt every memory with fresh salts and nonces.
 
 ## Deferred private-note architecture
 
@@ -41,7 +43,13 @@ Before production implementation, remove or replace the `KP2605` demonstration, 
 
 ## Additional incomplete metadata
 
-Two AMD to DEL round trips and the EIN to BGY and EIN to VIE round trips are present as separate memories with neutral styling. Their dates, airlines, and flight numbers have not yet been supplied.
+The January 2022 AMD to DEL round trip was for the Dutch SemEx visa; its airline and flight numbers remain unknown. A separate June 2023 AMD to DEL round trip was for the Swedish master’s visa and also has unknown airline and flight details. The EIN to BGY round trip remains undated with neutral styling. The July 2023 AMD to MAA round trip also has neutral styling because its airline and flight numbers have not yet been supplied. The EIN to VIE round trip is now dated July 2022, with Ryanair outbound and Lauda Air return; its flight numbers remain unknown.
+
+The June 2019 Ahmedabad–Jodhpur return is intentionally included even though it was a bus journey. It uses `transportMode: "bus"`, bus-specific labeling, and an encrypted memory note so it remains in the chronological story without being presented as a flight.
+
+The May–August 2024 Stockholm–Ahmedabad round trip remains grouped as one international journey. A July 2024 mixed journey sits beside it and contains an AMD–BLR flight, a BLR–MAA drive, and an MAA–AMD flight. A separate Summer 2024 AMD–BOM round trip represents the Bombay–Imagica journey. Airlines and flight numbers for both side journeys remain unknown.
+
+The December 2024 Stockholm–Ahmedabad memory is intentionally incomplete and must be expanded when the user remembers the missing detail.
 
 ## Default highlighted journey
 

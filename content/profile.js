@@ -222,6 +222,33 @@ export const profile = {
                     muted: "#766a6d",
                     stub: "#f8e7ea",
                 },
+                ryanair: {
+                    name: "Ryanair",
+                    showName: true,
+                    accent: "#f1c933",
+                    surface: "#f8faff",
+                    ink: "#073590",
+                    muted: "#657092",
+                    stub: "#e9edf8",
+                },
+                bus: {
+                    name: "Bus journey",
+                    showName: true,
+                    accent: "#9a6a3a",
+                    surface: "#fffaf3",
+                    ink: "#3d3024",
+                    muted: "#786b5f",
+                    stub: "#f3e8d8",
+                },
+                car: {
+                    name: "Road journey",
+                    showName: true,
+                    accent: "#6f7552",
+                    surface: "#fbfbf5",
+                    ink: "#34372b",
+                    muted: "#737666",
+                    stub: "#ecebdd",
+                },
                 lufthansa: {
                     name: "Lufthansa",
                     logo: "assets/images/airlines/lufthansa.svg?v=2",
@@ -266,6 +293,7 @@ export const profile = {
                     via: { code: "DXB", city: "Dubai", latitude: 25.2528, longitude: 55.3644 },
                     airline: "emirates",
                     date: "May–July 2010",
+                    qrNoteId: "may-2010-birmingham",
                     roundTrip: true,
                 },
                 {
@@ -278,6 +306,16 @@ export const profile = {
                         { label: "Return", marker: "←", numbers: ["SG894", "SG854"] },
                     ],
                     date: "May 2014",
+                    qrNoteId: "may-2014-guwahati",
+                    roundTrip: true,
+                },
+                {
+                    from: { code: "AMD", city: "Ahmedabad", latitude: 23.0225, longitude: 72.5714 },
+                    to: { code: "JDH", city: "Jodhpur", latitude: 26.2389, longitude: 73.0243 },
+                    airline: "bus",
+                    transportMode: "bus",
+                    date: "June 2019",
+                    qrNoteId: "june-2019-jodhpur",
                     roundTrip: true,
                 },
                 {
@@ -286,12 +324,14 @@ export const profile = {
                     airline: "air-india",
                     flightNumber: "AI594",
                     date: "July 2019",
+                    qrNoteId: "july-2019-iit-madras",
                 },
                 {
                     from: { code: "MAA", city: "Chennai", latitude: 12.9949, longitude: 80.1755 },
                     to: { code: "AMD", city: "Ahmedabad", latitude: 23.0712, longitude: 72.6264 },
                     airline: "indigo",
                     date: "October 2019",
+                    qrNoteId: "october-2019-festival",
                     roundTrip: true,
                 },
                 {
@@ -314,6 +354,7 @@ export const profile = {
                         },
                     ],
                     date: "November–December 2019",
+                    qrNoteId: "november-2019-winter",
                     roundTrip: true,
                 },
                 {
@@ -321,6 +362,7 @@ export const profile = {
                     to: { code: "AMD", city: "Ahmedabad", latitude: 23.0712, longitude: 72.6264 },
                     airline: "indigo",
                     date: "January 2020",
+                    qrNoteId: "january-2020-cept",
                     roundTrip: true,
                 },
                 {
@@ -328,6 +370,15 @@ export const profile = {
                     to: { code: "AMD", city: "Ahmedabad", latitude: 23.0712, longitude: 72.6264 },
                     airline: "indigo",
                     date: "March 2020",
+                    qrNoteId: "march-2020-covid",
+                },
+                {
+                    from: { code: "AMD", city: "Ahmedabad", latitude: 23.0712, longitude: 72.6264 },
+                    to: { code: "DEL", city: "Delhi", latitude: 28.5562, longitude: 77.1 },
+                    airline: { name: "Airline not recorded", hideBrand: true },
+                    date: "January 2022",
+                    qrNoteId: "pre-february-2022-delhi-visa",
+                    roundTrip: true,
                 },
                 {
                     from: { code: "AMD", city: "Ahmedabad", latitude: 23.0712, longitude: 72.6264 },
@@ -339,6 +390,29 @@ export const profile = {
                         { label: "Return", marker: "←", numbers: ["EY78", "EY288"] },
                     ],
                     date: "February–July 2022",
+                    qrNoteId: "february-2022-amsterdam",
+                    roundTrip: true,
+                },
+                {
+                    from: { code: "EIN", city: "Eindhoven", latitude: 51.4501, longitude: 5.3745 },
+                    to: { code: "VIE", city: "Vienna", latitude: 48.1103, longitude: 16.5697 },
+                    airline: "ryanair",
+                    passes: [
+                        {
+                            label: "Outbound",
+                            direction: "outbound",
+                            airline: "ryanair",
+                            date: "July 2022",
+                        },
+                        {
+                            label: "Return",
+                            direction: "return",
+                            airline: "lauda",
+                            date: "July 2022",
+                        },
+                    ],
+                    date: "July 2022",
+                    qrNoteId: "july-2022-vienna",
                     roundTrip: true,
                 },
                 {
@@ -346,12 +420,14 @@ export const profile = {
                     to: { code: "MAA", city: "Chennai", latitude: 12.9949, longitude: 80.1755 },
                     airline: "indigo",
                     date: "August 2022",
+                    qrNoteId: "august-2022-final-year",
                 },
                 {
                     from: { code: "MAA", city: "Chennai", latitude: 12.9949, longitude: 80.1755 },
                     to: { code: "AMD", city: "Ahmedabad", latitude: 23.0712, longitude: 72.6264 },
                     airline: "indigo",
                     date: "October 2022",
+                    qrNoteId: "october-2022-diwali",
                     roundTrip: true,
                 },
                 {
@@ -378,6 +454,7 @@ export const profile = {
                         },
                     ],
                     date: "November 2022–January 2023",
+                    qrNoteId: "november-2022-crossroads",
                     roundTrip: true,
                 },
                 {
@@ -413,7 +490,15 @@ export const profile = {
                         },
                     ],
                     date: "April 2023",
-                    qrNoteId: "april-2023-demo",
+                    qrNoteId: "april-2023-seabed",
+                    roundTrip: true,
+                },
+                {
+                    from: { code: "AMD", city: "Ahmedabad", latitude: 23.0712, longitude: 72.6264 },
+                    to: { code: "DEL", city: "Delhi", latitude: 28.5562, longitude: 77.1 },
+                    airline: { name: "Airline not recorded", hideBrand: true },
+                    date: "June 2023",
+                    qrNoteId: "june-2023-sweden-visa",
                     roundTrip: true,
                 },
                 {
@@ -422,6 +507,15 @@ export const profile = {
                     airline: "indigo",
                     flightNumbers: ["6E6015", "6E6056"],
                     date: "June 2023",
+                    qrNoteId: "june-2023-amritsar",
+                    roundTrip: true,
+                },
+                {
+                    from: { code: "AMD", city: "Ahmedabad", latitude: 23.0712, longitude: 72.6264 },
+                    to: { code: "MAA", city: "Chennai", latitude: 12.9949, longitude: 80.1755 },
+                    airline: { name: "Airline not recorded", hideBrand: true },
+                    date: "July 2023",
+                    qrNoteId: "july-2023-convocation",
                     roundTrip: true,
                 },
                 {
@@ -431,6 +525,7 @@ export const profile = {
                     airline: "emirates",
                     flightNumbers: ["EK539", "EK157"],
                     date: "August 2023",
+                    qrNoteId: "august-2023-kth",
                 },
                 {
                     from: { code: "ARN", city: "Stockholm", latitude: 59.6519, longitude: 17.9186 },
@@ -447,6 +542,54 @@ export const profile = {
                     ],
                     flightOperators: { QR6124: "Finnair" },
                     date: "May–August 2024",
+                    qrNoteId: "may-2024-calendar",
+                    roundTrip: true,
+                },
+                {
+                    from: { code: "AMD", city: "Ahmedabad", latitude: 23.0712, longitude: 72.6264 },
+                    to: { code: "BLR", city: "Bengaluru", latitude: 13.1986, longitude: 77.7066 },
+                    returnVia: { code: "MAA", city: "Chennai", latitude: 12.9949, longitude: 80.1755 },
+                    airline: { name: "Airline not recorded", hideBrand: true },
+                    transportMode: "mixed",
+                    passes: [
+                        {
+                            label: "Flight to Bengaluru",
+                            direction: "outbound",
+                            transportMode: "flight",
+                            from: { code: "AMD", city: "Ahmedabad", latitude: 23.0712, longitude: 72.6264 },
+                            to: { code: "BLR", city: "Bengaluru", latitude: 13.1986, longitude: 77.7066 },
+                            airline: { name: "Airline not recorded", hideBrand: true },
+                            date: "July 2024",
+                        },
+                        {
+                            label: "Drive to Chennai",
+                            direction: "ground",
+                            transportMode: "car",
+                            from: { code: "BLR", city: "Bengaluru", latitude: 13.1986, longitude: 77.7066 },
+                            to: { code: "MAA", city: "Chennai", latitude: 12.9949, longitude: 80.1755 },
+                            airline: "car",
+                            date: "July 2024",
+                        },
+                        {
+                            label: "Flight home",
+                            direction: "return",
+                            transportMode: "flight",
+                            from: { code: "MAA", city: "Chennai", latitude: 12.9949, longitude: 80.1755 },
+                            to: { code: "AMD", city: "Ahmedabad", latitude: 23.0712, longitude: 72.6264 },
+                            airline: { name: "Airline not recorded", hideBrand: true },
+                            date: "July 2024",
+                        },
+                    ],
+                    date: "July 2024",
+                    qrNoteId: "july-2024-bengaluru-chennai",
+                    roundTrip: true,
+                },
+                {
+                    from: { code: "AMD", city: "Ahmedabad", latitude: 23.0712, longitude: 72.6264 },
+                    to: { code: "BOM", city: "Mumbai", latitude: 19.0917, longitude: 72.8661 },
+                    airline: { name: "Airline not recorded", hideBrand: true },
+                    date: "Summer 2024",
+                    qrNoteId: "summer-2024-bombay-imagica",
                     roundTrip: true,
                 },
                 {
@@ -460,6 +603,7 @@ export const profile = {
                     flightNumbers: ["EY3907", "EY178", "EY246"],
                     flightOperators: { EY3907: "SAS" },
                     date: "December 2024",
+                    qrNoteId: "december-2024-stockholm-surprise",
                 },
                 {
                     from: { code: "AMD", city: "Ahmedabad", latitude: 23.0712, longitude: 72.6264 },
@@ -486,6 +630,7 @@ export const profile = {
                         },
                     ],
                     date: "January–July 2025",
+                    qrNoteId: "january-2025-differ",
                     roundTrip: true,
                 },
                 {
@@ -508,6 +653,7 @@ export const profile = {
                         },
                     ],
                     date: "September 2025",
+                    qrNoteId: "september-2025-bombay",
                     roundTrip: true,
                 },
                 {
@@ -517,6 +663,7 @@ export const profile = {
                     airline: "etihad",
                     flightNumbers: ["EY241", "EY125"],
                     date: "September 2025",
+                    qrNoteId: "september-2025-munich",
                 },
                 {
                     from: { code: "AMS", city: "Amsterdam", latitude: 52.3081, longitude: 4.7642 },
@@ -524,6 +671,7 @@ export const profile = {
                     airline: "lufthansa",
                     flightNumber: "LH2307",
                     date: "October 2025",
+                    qrNoteId: "october-2025-amsterdam-munich",
                 },
                 {
                     from: { code: "MUC", city: "Munich", latitude: 48.3538, longitude: 11.7861 },
@@ -536,6 +684,7 @@ export const profile = {
                     ],
                     date: "April–May 2026",
                     roundTrip: true,
+                    qrNoteId: "april-may-2026-india",
                 },
                 {
                     from: { code: "AMD", city: "Ahmedabad", latitude: 23.0712, longitude: 72.6264 },
@@ -546,6 +695,7 @@ export const profile = {
                         { label: "Return", marker: "←", numbers: ["6E381"] },
                     ],
                     date: "May 2026",
+                    qrNoteId: "may-2026-goa",
                     roundTrip: true,
                 },
                 {
@@ -562,6 +712,7 @@ export const profile = {
                         },
                     ],
                     date: "May 2026",
+                    qrNoteId: "may-2026-bombay",
                     roundTrip: true,
                 },
                 {
@@ -601,24 +752,6 @@ export const profile = {
                 {
                     from: { code: "EIN", city: "Eindhoven", latitude: 51.4501, longitude: 5.3745 },
                     to: { code: "BGY", city: "Bergamo", latitude: 45.6739, longitude: 9.7042 },
-                    airline: { name: "Airline not recorded", hideBrand: true },
-                    roundTrip: true,
-                },
-                {
-                    from: { code: "EIN", city: "Eindhoven", latitude: 51.4501, longitude: 5.3745 },
-                    to: { code: "VIE", city: "Vienna", latitude: 48.1103, longitude: 16.5697 },
-                    airline: { name: "Airline not recorded", hideBrand: true },
-                    roundTrip: true,
-                },
-                {
-                    from: { code: "AMD", city: "Ahmedabad", latitude: 23.0712, longitude: 72.6264 },
-                    to: { code: "DEL", city: "Delhi", latitude: 28.5562, longitude: 77.1 },
-                    airline: { name: "Airline not recorded", hideBrand: true },
-                    roundTrip: true,
-                },
-                {
-                    from: { code: "AMD", city: "Ahmedabad", latitude: 23.0712, longitude: 72.6264 },
-                    to: { code: "DEL", city: "Delhi", latitude: 28.5562, longitude: 77.1 },
                     airline: { name: "Airline not recorded", hideBrand: true },
                     roundTrip: true,
                 },

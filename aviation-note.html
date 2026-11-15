@@ -4,39 +4,62 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex, nofollow">
-    <meta name="description" content="Unlock a private note from the aviation logbook.">
-    <title>Private aviation note</title>
+    <meta name="description" content="Unlock a memory note from the aviation logbook.">
+    <title>Memory note</title>
     <link rel="icon" href="assets/images/photos/KirtanPatel-cropped.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/aviation-note.css?v=20261102-1">
-    <script type="module" src="assets/js/pages/aviation-note.js?v=20261102-1"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/aviation-note.css?v=20261115-23">
+    <script type="module" src="assets/js/pages/aviation-note.js?v=20261115-44"></script>
 </head>
 <body>
     <main class="aviation-note-shell">
-        <section class="aviation-note-card" aria-labelledby="note-title" data-note-card>
-            <span class="aviation-note-mark" aria-hidden="true">
-                <svg viewBox="0 0 24 24" role="img">
-                    <path d="M7.8 10V7.6a4.2 4.2 0 0 1 8.4 0V10m-9.8 0h11.2v9H6.4z"/>
-                </svg>
-            </span>
-            <p class="aviation-note-kicker">A passenger&rsquo;s aviation logbook</p>
-            <h1 id="note-title">Private note</h1>
-            <p class="aviation-note-status" data-note-status>Enter the password to reveal this memory.</p>
+        <section class="aviation-note-card" aria-label="Memory note" data-note-card>
+            <div class="aviation-note-main">
+                <header class="aviation-note-header">Memory note</header>
 
-            <form class="aviation-note-form" data-note-form>
-                <label for="note-password">Password</label>
-                <div class="aviation-note-controls">
-                    <input id="note-password" name="password" type="password" autocomplete="current-password" required data-note-password>
-                    <button type="submit" data-note-submit>Unlock</button>
+                <div class="aviation-note-content">
+                    <form class="aviation-note-form" data-note-form>
+                        <label for="note-password">Access code</label>
+                        <div class="aviation-note-controls">
+                            <input
+                                id="note-password"
+                                name="password"
+                                type="password"
+                                autocomplete="off"
+                                autocapitalize="off"
+                                spellcheck="false"
+                                required
+                                data-note-password
+                            >
+                            <button type="submit" data-note-submit>
+                                <span data-note-submit-label>Unlock</span>
+                            </button>
+                        </div>
+                    </form>
+
+                    <p class="aviation-note-status" role="status" aria-live="polite" data-note-status></p>
+
+                    <div class="aviation-note-result-panel" hidden data-note-result-panel>
+                        <p class="aviation-note-result" data-note-result></p>
+                    </div>
+
+                    <noscript>This memory requires JavaScript for local decryption.</noscript>
                 </div>
-            </form>
+            </div>
 
-            <p class="aviation-note-result" hidden data-note-result></p>
-            <a class="aviation-note-back" href="showcase.html">Back to the logbook</a>
-            <noscript>This note requires JavaScript for local decryption.</noscript>
+            <aside class="aviation-note-stub" aria-hidden="true">
+                <span class="aviation-note-mark">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M7.8 10V7.6a4.2 4.2 0 0 1 8.4 0V10m-9.8 0h11.2v9H6.4z"/>
+                    </svg>
+                </span>
+                <span>Encrypted</span>
+            </aside>
         </section>
+
+        <a class="aviation-note-back" href="showcase.html">Back to the logbook</a>
     </main>
 </body>
 </html>

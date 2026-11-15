@@ -1,4 +1,4 @@
-import { profile } from "../../../content/profile.js?v=20261101-39";
+import { profile } from "../../../content/profile.js?v=20261115-64";
 import { renderShell } from "../components.js?v=20261022-16";
 
 renderShell("showcase");
@@ -408,7 +408,14 @@ function routeLabel(route, airlineCatalog) {
     const direction = route.roundTrip
         ? `${route.from.city} (${route.from.code}) to ${route.to.city} (${route.to.code}) and back`
         : `${route.from.city} (${route.from.code}) to ${route.to.city} (${route.to.code})`;
-    return `${direction}${via} with ${getAirlineIdentity(route, airlineCatalog).name}${period}`;
+    const transport = route.transportMode === "bus"
+        ? " by bus"
+        : route.transportMode === "car"
+        ? " by car"
+        : route.transportMode === "mixed"
+        ? " by air and road"
+        : ` with ${getAirlineIdentity(route, airlineCatalog).name}`;
+    return `${direction}${via}${transport}${period}`;
 }
 
 function renderAviationLogbook(logbook, container) {
@@ -480,14 +487,14 @@ function renderAviationLogbook(logbook, container) {
         viewBox: `0 0 ${mapWidth} ${mapHeight}`,
         role: "img",
         tabindex: "0",
-        "aria-label": "Remembered flight routes",
+        "aria-label": "Remembered journey routes",
         "aria-describedby": "aviation-map-description",
         "aria-keyshortcuts": "+ - 0 ArrowUp ArrowDown ArrowLeft ArrowRight",
     });
     map.append(
         Object.assign(createSvgElement("desc", { id: "aviation-map-description" }), {
             textContent: routes.length
-                ? "Interactive map. Select a route to read its details, or select an airport to browse the routes serving it. Drag to pan, or use the map controls to zoom and reset the view."
+                ? "Interactive map. Select a route to read its details, or select a location to browse the journeys serving it. Drag to pan, or use the map controls to zoom and reset the view."
                 : "A world map waiting for remembered routes to be added.",
         }),
     );
@@ -728,11 +735,11 @@ function renderAviationLogbook(logbook, container) {
     passPlane.className = "aviation-boarding-pass-plane";
     passRoute.append(origin.stop, passPlane, destination.stop);
 
-    const createDirectionSymbol = (roundTrip = false) => {
+    const createDirectionSymbol = (roundTrip = false, transportMode = "flight") => {
         const direction = document.createElement(roundTrip ? "span" : "i");
         direction.setAttribute("aria-hidden", "true");
         if (roundTrip) direction.innerHTML = "&#8644;";
-        else direction.className = "fas fa-plane";
+        else direction.className = `fas ${transportMode === "bus" ? "fa-bus" : transportMode === "car" ? "fa-car" : "fa-plane"}`;
         return direction;
     };
 
@@ -855,6 +862,7 @@ function renderAviationLogbook(logbook, container) {
             flightNumbers: pass.flightNumbers,
             flightNumberGroups: undefined,
             flightOperators: pass.flightOperators || route.flightOperators,
+            transportMode: pass.transportMode || route.transportMode,
             note: pass.note ?? route.note,
         };
     };
@@ -1040,7 +1048,7 @@ function renderAviationLogbook(logbook, container) {
         const returnViaAirports = getRouteReturnViaAirports(displayRoute);
         const hasConnections = viaAirports.length > 0 || returnViaAirports.length > 0;
         passPlane.classList.toggle("has-connection", hasConnections);
-        const direction = createDirectionSymbol(displayRoute.roundTrip);
+        const direction = createDirectionSymbol(displayRoute.roundTrip, displayRoute.transportMode);
         if (hasConnections) {
             const connection = document.createElement("span");
             connection.className = "aviation-boarding-pass-connection";
@@ -1098,7 +1106,13 @@ function renderAviationLogbook(logbook, container) {
                 return row;
             }));
         } else {
-            passType.textContent = flightNumberLabels.length ? flightNumberLabels.join(" / ") : "Boarding pass";
+            passType.textContent = flightNumberLabels.length
+                ? flightNumberLabels.join(" / ")
+                : displayRoute.transportMode === "bus"
+                ? "Bus journey"
+                : displayRoute.transportMode === "car"
+                ? "Road journey"
+                : "Boarding pass";
         }
         passType.classList.toggle("has-flight-number", flightNumbers.length > 0);
         passType.classList.toggle("has-flight-groups", flightNumberGroups.length > 0);
@@ -1162,6 +1176,10 @@ function renderAviationLogbook(logbook, container) {
     const routeSummary = (route) => {
         const viaCodes = getRouteViaAirports(route).map((airport) => airport.code);
         const stops = [route.from.code, ...viaCodes, route.to.code].join("–");
+        const returnViaCodes = getRouteReturnViaAirports(route).map((airport) => airport.code);
+        if (hasDirectionalReturn(route)) {
+            return `${stops} → ${[...returnViaCodes, route.from.code].join("–")}`;
+        }
         return route.roundTrip ? `${stops} ⇄` : stops;
     };
     const renderAirportRouteSwitcher = () => {
@@ -1176,7 +1194,7 @@ function renderAviationLogbook(logbook, container) {
         airportRoutePosition.textContent = `Route ${selectedAirportGroupPosition + 1} of ${selectedAirportGroups.length}`;
         airportRouteSwitcher.setAttribute(
             "aria-label",
-            `${selectedAirport.city} airport routes. ${routeSummary(route)}, route ${selectedAirportGroupPosition + 1} of ${selectedAirportGroups.length}.`,
+            `${selectedAirport.city} journeys. ${routeSummary(route)}, route ${selectedAirportGroupPosition + 1} of ${selectedAirportGroups.length}.`,
         );
         const hasMultipleRoutes = selectedAirportGroups.length > 1;
         previousAirportRoute.disabled = !hasMultipleRoutes;

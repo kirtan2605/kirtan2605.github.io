@@ -1,6 +1,11 @@
 :root {
     color-scheme: light;
     font-family: "Hanken Grotesk", system-ui, sans-serif;
+    --pass-accent: #4f6f8f;
+    --pass-ink: #26313b;
+    --pass-muted: #68757e;
+    --pass-stub: #f4f7f8;
+    --pass-surface: #fff;
 }
 
 * {
@@ -9,121 +14,152 @@
 
 body {
     background: #edf2f4;
-    color: #26313b;
+    color: var(--pass-ink);
     margin: 0;
     min-height: 100vh;
+}
+
+button,
+input {
+    font: inherit;
 }
 
 .aviation-note-shell {
     align-items: center;
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     min-height: 100vh;
     padding: 1.5rem;
-    place-items: center;
 }
 
 .aviation-note-card {
-    background: rgba(255, 255, 255, 0.94);
+    --pass-notch-radius: 0.48rem;
+    --pass-notch-x: calc(100% - 6.25rem);
+    -webkit-mask-composite: source-in;
+    -webkit-mask-image:
+        radial-gradient(circle var(--pass-notch-radius) at var(--pass-notch-x) 0, transparent calc(100% - 1px), #000 100%),
+        radial-gradient(circle var(--pass-notch-radius) at var(--pass-notch-x) 100%, transparent calc(100% - 1px), #000 100%);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    aspect-ratio: 2.75 / 1;
+    background: var(--pass-surface);
     border: 1px solid rgba(62, 79, 91, 0.12);
-    border-radius: 0.75rem;
-    box-shadow: 0 1rem 3rem rgba(31, 48, 61, 0.1);
-    max-width: 24rem;
-    padding: clamp(1.5rem, 6vw, 2.25rem);
-    text-align: center;
+    border-radius: 0.4rem;
+    display: grid;
+    filter: drop-shadow(0 0.5rem 0.75rem rgba(31, 48, 61, 0.12));
+    grid-template-columns: minmax(0, 1fr) 6.25rem;
+    mask-composite: intersect;
+    mask-image:
+        radial-gradient(circle var(--pass-notch-radius) at var(--pass-notch-x) 0, transparent calc(100% - 1px), #000 100%),
+        radial-gradient(circle var(--pass-notch-radius) at var(--pass-notch-x) 100%, transparent calc(100% - 1px), #000 100%);
+    mask-repeat: no-repeat;
+    mask-size: 100% 100%;
+    max-width: 34rem;
+    overflow: hidden;
+    position: relative;
     width: 100%;
 }
 
-.aviation-note-mark {
+.aviation-note-card::before {
+    background: var(--pass-accent);
+    content: "";
+    height: 0.24rem;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 2;
+}
+
+.aviation-note-main {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 0.85rem 1rem 0.8rem;
+}
+
+.aviation-note-header {
     align-items: center;
-    background: #f1f4f6;
-    border-radius: 50%;
-    display: inline-flex;
-    height: 2.75rem;
-    justify-content: center;
-    margin-bottom: 1rem;
-    width: 2.75rem;
-}
-
-.aviation-note-mark svg {
-    fill: none;
-    height: 1.25rem;
-    stroke: #52626c;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-width: 1.5;
-    width: 1.25rem;
-}
-
-.aviation-note-kicker {
-    color: #68757e;
-    font-size: 0.7rem;
-    font-weight: 650;
-    letter-spacing: 0.09em;
-    margin: 0 0 0.5rem;
+    color: var(--pass-muted);
+    display: flex;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.075em;
+    min-height: 1.5rem;
     text-transform: uppercase;
 }
 
-.aviation-note-card h1 {
-    font-size: clamp(1.65rem, 7vw, 2rem);
-    letter-spacing: -0.025em;
-    line-height: 1.1;
-    margin: 0;
+.aviation-note-header::before {
+    background: var(--pass-accent);
+    border-radius: 50%;
+    content: "";
+    height: 0.32rem;
+    margin-right: 0.4rem;
+    width: 0.32rem;
+}
+
+.aviation-note-content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 0.4rem;
 }
 
 .aviation-note-status {
-    color: #68757e;
-    font-size: 0.94rem;
-    line-height: 1.5;
-    margin: 0.75rem auto 1.5rem;
-    max-width: 18rem;
+    color: var(--pass-muted);
+    font-size: 0.62rem;
+    line-height: 1.35;
+    margin: 0.35rem 0 0;
+}
+
+.aviation-note-status:empty {
+    display: none;
 }
 
 .aviation-note-card.has-error .aviation-note-status {
     color: #a14343;
 }
 
-.aviation-note-form {
-    text-align: left;
-}
-
-.aviation-note-form[hidden] {
+.aviation-note-form[hidden],
+.aviation-note-result-panel[hidden] {
     display: none;
 }
 
 .aviation-note-form label {
-    color: #52626c;
+    color: var(--pass-muted);
     display: block;
-    font-size: 0.72rem;
-    font-weight: 650;
-    letter-spacing: 0.065em;
-    margin: 0 0 0.4rem;
+    font-size: 0.52rem;
+    font-weight: 700;
+    letter-spacing: 0.075em;
+    margin-bottom: 0.25rem;
     text-transform: uppercase;
 }
 
 .aviation-note-controls {
     display: grid;
-    gap: 0.5rem;
+    gap: 0.4rem;
     grid-template-columns: minmax(0, 1fr) auto;
 }
 
 .aviation-note-controls input,
 .aviation-note-controls button {
-    border-radius: 0.4rem;
-    font: inherit;
-    min-height: 2.8rem;
+    border-radius: 0.3rem;
+    min-height: 2.35rem;
 }
 
 .aviation-note-controls input {
     background: #fff;
     border: 1px solid #cad3d8;
-    color: #26313b;
+    color: var(--pass-ink);
     min-width: 0;
-    padding: 0.65rem 0.75rem;
+    padding: 0.45rem 0.65rem;
 }
 
 .aviation-note-controls input:focus {
-    border-color: #52626c;
-    box-shadow: 0 0 0 3px rgba(82, 98, 108, 0.12);
+    border-color: var(--pass-accent);
+    box-shadow: 0 0 0 3px rgba(79, 111, 143, 0.12);
     outline: none;
 }
 
@@ -132,47 +168,151 @@ body {
 }
 
 .aviation-note-controls button {
-    background: #26313b;
-    border: 1px solid #26313b;
+    background: var(--pass-ink);
+    border: 1px solid var(--pass-ink);
     color: #fff;
     cursor: pointer;
-    font-weight: 650;
-    padding: 0.65rem 1rem;
+    font-size: 0.68rem;
+    font-weight: 700;
+    padding: 0.45rem 0.85rem;
+}
+
+.aviation-note-controls button:hover:not(:disabled),
+.aviation-note-controls button:focus-visible {
+    background: #3a4a53;
+}
+
+.aviation-note-controls button:focus-visible {
+    box-shadow: 0 0 0 3px rgba(38, 49, 59, 0.16);
+    outline: none;
 }
 
 .aviation-note-controls button:disabled {
     cursor: wait;
-    opacity: 0.7;
+    opacity: 0.68;
+}
+
+.aviation-note-result-panel {
+    padding: 0.4rem 0;
+    text-align: center;
 }
 
 .aviation-note-result {
-    color: #26313b;
-    font-size: clamp(1.55rem, 8vw, 2.2rem);
+    color: var(--pass-ink);
+    font-family: "Caveat", "Segoe Print", cursive;
+    font-size: 1.65rem;
     font-weight: 600;
-    letter-spacing: -0.025em;
-    margin: 1.75rem 0;
+    letter-spacing: 0.01em;
+    line-height: 1.1;
+    margin: 0;
 }
 
-.aviation-note-result[hidden] {
-    display: none;
+.aviation-note-result.is-long {
+    font-size: 1.3rem;
+    line-height: 1.14;
+}
+
+.aviation-note-result.is-very-long {
+    font-size: 1.05rem;
+    line-height: 1.18;
+}
+
+.aviation-note-content noscript {
+    color: #a14343;
+    display: block;
+    font-size: 0.58rem;
+    margin-top: 0.35rem;
+}
+
+.aviation-note-stub {
+    align-items: center;
+    background: var(--pass-stub);
+    border-left: 1px dashed var(--pass-muted);
+    color: var(--pass-muted);
+    display: flex;
+    flex-direction: column;
+    font-size: 0.48rem;
+    font-weight: 700;
+    gap: 0.45rem;
+    justify-content: center;
+    letter-spacing: 0.08em;
+    padding: 0.8rem 0.65rem;
+    text-transform: uppercase;
+}
+
+.aviation-note-mark {
+    align-items: center;
+    border: 1px solid #cbd4d8;
+    border-radius: 0.25rem;
+    display: flex;
+    height: 3.25rem;
+    justify-content: center;
+    width: 3.25rem;
+}
+
+.aviation-note-mark svg {
+    fill: none;
+    height: 1.25rem;
+    stroke: var(--pass-ink);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.45;
+    width: 1.25rem;
+}
+
+.aviation-note-card.is-unlocked .aviation-note-mark {
+    background: #e7f0e9;
+    border-color: #bfd3c4;
+}
+
+.aviation-note-card.is-unlocked .aviation-note-mark svg {
+    stroke: #4e7559;
 }
 
 .aviation-note-back {
-    color: #68757e;
-    display: inline-block;
-    font-size: 0.8rem;
-    margin-top: 1.5rem;
+    color: var(--pass-muted);
+    font-size: 0.72rem;
+    margin-top: 1rem;
     text-decoration: none;
 }
 
 .aviation-note-back:hover,
 .aviation-note-back:focus-visible {
-    color: #26313b;
+    color: var(--pass-ink);
     text-decoration: underline;
 }
 
-@media (max-width: 28rem) {
-    .aviation-note-controls {
-        grid-template-columns: 1fr;
+@media (max-width: 30rem) {
+    .aviation-note-shell {
+        padding: 1rem;
+    }
+
+    .aviation-note-card {
+        --pass-notch-x: calc(100% - 5rem);
+        aspect-ratio: auto;
+        grid-template-columns: minmax(0, 1fr) 5rem;
+        min-height: 12.5rem;
+    }
+
+    .aviation-note-main {
+        padding-inline: 0.8rem;
+    }
+
+    .aviation-note-controls button {
+        padding-inline: 0.65rem;
+    }
+
+    .aviation-note-mark {
+        height: 2.75rem;
+        width: 2.75rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
     }
 }
