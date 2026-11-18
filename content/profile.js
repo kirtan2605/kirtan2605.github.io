@@ -909,6 +909,11 @@ export const profile = {
     ],
     awards: [
         {
+            name: "Erasmus+ Student Mobility for Traineeships",
+            date: "2025",
+            description: "European Commission mobility grant supporting Master’s thesis research at the Dutch Institute for Fundamental Energy Research (DIFFER).",
+        },
+        {
             name: "Karl Engver’s Foundation Travel Grant",
             date: "2024",
             description: "Competitive merit grant supporting research mobility for Master’s thesis work.",
