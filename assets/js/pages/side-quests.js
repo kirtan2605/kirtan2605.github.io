@@ -5,7 +5,7 @@ renderShell("showcase");
 
 const collage = document.querySelector("[data-collage]");
 const gamesPanel = document.querySelector("[data-games]");
-const supportPanel = document.querySelector("[data-support]");
+// const supportPanel = document.querySelector("[data-support]");
 const aviationLogbook = document.querySelector("[data-aviation-logbook]");
 
 const svgNamespace = "http://www.w3.org/2000/svg";
@@ -1341,5 +1341,5 @@ function renderAviationLogbook(logbook, container) {
 
 renderHighlights(profile.personal.highlights || [], collage);
 renderGames(profile.personal.games, profile.personal.discord, gamesPanel);
-if (supportPanel) renderSupport(profile.personal.teams || [], supportPanel);
+// if (supportPanel) renderSupport(profile.personal.teams || [], supportPanel);
 renderAviationLogbook(profile.personal.aviation, aviationLogbook);
